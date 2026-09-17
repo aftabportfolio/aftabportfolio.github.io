@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aftab Ahmed | Procurement Executive</title>
+
+  <meta
+    name="description"
+    content="Aftab Ahmed - Procurement Executive, Business Administration and Entrepreneur"
+  >
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    /* Navigation */
+    nav {
+      background: #111827;
+      padding: 18px 20px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 80px 20px;
+
+      background:
+        linear-gradient(
+          rgba(10, 20, 35, 0.72),
+          rgba(10, 20, 35, 0.72)
+        ),
+        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .hero h1 {
+      font-size: 58px;
+      margin-bottom: 15px;
+    }
+
+    .hero h2 {
+      font-size: 26px;
+      font-weight: normal;
+      margin: 5px 0;
+    }
+
+    .hero p {
+      color: #dbeafe;
+      font-size: 19px;
+      margin-top: 20px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 14px 30px;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+    }
+
+    .button:hover {
+      background: #1d4ed8;
+    }
+
+    /* Sections */
+    section {
+      max-width: 1100px;
+      margin: 45px auto;
+      padding: 50px 35px;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
+    }
+
+    section h2 {
+      color: #172033;
+      font-size: 32px;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .section-text {
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    /* About Image */
+    .work-image {
+      width: 100%;
+      max-height: 450px;
+      object-fit: cover;
+      border-radius: 14px;
+      margin-top: 30px;
+    }
+
+    /* Professional Work Cards */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: #f8fafc;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #e5e7eb;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .card-content {
+      padding: 22px;
+    }
+
+    .card h3 {
+      color: #172033;
+      margin-bottom: 10px;
+    }
+
+    /* Skills */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      background: #eef2f7;
+      color: #172033;
+      padding: 12px 20px;
+      border-radius: 25px;
+      font-weight: bold;
+    }
+
+    .skill:hover {
+      background: #dbeafe;
+    }
+
+    /* Team */
+    .team-image {
+      width: 100%;
+      border-radius: 14px;
+      margin-top: 30px;
+      max-height: 500px;
+      object-fit: cover;
+    }
+
+    /* Contact */
+    .contact {
+      text-align: center;
+    }
+
+    .contact p {
+      margin: 14px 0;
+      font-size: 18px;
+    }
+
+    .contact a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+      margin-top: 60px;
+    }
+
+    /* Mobile */
+    @media (max-width: 800px) {
+
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .hero h2 {
+        font-size: 21px;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        margin: 25px 15px;
+        padding: 35px 20px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      nav a {
+        display: inline-block;
+        margin: 5px 7px;
+        font-size: 14px;
+      }
+
+      .hero {
+        min-height: 540px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#work">Professional Work</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+
+    <div class="hero-content">
+
+      <h1>Aftab Ahmed</h1>
+
+      <h2>Procurement Executive</h2>
+
+      <h2>Business Administration &amp; Entrepreneur</h2>
+
+      <p>
+        Professional portfolio focused on procurement,
+        business administration, vendor management,
+        teamwork and entrepreneurship.
+      </p>
+
+      <a class="button" href="#contact">
+        Contact Me
+      </a>
+
+    </div>
+
+  </header>
+
+  <!-- About -->
+  <section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="section-text">
+
+      <p>
+        Welcome to my professional portfolio.
+        I am interested in procurement, business administration,
+        vendor management, negotiation and entrepreneurship.
+      </p>
+
+      <p style="margin-top:18px;">
+        I believe in professional communication,
+        effective business relationships and organized
+        working practices that create long-term value.
+      </p>
+
+    </div>
+
+    <img
+      class="work-image"
+      src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85"
+      alt="Modern professional office"
+    >
+
+  </section>
+
+  <!-- Professional Work -->
+  <section id="work">
+
+    <h2>Professional Work</h2>
+
+    <div class="cards">
+
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=85"
+          alt="Business meeting"
+        >
+
+        <div class="card-content">
+
+          <h3>Procurement</h3>
+
+          <p>
+            Supporting procurement activities,
+            supplier coordination, purchasing and
+            business requirements.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
+          alt="Professional business team"
+        >
+
+        <div class="card-content">
+
+          <h3>Teamwork</h3>
+
+          <p>
+            Professional collaboration, communication
+            and teamwork in a business environment.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img
+          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85"
+          alt="Business professionals working"
+        >
+
+        <div class="card-content">
+
+          <h3>Business Administration</h3>
+
+          <p>
+            Organized business administration,
+            planning, coordination and operational support.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Team Environment -->
+  <section>
+
+    <h2>Professional Team Environment</h2>
+
+    <p class="section-text">
+      Effective teamwork and professional communication
+      are important parts of successful business operations.
+    </p>
+
+    <img
+      class="team-image"
+      src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=85"
+      alt="Business team working together"
+    >
+
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+
+    <h2>Professional Skills</h2>
+
+    <div class="skills">
+
+      <div class="skill">Procurement</div>
+      <div class="skill">Business Administration</div>
+      <div class="skill">Entrepreneurship</div>
+      <div class="skill">Vendor Management</div>
+      <div class="skill">Negotiation</div>
+      <div class="skill">Microsoft Office</div>
+      <div class="skill">Communication</div>
+      <div class="skill">Business Management</div>
+      <div class="skill">Teamwork</div>
+      <div class="skill">Planning</div>
+
+    </div>
+
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact">
+
+    <h2>Contact Me</h2>
+
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:your-aftabchib085@gmail.com">
+        your-aftabchib085@gmail.com
+      </a>
+    </p>
+
+    <p>
+      <strong>LinkedIn:</strong>
+      <a
+        href="https://www.linkedin.com/in/chib-aftab-3a5a13289"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        View my LinkedIn profile
+      </a>
+    </p>
+
+    <a
+      class="button"
+      href="mailto:your-aftabchib085@gmail.com"
+    >
+      Send Me an Email
+    </a>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+
+    <p>
+      &copy; 2026 Aftab Ahmed. All Rights Reserved.
+    </p>
+
+    <p style="margin-top:8px;">
+      Professional Portfolio
+    </p>
+
+  </footer>
+
+</body>
+</html>
