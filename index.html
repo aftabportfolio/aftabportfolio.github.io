@@ -114,6 +114,87 @@ footer{background:#07111f;color:#cbd5e1;text-align:center;padding:25px}
  .hero{min-height:auto;padding:40px 0}
  section{padding:35px 0}
 }
+
+/* Extended professional section */
+.extension-panel{
+  margin-top:28px;padding:30px;border:1px solid #dbe4ef;border-radius:22px;
+  background:linear-gradient(135deg,#ffffff,#f7faff);
+  box-shadow:0 18px 45px rgba(23,32,51,.08)
+}
+.extension-panel h3{font-size:22px;margin-bottom:8px;color:#172033}
+.extension-panel p{color:#5b677a}
+.extension-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.extension-card{
+  padding:22px;border-radius:18px;background:#fff;border:1px solid #e4eaf2;
+  transition:transform .25s ease,box-shadow .25s ease
+}
+.extension-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(23,32,51,.10)}
+.extension-card strong{display:block;font-size:17px;margin-bottom:7px}
+.extension-card span{font-size:14px;color:#667085}
+.commit-box{
+  margin-top:28px;padding:22px;border-radius:18px;background:#0b1220;color:#e5edf8;
+  overflow:auto;font-family:Consolas,monospace;font-size:14px;line-height:1.7
+}
+@media(max-width:800px){.extension-grid{grid-template-columns:1fr}}
+
+
+/* Interactive study cards */
+.study-card{cursor:pointer;position:relative;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.study-card:hover{transform:translateY(-5px);box-shadow:0 16px 34px rgba(23,32,51,.12);border-color:#9bbce2}
+.study-card:after{content:'Click to study →';display:block;margin-top:10px;font-size:12px;color:#4b78a8;font-weight:700}
+.study-modal{position:fixed;inset:0;z-index:100000;display:none;background:rgba(7,17,31,.72);padding:24px;overflow:auto}
+.study-modal.open{display:flex;align-items:flex-start;justify-content:center}
+.study-dialog{width:min(1000px,100%);margin:30px auto;background:#fff;border-radius:24px;box-shadow:0 30px 90px rgba(0,0,0,.35);overflow:hidden}
+.study-head{padding:28px 32px;background:linear-gradient(135deg,#0b2038,#163e64);color:#fff;display:flex;justify-content:space-between;gap:20px;align-items:flex-start}
+.study-head h2{font-size:clamp(25px,4vw,38px);margin:0 0 6px}
+.study-head p{opacity:.85;font-size:14px}
+.study-close{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.1);color:#fff;border-radius:12px;width:42px;height:42px;font-size:24px;cursor:pointer}
+.study-body{padding:30px 32px 36px;display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.study-block{padding:22px;border:1px solid #e2e8f0;border-radius:17px;background:#f8fafc}
+.study-block h3{color:#12395f;margin-bottom:9px;font-size:18px}
+.study-block p,.study-block li{font-size:14px;color:#4b5563;line-height:1.7}
+.study-block ul{padding-left:20px}
+.study-block.wide{grid-column:1/-1}
+.study-plan{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:12px}
+.study-step{padding:13px;border-radius:12px;background:#fff;border:1px solid #e2e8f0;font-size:13px;color:#374151}
+.study-actions{padding:0 32px 30px;display:flex;gap:10px;flex-wrap:wrap}
+.study-actions button{border:0;border-radius:12px;padding:12px 16px;background:#12395f;color:#fff;font-weight:700;cursor:pointer}
+@media(max-width:700px){.study-body{grid-template-columns:1fr;padding:22px}.study-block.wide{grid-column:auto}.study-head{padding:22px}.study-actions{padding:0 22px 22px}.study-plan{grid-template-columns:1fr 1fr}.study-modal{padding:10px}.study-dialog{margin:10px auto}}
+
+
+/* Mini-course learning experience */
+.course-intro{padding:24px;border-radius:18px;background:linear-gradient(135deg,#eef6ff,#f8fbff);border:1px solid #d7e6f6}
+.course-intro h3{margin:10px 0 7px;color:#12395f;font-size:21px}
+.course-badge{display:inline-block;padding:6px 10px;border-radius:999px;background:#dbeafe;color:#174a7e;font-size:10px;font-weight:900;letter-spacing:1.5px}
+.course-progress{display:flex;justify-content:space-between;gap:14px;align-items:center;padding:13px 16px;border-radius:13px;background:#f1f5f9;color:#475569;font-size:13px}
+.course-progress strong{color:#12395f}
+.course-section-title{font-size:21px;color:#12395f;margin-bottom:15px}
+.course-lessons{display:grid;gap:16px}
+.course-lesson{padding:23px;border:1px solid #dbe4ee;border-radius:18px;background:#fff;box-shadow:0 7px 20px rgba(15,23,42,.045)}
+.lesson-number{font-size:10px;font-weight:900;letter-spacing:1.5px;color:#2563eb;margin-bottom:7px}
+.course-lesson h3{color:#12395f;margin-bottom:9px;font-size:19px}
+.course-lesson p{font-size:14px;color:#4b5563;line-height:1.75}
+.lesson-example{margin-top:15px;padding:15px;border-left:4px solid #2563eb;background:#f8fafc;border-radius:0 12px 12px 0}
+.lesson-example strong{display:block;color:#12395f;margin-bottom:4px;font-size:13px}
+.lesson-example p{font-size:13px}
+.course-questions{padding-top:2px}
+.course-question{border:1px solid #dbe4ee;border-radius:13px;background:#fff;margin:10px 0;overflow:hidden}
+.course-question summary{cursor:pointer;padding:15px 17px;font-weight:700;color:#243b53;font-size:14px}
+.course-question div{padding:0 17px 17px;color:#4b5563;font-size:14px;line-height:1.7;background:#f8fafc}
+.course-question div strong{color:#12395f}
+.course-test{padding:24px;border-radius:18px;background:#f8fafc;border:1px solid #dbe4ee}
+.test-header{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:16px}
+.test-header h3{margin:8px 0 4px;color:#12395f;font-size:21px}
+.test-header p{font-size:13px;color:#64748b}
+.test-score{min-width:130px;padding:12px;border-radius:12px;background:#fff;border:1px solid #dbe4ee;text-align:center;color:#12395f;font-size:13px}
+.test-question{padding:17px 0;border-top:1px solid #e2e8f0}
+.test-question p{color:#25364d;font-size:14px;margin-bottom:9px}
+.test-question label{display:block;padding:7px 9px;margin:5px 0;border-radius:9px;color:#4b5563;font-size:13px;cursor:pointer}
+.test-question label:hover{background:#fff}
+.test-question input{margin-right:8px}
+.calculate-test{margin-top:14px;border:0;border-radius:12px;padding:12px 18px;background:#12395f;color:#fff;font-weight:800;cursor:pointer}
+@media(max-width:700px){.course-progress,.test-header{display:block}.course-progress strong{display:block;margin-top:5px}.test-score{margin-top:14px}.course-lesson{padding:18px}}
+
 </style>
 </head>
 <body>
@@ -142,6 +223,7 @@ footer{background:#07111f;color:#cbd5e1;text-align:center;padding:25px}
       <a href="#skills" onclick="goToSection('skills');return false;">Skills</a>
       <a href="#learning" onclick="goToSection('learning');return false;">Learning</a>
       <a href="#development" onclick="goToSection('development');return false;">Development</a>
+      <a href="#extension" onclick="goToSection('extension');return false;">Development</a>
       <a href="#contact" onclick="goToSection('contact');return false;">Contact</a>
     </div>
   </div>
@@ -213,8 +295,8 @@ footer{background:#07111f;color:#cbd5e1;text-align:center;padding:25px}
  <div class="container">
   <h2 class="section-title reveal">Skills</h2>
   <div class="skills-grid">
-   <div class="skill reveal">Business Administration</div><div class="skill reveal">Business Development</div><div class="skill reveal">Strategic Planning</div>
-   <div class="skill reveal">Communication</div><div class="skill reveal">Problem Solving</div><div class="skill reveal">Growth Mindset</div>
+   <div class="skill study-card reveal" tabindex="0" role="button" data-topic="Business Administration">Business Administration</div><div class="skill study-card reveal" tabindex="0" role="button" data-topic="Business Development">Business Development</div><div class="skill study-card reveal" tabindex="0" role="button" data-topic="Strategic Planning">Strategic Planning</div>
+   <div class="skill study-card reveal" tabindex="0" role="button" data-topic="Communication">Communication</div><div class="skill study-card reveal" tabindex="0" role="button" data-topic="Problem Solving">Problem Solving</div><div class="skill study-card reveal" tabindex="0" role="button" data-topic="Growth Mindset">Growth Mindset</div>
   </div>
  </div>
 </section>
@@ -264,7 +346,61 @@ footer{background:#07111f;color:#cbd5e1;text-align:center;padding:25px}
 </section>
 </main>
 
+
+<div id="studyModal" class="study-modal" aria-hidden="true">
+  <div class="study-dialog" role="dialog" aria-modal="true" aria-labelledby="studyTitle">
+    <div class="study-head">
+      <div><h2 id="studyTitle">Study Topic</h2><p id="studySubtitle">Complete learning guide</p></div>
+      <button class="study-close" onclick="closeStudy()" aria-label="Close study guide">×</button>
+    </div>
+    <div id="studyBody" class="study-body"></div>
+    <div class="study-actions">
+      <button onclick="closeStudy()">Back to Skills</button>
+    </div>
+  </div>
+</div>
+
 <button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
+
+<section id="extension" class="section">
+  <div class="container">
+    <div class="section-heading">
+      <span class="eyebrow">EXTENDED PROFILE</span>
+      <h2>Professional Development</h2>
+      <p>Focused on building practical business capability through strategy, leadership, operations and continuous learning.</p>
+    </div>
+
+    <div class="extension-panel">
+      <h3>Business Growth Framework</h3>
+      <p>A practical structure for evaluating opportunities, improving operations and supporting sustainable business growth.</p>
+      <div class="extension-grid">
+        <div class="extension-card">
+          <strong>01 · Strategy</strong>
+          <span>Define objectives, priorities, market direction and measurable outcomes.</span>
+        </div>
+        <div class="extension-card">
+          <strong>02 · Operations</strong>
+          <span>Improve processes, coordination, productivity and day-to-day execution.</span>
+        </div>
+        <div class="extension-card">
+          <strong>03 · Growth</strong>
+          <span>Identify opportunities, strengthen relationships and develop scalable ideas.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="extension-panel">
+      <h3>GitHub Commit</h3>
+      <p>Use these commands to publish the extended website to your GitHub Pages repository.</p>
+      <div class="commit-box">
+git add index.html<br>
+git commit -m "Extend professional portfolio website"<br>
+git push origin main
+      </div>
+    </div>
+  </div>
+</section>
+
 <footer>© 2026 Aftab Ahmed. All rights reserved.</footer>
 
 <script>
@@ -343,6 +479,181 @@ function getBusinessAnswer(question){
   if(q.includes("management")||q.includes("administration"))return "<strong>Business Administration</strong><br><br>Business administration coordinates people, resources, information and daily activities through planning, organization, documentation, communication and performance monitoring.";
   return "<strong>Business Learning Response</strong><br><br>A practical approach is: understand the problem → understand the customer → identify options → take action → measure the result → learn and improve.";
 }
+
+const studyTopics={
+ "Business Administration":{
+  subtitle:"Mini Course • Foundations of managing people, resources, processes and business activities.",
+  objective:"By the end of this course, you should be able to explain how a business is organized, plan daily work, coordinate resources, understand basic financial information and monitor performance.",
+  lessons:[
+   ["Lesson 1 — Business Foundations","Business administration is the organized coordination of people, money, information, materials and processes to achieve business objectives. The core management cycle is plan → organize → execute → monitor → improve.","Example: A small service company can assign staff, schedule jobs, record customer requests, control expenses and review weekly performance through one simple operating system."],
+   ["Lesson 2 — Planning & Organization","Planning defines what must be achieved, when it must happen and who is responsible. Organization turns the plan into roles, resources, schedules and workflows. Use priorities, checklists, calendars and standard procedures to reduce confusion.","Example: Before a busy week, an administrator lists urgent tasks, assigns owners, checks required resources and sets deadlines."],
+   ["Lesson 3 — Operations & Finance","Operations covers how work moves through the business. Finance awareness includes revenue, costs, profit, cash flow, budgets and basic financial controls. A manager should know what is being spent, why it is being spent and whether the activity creates value.","Example: If monthly sales rise but cash is still tight, investigate payment timing, inventory, supplier terms and operating expenses rather than looking only at sales."],
+   ["Lesson 4 — People, Communication & Control","Good administration depends on clear responsibilities, professional communication, accurate records and performance monitoring. Useful controls include KPIs, reports, approvals, deadlines and regular reviews.","Example: A weekly operations report can show completed work, pending work, customer issues, costs and next actions so managers can make informed decisions."]
+  ],
+  keyTopics:["Planning and goal setting","Organization and delegation","Operations and workflow","Budgeting and cost awareness","Documentation and reporting","People coordination","KPIs and performance","Risk and compliance basics"],
+  practice:"Create a one-page operating plan for a small business: objective, five weekly tasks, responsible person, deadline, expected cost and one KPI.",
+  questions:[
+   ["What is the main purpose of business administration?","To coordinate resources, people and processes so business objectives can be achieved efficiently and in a controlled way."],
+   ["What is the difference between revenue and profit?","Revenue is money earned from sales. Profit is what remains after relevant expenses are deducted from revenue."],
+   ["Why are KPIs useful?","They provide measurable indicators that help a business monitor progress and identify areas that need attention." ]
+  ],
+  test:[
+   ["Which sequence best describes the management cycle?",["Plan → organize → execute → monitor → improve","Sell → hire → advertise → close","Spend → borrow → expand → stop","Design → ignore → repeat → report"],0],
+   ["Which item is an operating control?",["A KPI report","A random guess","An unrecorded verbal promise","A personal preference"],0],
+   ["Profit is generally calculated as:",["Revenue minus relevant expenses","Revenue plus all expenses","Expenses minus sales","Cash balance plus inventory"],0],
+   ["A good delegation practice is to:",["Give responsibility without clarity","Define responsibility, authority and deadline","Avoid assigning owners","Change the owner every hour"],1]
+  ]
+ },
+ "Business Development":{
+  subtitle:"Mini Course • Finding opportunities, creating value and building business relationships.",
+  objective:"By the end of this course, you should be able to identify target customers, qualify opportunities, explain value, manage a pipeline and build professional relationships.",
+  lessons:[
+   ["Lesson 1 — Understanding the Market","Business development begins with understanding customers, competitors, market needs and the problem being solved. Segment customers by meaningful characteristics and identify the people involved in buying decisions.","Example: Instead of targeting 'all companies', a cleaning service might target offices with 20–100 employees in a specific area and identify the office manager as a likely decision-maker."],
+   ["Lesson 2 — Value Proposition & Leads","A value proposition explains who you help, what problem you solve and why the customer should consider your solution. Lead generation can come from referrals, networking, outreach, partnerships, events and digital channels.","Example: 'We help small offices reduce routine cleaning coordination through scheduled, documented service' is clearer than simply saying 'we provide cleaning.'"],
+   ["Lesson 3 — Qualification & Sales Pipeline","A pipeline organizes opportunities by stage: prospect → qualified → meeting → proposal → negotiation → won/lost. Qualification checks need, fit, authority, timing and potential value. Record next steps and dates.","Example: If a prospect has no current need or budget, keep the relationship but do not treat it as an immediate high-priority opportunity."],
+   ["Lesson 4 — Relationships, Negotiation & Growth","Long-term development depends on trust, follow-up, useful communication, negotiation and measuring results. Track leads, conversion rates, average deal value, sales cycle and retention where relevant.","Example: After a proposal, send a clear follow-up with the agreed requirements, open questions, decision date and next meeting rather than repeatedly sending generic messages."]
+  ],
+  keyTopics:["Market research","Customer segmentation","Value proposition","Lead generation","Lead qualification","Sales pipeline","Partnerships","Negotiation and follow-up","Growth metrics"],
+  practice:"Choose a business you know and create a target-customer profile, value proposition, five lead sources and a six-stage sales pipeline.",
+  questions:[
+   ["What is a value proposition?","A concise explanation of the customer problem, the value of the solution and why the offer is relevant."],
+   ["What does lead qualification do?","It helps determine whether an opportunity has enough fit, need, authority, timing and potential value to justify further effort."],
+   ["Why should a pipeline have next actions?","A next action gives each opportunity a clear movement point and reduces opportunities being forgotten." ]
+  ],
+  test:[
+   ["Which is the strongest starting point for business development?",["Understanding a real customer need","Sending random messages","Copying a competitor blindly","Offering every possible service"],0],
+   ["A sales pipeline is used to:",["Track opportunities through stages","Store employee holidays only","Replace all financial records","Guarantee every sale"],0],
+   ["A good value proposition should focus on:",["Customer value and problem solved","Only the company logo","Internal office rules","Unrelated personal interests"],0],
+   ["After sending a proposal, a useful next step is:",["Define follow-up date and decision points","Never contact the customer again","Change the price every day","Delete the opportunity"],0]
+  ]
+ },
+ "Strategic Planning":{
+  subtitle:"Mini Course • Turning objectives into priorities, resources, actions and measurable results.",
+  objective:"By the end of this course, you should be able to analyze a business situation, set clear objectives, choose priorities, define KPIs and build an execution roadmap.",
+  lessons:[
+   ["Lesson 1 — Direction & Objectives","Strategy starts with a clear direction. Mission describes purpose, vision describes a desired future state, and objectives define measurable outcomes. Good objectives specify what, how much and by when.","Example: 'Increase qualified monthly leads from 40 to 60 within six months' is more actionable than 'grow the business.'"],
+   ["Lesson 2 — Situation Analysis","Use tools such as SWOT, competitor analysis, customer analysis and market trends to understand the current position. Separate facts, assumptions and risks so decisions are based on evidence where possible.","Example: A SWOT review may identify strong customer relationships as a strength, high supplier costs as a weakness, a new market segment as an opportunity and a new competitor as a threat."],
+   ["Lesson 3 — Strategic Choices & Resources","A strategy requires choices. Decide which customers, products, markets and capabilities deserve attention. Match priorities with people, time, budget and technology. Avoid creating more priorities than the organization can execute.","Example: A small company may choose to improve its existing service before entering a second city because resources are limited."],
+   ["Lesson 4 — Execution, KPIs & Review","Turn strategy into initiatives, owners, deadlines and KPIs. Review results regularly and adjust when evidence changes. Strategy is not a one-time document; it is a cycle of analysis, action, measurement and learning.","Example: A monthly strategy review can compare target leads, actual leads, conversion rate, revenue and major risks, then assign corrective actions."]
+  ],
+  keyTopics:["Mission and vision","SMART objectives","SWOT analysis","Market and competitor analysis","Strategic priorities","Resource allocation","KPIs","Risk planning","Execution roadmap"],
+  practice:"Write a strategy for a small business with one objective, three strategic priorities, five actions, owners, deadlines and three KPIs.",
+  questions:[
+   ["Why should objectives be measurable?","Measurement allows progress to be compared with a target and makes it easier to identify whether action is working."],
+   ["What does SWOT analyze?","Strengths and weaknesses inside the organization, plus opportunities and threats in the external environment."],
+   ["Why are strategic priorities necessary?","Resources are limited, so priorities help the organization focus effort on the outcomes that matter most." ]
+  ],
+  test:[
+   ["Which objective is most measurable?",["Grow somehow","Improve everything","Increase qualified leads by 20% in six months","Be successful"],2],
+   ["In SWOT, an opportunity is generally:",["An external favorable condition","An internal weakness","A staff schedule","A fixed expense"],0],
+   ["Strategy execution requires:",["Actions, owners, deadlines and measurement","Only a presentation","No review","Unlimited resources"],0],
+   ["If evidence changes significantly, a strategy should:",["Be reviewed and potentially adjusted","Never change","Be hidden","Ignore the evidence"],0]
+  ]
+ },
+ "Communication":{
+  subtitle:"Mini Course • Clear speaking, writing, listening, presentations, meetings and professional relationships.",
+  objective:"By the end of this course, you should be able to communicate clearly with customers, managers and teams through structured speaking, writing, listening and feedback.",
+  lessons:[
+   ["Lesson 1 — Clear Communication","Effective communication means the receiver understands the intended message. Start with purpose, audience and desired action. Use simple language, logical structure and relevant detail.","Example: A work update should state status, issue, impact, action being taken and the decision or support needed."],
+   ["Lesson 2 — Listening & Questions","Active listening includes attention, clarification, paraphrasing and confirming understanding. Good questions uncover needs instead of assuming them.","Example: Instead of responding immediately to a customer complaint, ask what happened, when it happened, what outcome they expected and what would resolve the issue."],
+   ["Lesson 3 — Business Writing & Meetings","Professional emails should have a clear subject, purpose, key information and action/date. Meetings should have an agenda, participants, decisions, owners and follow-up actions.","Example: End a meeting with three lines: decision, responsible person and deadline. This converts discussion into execution."],
+   ["Lesson 4 — Presentations, Feedback & Conflict","A presentation normally needs a clear opening, logical points, evidence and conclusion. Feedback should describe the behavior or result, its impact and a constructive next step. Conflict communication should focus on facts and solutions rather than personal attacks.","Example: 'The report arrived two days late, which delayed the client update. For the next report, let's agree on a Wednesday 3 PM deadline.'"]
+  ],
+  keyTopics:["Audience and purpose","Active listening","Questioning","Professional emails","Reports","Meetings","Presentations","Feedback","Conflict communication"],
+  practice:"Write a professional email about a one-day project delay using: situation, impact, action, new date and support needed.",
+  questions:[
+   ["What is active listening?","Giving attention, clarifying meaning, paraphrasing and confirming understanding before responding."],
+   ["What makes a business email effective?","A clear purpose, concise relevant information, professional tone and a specific action or deadline when needed."],
+   ["How should constructive feedback be structured?","Describe the behavior or result, explain its impact and suggest a clear improvement or next step." ]
+  ],
+  test:[
+   ["The first question before communicating should often be:",["What is my purpose and who is the audience?","How can I make it confusing?","How long can I make it?","Can I avoid the main point?"],0],
+   ["Active listening includes:",["Clarifying and confirming understanding","Interrupting continuously","Ignoring questions","Preparing a reply without listening"],0],
+   ["A useful meeting outcome is:",["Decision + owner + deadline","Only conversation","No notes","Unclear responsibilities"],0],
+   ["Constructive feedback should focus mainly on:",["Observable behavior, impact and improvement","Personal insults","Rumors","Someone's character"],0]
+  ]
+ },
+ "Problem Solving":{
+  subtitle:"Mini Course • Finding root causes, evaluating options and implementing practical solutions.",
+  objective:"By the end of this course, you should be able to define business problems, gather evidence, identify root causes, compare solutions and measure results.",
+  lessons:[
+   ["Lesson 1 — Define the Problem","A problem statement should describe the gap between the current and desired condition. Avoid jumping directly to a solution. Ask what is happening, where, when, how often and who is affected.","Example: 'Customer complaints about late deliveries increased from 8 to 19 per month over the last quarter' is more useful than 'the delivery team is bad.'"],
+   ["Lesson 2 — Root-Cause Analysis","Separate symptoms from causes. Use 5 Whys, Fishbone diagrams, process mapping and data analysis. Look for evidence before assigning blame.","Example: Late delivery may result from inaccurate order information, poor scheduling, supplier delays or insufficient capacity—not necessarily one employee."],
+   ["Lesson 3 — Generate & Evaluate Options","Create multiple possible solutions, then compare them using criteria such as impact, cost, speed, risk, resources and feasibility. Choose based on the problem and evidence.","Example: For repeated stockouts, options could include better forecasting, reorder points, supplier changes or safety stock. Compare the cost and expected effect of each."],
+   ["Lesson 4 — Implement, Test & Learn","Assign an owner, action, deadline and success measure. When appropriate, test a solution on a limited scale first. Review the result and standardize what works.","Example: Pilot a new scheduling process for two weeks and compare late deliveries with the previous period before rolling it out to the whole team."]
+  ],
+  keyTopics:["Problem statements","Evidence and data","5 Whys","Fishbone analysis","Process mapping","Option generation","Decision criteria","Pilot testing","Corrective action"],
+  practice:"Take a real everyday business problem and write: current state, desired state, three possible causes, three solutions and one KPI to measure the result.",
+  questions:[
+   ["Why define a problem before choosing a solution?","A clear problem prevents solving the wrong issue and gives the team a measurable target."],
+   ["What is the 5 Whys method?","A questioning technique that repeatedly asks why a problem occurred to explore deeper causes rather than stopping at the first symptom."],
+   ["Why pilot a solution?","A pilot can reduce risk and provide evidence about whether the solution works before wider implementation." ]
+  ],
+  test:[
+   ["A good problem statement should describe:",["A measurable gap between current and desired conditions","A personal accusation","Only a proposed solution","A rumor"],0],
+   ["5 Whys is mainly used for:",["Exploring root causes","Setting employee salaries","Writing advertisements","Choosing office colors"],0],
+   ["When comparing solutions, a useful criterion is:",["Cost and expected impact","Personal popularity only","Random selection","Guessing"],0],
+   ["After implementing a solution, you should:",["Measure the result and learn","Assume it worked","Stop tracking","Delete the data"],0]
+  ]
+ },
+ "Growth Mindset":{
+  subtitle:"Mini Course • Continuous learning, feedback, adaptability, experimentation and professional improvement.",
+  objective:"By the end of this course, you should be able to create a practical learning habit, use feedback, learn from mistakes and turn improvement goals into measurable actions.",
+  lessons:[
+   ["Lesson 1 — Learning as a Process","A growth mindset treats skills as developable through practice, feedback, reflection and deliberate learning. It does not mean every result is guaranteed; it means capability can be improved through effective effort.","Example: If presentation skills are weak, identify the specific gap, practice structure and delivery, ask for feedback and compare later presentations."],
+   ["Lesson 2 — Goals & Deliberate Practice","Choose a specific skill, define a measurable target and practice the component that needs improvement. Small repeated actions are easier to sustain than vague intentions.","Example: Instead of 'improve communication,' set 'deliver one five-minute business presentation every week and request two feedback points.'"],
+   ["Lesson 3 — Feedback & Learning from Mistakes","Feedback is information about performance. Separate the person from the result: identify what happened, what contributed to it, what can be changed and what should be repeated.","Example: After losing a sales opportunity, review qualification, customer needs, proposal clarity, timing and follow-up to identify lessons rather than simply labeling the attempt a failure."],
+   ["Lesson 4 — Adaptability & Continuous Improvement","Use small experiments, review results and update your approach. Track progress over time. Improvement can be a cycle: goal → practice → feedback → experiment → measurement → adjustment.","Example: Test two different meeting structures for a month and compare completion of action items to see which process works better."]
+  ],
+  keyTopics:["Continuous learning","SMART development goals","Deliberate practice","Feedback","Reflection","Adaptability","Experimentation","Resilience","Progress tracking"],
+  practice:"Choose one professional skill and create a 30-day plan with a weekly practice activity, feedback source and measurable progress indicator.",
+  questions:[
+   ["What does a growth mindset mean in practice?","It means treating capability as developable and using practice, feedback, reflection and experimentation to improve."],
+   ["Why should goals be specific?","Specific goals make it easier to know what action to take and whether progress has occurred."],
+   ["How can mistakes become learning opportunities?","Review the evidence, identify contributing factors, extract a lesson and change the next action where appropriate." ]
+  ],
+  test:[
+   ["A growth mindset emphasizes:",["Learning and improving capability","Guaranteed success","Ignoring feedback","Avoiding difficult tasks"],0],
+   ["Deliberate practice means:",["Practicing a specific skill with focused improvement","Repeating anything without reflection","Avoiding measurement","Waiting for motivation"],0],
+   ["Useful feedback should be:",["Specific and connected to performance","Personal and insulting","Vague only","Based on rumors"],0],
+   ["Continuous improvement is best described as:",["Goal → practice → feedback → measure → adjust","One decision forever","Never reviewing results","Avoiding experiments"],0]
+  ]
+ }
+};
+
+function openStudy(topic){
+ const data=studyTopics[topic]; if(!data)return;
+ document.getElementById('studyTitle').textContent=topic;
+ document.getElementById('studySubtitle').textContent=data.subtitle;
+ const lessonHTML=data.lessons.map((l,i)=>`<article class="course-lesson"><div class="lesson-number">LESSON ${i+1}</div><h3>${l[0].replace(/^Lesson \d+ — /,'')}</h3><p>${l[1]}</p><div class="lesson-example"><strong>Real Business Example</strong><p>${l[2]}</p></div></article>`).join('');
+ const topicsHTML=data.keyTopics.map(x=>`<li>${x}</li>`).join('');
+ const questionsHTML=data.questions.map((q,i)=>`<details class="course-question"><summary>Question ${i+1}: ${q[0]}</summary><div><strong>Answer:</strong> ${q[1]}</div></details>`).join('');
+ const testHTML=data.test.map((q,i)=>`<div class="test-question"><p><strong>${i+1}. ${q[0]}</strong></p>${q[1].map((opt,j)=>`<label><input type="radio" name="test-${i}" value="${j}"> ${opt}</label>`).join('')}</div>`).join('');
+ document.getElementById('studyBody').innerHTML=`
+  <div class="course-intro wide"><span class="course-badge">MINI COURSE</span><h3>Learning Objective</h3><p>${data.objective}</p></div>
+  <div class="course-progress wide"><span>Course Structure</span><strong>${data.lessons.length} lessons • ${data.questions.length} review questions • ${data.test.length} test questions</strong></div>
+  <div class="course-lessons wide"><h3 class="course-section-title">Course Lessons</h3>${lessonHTML}</div>
+  <div class="study-block"><h3>Core Topics</h3><ul>${topicsHTML}</ul></div>
+  <div class="study-block"><h3>Practice Assignment</h3><p>${data.practice}</p></div>
+  <div class="course-questions wide"><h3 class="course-section-title">Review Questions & Answers</h3>${questionsHTML}</div>
+  <div class="course-test wide"><div class="test-header"><div><span class="course-badge">FINAL TEST</span><h3>Check Your Knowledge</h3><p>Choose one answer for each question, then select <strong>Calculate Score</strong>.</p></div><div id="testScore" class="test-score" aria-live="polite"></div></div>${testHTML}<button class="calculate-test" onclick="calculateStudyTest('${topic.replace(/'/g,"\\'")}')">Calculate Score</button></div>`;
+ const modal=document.getElementById('studyModal'); modal.classList.add('open'); modal.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden';
+}
+function calculateStudyTest(topic){
+ const data=studyTopics[topic]; if(!data)return;
+ let score=0,answered=0;
+ data.test.forEach((q,i)=>{const selected=document.querySelector(`input[name="test-${i}"]:checked`);if(selected){answered++;if(Number(selected.value)===q[2])score++;}});
+ const el=document.getElementById('testScore');
+ if(!el)return;
+ if(answered<data.test.length){el.textContent=`${answered}/${data.test.length} answered`;return;}
+ const pct=Math.round(score/data.test.length*100);
+ el.innerHTML=`Score: <strong>${score}/${data.test.length} (${pct}%)</strong>`;
+}
+function closeStudy(){const modal=document.getElementById('studyModal');modal.classList.remove('open');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';}
+
+document.addEventListener('click',function(e){const card=e.target.closest('.study-card');if(card)openStudy(card.dataset.topic);if(e.target.id==='studyModal')closeStudy();});
+document.addEventListener('keydown',function(e){if((e.key==='Enter'||e.key===' ')&&e.target.classList.contains('study-card')){e.preventDefault();openStudy(e.target.dataset.topic)}if(e.key==='Escape')closeStudy();});
+
 document.addEventListener("keydown",function(e){
   if(e.target.id==="businessQuestion"&&e.key==="Enter"&&!e.shiftKey){e.preventDefault();askBusinessAI()}
 });
