@@ -1,504 +1,1758 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Aftab Ahmed | Procurement Executive</title>
+    <meta charset="UTF-8">
 
-  <meta
-    name="description"
-    content="Aftab Ahmed - Procurement Executive, Business Administration and Entrepreneur"
-  >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    <title>Aftab Ahmed | Professional Portfolio</title>
 
-    html {
-      scroll-behavior: smooth;
-    }
+    <meta
+        name="description"
+        content="Professional portfolio of Aftab Ahmed - Business Administration, Operations and Entrepreneur."
+    >
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f4f6f8;
-      color: #222;
-      line-height: 1.6;
-    }
+    <style>
 
-    /* Navigation */
-    nav {
-      background: #111827;
-      padding: 18px 20px;
-      text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 15px;
-      font-weight: bold;
-    }
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.6;
+            color: #1f2937;
+            background: #f5f7fa;
+        }
 
-    nav a:hover {
-      color: #60a5fa;
-    }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
 
-    /* Hero */
-    .hero {
-      min-height: 620px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      padding: 80px 20px;
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
-      background:
-        linear-gradient(
-          rgba(10, 20, 35, 0.72),
-          rgba(10, 20, 35, 0.72)
-        ),
-        url("https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1800&q=85");
 
-      background-size: cover;
-      background-position: center;
-    }
+        /* ========================================
+           LOGIN SCREEN
+        ======================================== */
 
-    .hero-content {
-      max-width: 900px;
-    }
+        #loginScreen {
+            position: fixed;
+            inset: 0;
+            z-index: 99999;
 
-    .hero h1 {
-      font-size: 58px;
-      margin-bottom: 15px;
-    }
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-    .hero h2 {
-      font-size: 26px;
-      font-weight: normal;
-      margin: 5px 0;
-    }
+            background:
+                linear-gradient(
+                    135deg,
+                    #020617,
+                    #0f172a,
+                    #1e3a5f
+                );
 
-    .hero p {
-      color: #dbeafe;
-      font-size: 19px;
-      margin-top: 20px;
-    }
+            padding: 20px;
+        }
 
-    .button {
-      display: inline-block;
-      margin-top: 30px;
-      padding: 14px 30px;
-      background: #2563eb;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-weight: bold;
-    }
+        .login-box {
+            width: 100%;
+            max-width: 420px;
 
-    .button:hover {
-      background: #1d4ed8;
-    }
+            background: rgba(255,255,255,0.97);
 
-    /* Sections */
-    section {
-      max-width: 1100px;
-      margin: 45px auto;
-      padding: 50px 35px;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.07);
-    }
+            padding: 45px 35px;
 
-    section h2 {
-      color: #172033;
-      font-size: 32px;
-      margin-bottom: 25px;
-      text-align: center;
-    }
+            border-radius: 20px;
 
-    .section-text {
-      max-width: 850px;
-      margin: auto;
-      text-align: center;
-      font-size: 17px;
-    }
+            box-shadow:
+                0 25px 70px rgba(0,0,0,0.35);
 
-    /* About Image */
-    .work-image {
-      width: 100%;
-      max-height: 450px;
-      object-fit: cover;
-      border-radius: 14px;
-      margin-top: 30px;
-    }
+            text-align: center;
+        }
 
-    /* Professional Work Cards */
-    .cards {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-      margin-top: 30px;
-    }
+        .login-logo {
+            width: 75px;
+            height: 75px;
 
-    .card {
-      background: #f8fafc;
-      border-radius: 12px;
-      overflow: hidden;
-      border: 1px solid #e5e7eb;
-      transition: transform 0.3s ease;
-    }
+            margin: 0 auto 20px;
 
-    .card:hover {
-      transform: translateY(-5px);
-    }
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    .card img {
-      width: 100%;
-      height: 210px;
-      object-fit: cover;
-    }
+            border-radius: 50%;
 
-    .card-content {
-      padding: 22px;
-    }
+            background: #0f172a;
 
-    .card h3 {
-      color: #172033;
-      margin-bottom: 10px;
-    }
+            color: white;
 
-    /* Skills */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 13px;
-      margin-top: 25px;
-    }
+            font-size: 30px;
+            font-weight: bold;
+        }
 
-    .skill {
-      background: #eef2f7;
-      color: #172033;
-      padding: 12px 20px;
-      border-radius: 25px;
-      font-weight: bold;
-    }
+        .login-box h1 {
+            color: #0f172a;
+            margin-bottom: 8px;
+            font-size: 30px;
+        }
 
-    .skill:hover {
-      background: #dbeafe;
-    }
+        .login-box .login-subtitle {
+            color: #64748b;
+            margin-bottom: 30px;
+        }
 
-    /* Team */
-    .team-image {
-      width: 100%;
-      border-radius: 14px;
-      margin-top: 30px;
-      max-height: 500px;
-      object-fit: cover;
-    }
+        .login-form {
+            text-align: left;
+        }
 
-    /* Contact */
-    .contact {
-      text-align: center;
-    }
+        .login-form label {
+            display: block;
+            margin-bottom: 7px;
 
-    .contact p {
-      margin: 14px 0;
-      font-size: 18px;
-    }
+            font-weight: bold;
+            color: #334155;
+        }
 
-    .contact a {
-      color: #2563eb;
-      text-decoration: none;
-      font-weight: bold;
-    }
+        .login-form input {
+            width: 100%;
 
-    .contact a:hover {
-      text-decoration: underline;
-    }
+            padding: 14px 15px;
 
-    /* Footer */
-    footer {
-      background: #111827;
-      color: white;
-      text-align: center;
-      padding: 35px 20px;
-      margin-top: 60px;
-    }
+            margin-bottom: 18px;
 
-    /* Mobile */
-    @media (max-width: 800px) {
+            border: 1px solid #cbd5e1;
 
-      .hero h1 {
-        font-size: 42px;
-      }
+            border-radius: 8px;
 
-      .hero h2 {
-        font-size: 21px;
-      }
+            font-size: 16px;
 
-      .cards {
-        grid-template-columns: 1fr;
-      }
+            outline: none;
 
-      section {
-        margin: 25px 15px;
-        padding: 35px 20px;
-      }
-    }
+            transition: 0.3s;
+        }
 
-    @media (max-width: 500px) {
+        .login-form input:focus {
+            border-color: #0284c7;
 
-      nav a {
-        display: inline-block;
-        margin: 5px 7px;
-        font-size: 14px;
-      }
+            box-shadow:
+                0 0 0 3px rgba(2,132,199,0.12);
+        }
 
-      .hero {
-        min-height: 540px;
-      }
+        .login-button {
+            width: 100%;
 
-      .hero h1 {
-        font-size: 36px;
-      }
+            padding: 14px;
 
-      .hero p {
-        font-size: 17px;
-      }
-    }
-  </style>
+            border: none;
+
+            border-radius: 8px;
+
+            background: #0284c7;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .login-button:hover {
+            background: #0369a1;
+        }
+
+        .login-error {
+            display: none;
+
+            margin-top: 15px;
+
+            padding: 10px;
+
+            border-radius: 7px;
+
+            background: #fee2e2;
+
+            color: #b91c1c;
+
+            font-size: 14px;
+        }
+
+        .login-footer {
+            margin-top: 25px;
+
+            font-size: 13px;
+
+            color: #94a3b8;
+        }
+
+
+        /* ========================================
+           HIDE WEBSITE BEFORE LOGIN
+        ======================================== */
+
+        #website {
+            display: none;
+        }
+
+
+        /* ========================================
+           NAVIGATION
+        ======================================== */
+
+        nav {
+            position: sticky;
+            top: 0;
+
+            z-index: 1000;
+
+            background: #0f172a;
+
+            box-shadow:
+                0 3px 15px rgba(0,0,0,0.15);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+
+            margin: auto;
+
+            padding: 15px 25px;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+
+            font-size: 22px;
+
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+
+            list-style: none;
+
+            gap: 28px;
+
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: #e5e7eb;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+        }
+
+        .logout-button {
+            border: 1px solid #38bdf8;
+
+            background: transparent;
+
+            color: white;
+
+            padding: 7px 13px;
+
+            border-radius: 6px;
+
+            cursor: pointer;
+
+            font-weight: bold;
+        }
+
+        .logout-button:hover {
+            background: #38bdf8;
+
+            color: #0f172a;
+        }
+
+        .menu-btn {
+            display: none;
+
+            color: white;
+
+            font-size: 28px;
+
+            cursor: pointer;
+        }
+
+
+        /* ========================================
+           HERO
+        ======================================== */
+
+        .hero {
+            min-height: 88vh;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e3a5f
+                );
+
+            color: white;
+
+            display: flex;
+
+            align-items: center;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+
+            width: 100%;
+
+            margin: auto;
+
+            padding: 70px 25px;
+
+            display: grid;
+
+            grid-template-columns: 1.5fr 1fr;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 58px;
+
+            margin-bottom: 15px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+
+            color: #38bdf8;
+
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 19px;
+
+            color: #dbeafe;
+
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+
+            gap: 15px;
+
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+
+            padding: 13px 25px;
+
+            border-radius: 8px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            background: #7dd3fc;
+        }
+
+        .btn-outline {
+            border: 2px solid #38bdf8;
+
+            color: white;
+        }
+
+        .btn-outline:hover {
+            background: #38bdf8;
+
+            color: #0f172a;
+        }
+
+        .hero-image {
+            display: flex;
+
+            justify-content: center;
+        }
+
+        .hero-image img {
+            width: 330px;
+
+            height: 400px;
+
+            object-fit: cover;
+
+            border-radius: 20px;
+
+            border: 5px solid rgba(255,255,255,0.2);
+
+            box-shadow:
+                0 20px 50px rgba(0,0,0,0.35);
+        }
+
+
+        /* ========================================
+           GENERAL SECTIONS
+        ======================================== */
+
+        section {
+            padding: 80px 25px;
+        }
+
+        .container {
+            max-width: 1100px;
+
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+
+            color: #0f172a;
+
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: #64748b;
+        }
+
+
+        /* ========================================
+           ABOUT
+        ======================================== */
+
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            max-width: 900px;
+
+            margin: auto;
+
+            text-align: center;
+
+            font-size: 18px;
+
+            color: #475569;
+        }
+
+
+        /* ========================================
+           PROFESSIONAL WORK
+        ======================================== */
+
+        .work-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .work-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 8px 25px rgba(15,23,42,0.08);
+
+            transition: 0.3s;
+        }
+
+        .work-card:hover {
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 15px 35px rgba(15,23,42,0.14);
+        }
+
+        .work-card h3 {
+            color: #0f172a;
+
+            margin-bottom: 12px;
+        }
+
+        .work-card p {
+            color: #64748b;
+        }
+
+
+        /* ========================================
+           SKILLS
+        ======================================== */
+
+        .skills {
+            background: #eef4f8;
+        }
+
+        .skills-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(2, 1fr);
+
+            gap: 20px;
+        }
+
+        .skill {
+            background: white;
+
+            padding: 22px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 18px rgba(15,23,42,0.06);
+        }
+
+        .skill h3 {
+            margin-bottom: 8px;
+
+            color: #0f172a;
+        }
+
+        .skill p {
+            color: #64748b;
+        }
+
+
+        /* ========================================
+           EXPERIENCE
+        ======================================== */
+
+        .experience {
+            background: white;
+        }
+
+        .experience-box {
+            max-width: 900px;
+
+            margin: auto;
+
+            background: #f8fafc;
+
+            border-left: 5px solid #38bdf8;
+
+            padding: 30px;
+
+            border-radius: 10px;
+        }
+
+        .experience-box h3 {
+            font-size: 25px;
+
+            color: #0f172a;
+
+            margin-bottom: 5px;
+        }
+
+        .experience-box .role {
+            color: #0284c7;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+        }
+
+        .experience-box p {
+            color: #64748b;
+        }
+
+
+        /* ========================================
+           CTA
+        ======================================== */
+
+        .cta {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f172a,
+                    #1e3a5f
+                );
+
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-size: 38px;
+
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            color: #dbeafe;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* ========================================
+           CONTACT
+        ======================================== */
+
+        .contact {
+            background: #f8fafc;
+        }
+
+        .contact-grid {
+            display: grid;
+
+            grid-template-columns:
+                repeat(3, 1fr);
+
+            gap: 20px;
+        }
+
+        .contact-card {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow:
+                0 7px 22px rgba(15,23,42,0.07);
+        }
+
+        .contact-card h3 {
+            margin-bottom: 10px;
+
+            color: #0f172a;
+        }
+
+        .contact-card a {
+            color: #0284c7;
+
+            word-break: break-word;
+        }
+
+
+        /* ========================================
+           FOOTER
+        ======================================== */
+
+        footer {
+            background: #0f172a;
+
+            color: #cbd5e1;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ========================================
+           WHATSAPP
+        ======================================== */
+
+        .whatsapp {
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            z-index: 999;
+        }
+
+        .whatsapp a {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            width: 58px;
+
+            height: 58px;
+
+            background: #25d366;
+
+            color: white;
+
+            border-radius: 50%;
+
+            font-size: 25px;
+
+            font-weight: bold;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.25);
+        }
+
+
+        /* ========================================
+           MOBILE
+        ======================================== */
+
+        @media (max-width: 800px) {
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+
+                position: absolute;
+
+                top: 60px;
+
+                left: 0;
+
+                width: 100%;
+
+                background: #0f172a;
+
+                flex-direction: column;
+
+                align-items: flex-start;
+
+                padding: 20px 25px;
+
+                gap: 18px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+
+                text-align: center;
+            }
+
+            .hero {
+                min-height: auto;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .hero h2 {
+                font-size: 23px;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-image {
+                order: -1;
+            }
+
+            .hero-image img {
+                width: 250px;
+
+                height: 310px;
+            }
+
+            .work-grid,
+            .skills-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title h2 {
+                font-size: 32px;
+            }
+
+            .login-box {
+                padding: 35px 25px;
+            }
+        }
+
+    </style>
+
 </head>
+
 
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#about">About</a>
-    <a href="#work">Professional Work</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-  </nav>
 
-  <!-- Hero -->
-  <header class="hero" id="home">
+<!-- =========================================
+     LOGIN SCREEN
+========================================= -->
 
-    <div class="hero-content">
+<div id="loginScreen">
 
-      <h1>Aftab Ahmed</h1>
+    <div class="login-box">
 
-      <h2>Procurement Executive</h2>
+        <div class="login-logo">
+            AA
+        </div>
 
-      <h2>Business Administration &amp; Entrepreneur</h2>
+        <h1>Welcome</h1>
 
-      <p>
-        Professional portfolio focused on procurement,
-        business administration, vendor management,
-        teamwork and entrepreneurship.
-      </p>
+        <p class="login-subtitle">
+            Aftab Ahmed Professional Portfolio
+        </p>
 
-      <a class="button" href="#contact">
-        Contact Me
-      </a>
 
-    </div>
-
-  </header>
-
-  <!-- About -->
-  <section id="about">
-
-    <h2>About Me</h2>
-
-    <div class="section-text">
-
-      <p>
-        Welcome to my professional portfolio.
-        I am interested in procurement, business administration,
-        vendor management, negotiation and entrepreneurship.
-      </p>
-
-      <p style="margin-top:18px;">
-        I believe in professional communication,
-        effective business relationships and organized
-        working practices that create long-term value.
-      </p>
-
-    </div>
-
-    <img
-      class="work-image"
-      src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=1600&q=85"
-      alt="Modern professional office"
-    >
-
-  </section>
-
-  <!-- Professional Work -->
-  <section id="work">
-
-    <h2>Professional Work</h2>
-
-    <div class="cards">
-
-      <div class="card">
-
-        <img
-          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=85"
-          alt="Business meeting"
+        <form
+            class="login-form"
+            onsubmit="login(event)"
         >
 
-        <div class="card-content">
+            <label for="username">
+                Username
+            </label>
 
-          <h3>Procurement</h3>
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+                autocomplete="username"
+                required
+            >
 
-          <p>
-            Supporting procurement activities,
-            supplier coordination, purchasing and
-            business requirements.
-          </p>
+
+            <label for="password">
+                Password
+            </label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                autocomplete="current-password"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="login-button"
+            >
+                Login
+            </button>
+
+
+            <div
+                id="loginError"
+                class="login-error"
+            >
+                Incorrect username or password.
+            </div>
+
+        </form>
+
+
+        <div class="login-footer">
+            © <span id="loginYear"></span> Aftab Ahmed
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     WEBSITE
+========================================= -->
+
+<div id="website">
+
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="nav-container">
+
+            <div class="logo">
+                Aftab Ahmed
+            </div>
+
+
+            <div
+                class="menu-btn"
+                onclick="toggleMenu()"
+            >
+                ☰
+            </div>
+
+
+            <ul
+                class="nav-links"
+                id="navLinks"
+            >
+
+                <li>
+                    <a
+                        href="#home"
+                        onclick="closeMenu()"
+                    >
+                        Home
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="#about"
+                        onclick="closeMenu()"
+                    >
+                        About
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="#work"
+                        onclick="closeMenu()"
+                    >
+                        Professional Work
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="#skills"
+                        onclick="closeMenu()"
+                    >
+                        Skills
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="#experience"
+                        onclick="closeMenu()"
+                    >
+                        Experience
+                    </a>
+                </li>
+
+
+                <li>
+                    <a
+                        href="#contact"
+                        onclick="closeMenu()"
+                    >
+                        Contact
+                    </a>
+                </li>
+
+
+                <li>
+
+                    <button
+                        class="logout-button"
+                        onclick="logout()"
+                    >
+                        Logout
+                    </button>
+
+                </li>
+
+            </ul>
 
         </div>
 
-      </div>
+    </nav>
 
-      <div class="card">
 
-        <img
-          src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=85"
-          alt="Professional business team"
-        >
 
-        <div class="card-content">
+    <!-- HERO -->
 
-          <h3>Teamwork</h3>
+    <section
+        class="hero"
+        id="home"
+    >
 
-          <p>
-            Professional collaboration, communication
-            and teamwork in a business environment.
-          </p>
+        <div class="hero-container">
+
+
+            <div>
+
+                <h1>
+                    Aftab Ahmed
+                </h1>
+
+
+                <h2>
+                    Business Administration & Operations
+                </h2>
+
+
+                <p>
+                    Business Administration • Operations • Entrepreneur
+                </p>
+
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#contact"
+                        class="btn btn-primary"
+                    >
+                        Contact Me
+                    </a>
+
+
+                    <a
+                        href="#work"
+                        class="btn btn-outline"
+                    >
+                        View My Work
+                    </a>
+
+
+                    <a
+                        href="#"
+                        onclick="window.print(); return false;"
+                        class="btn btn-outline"
+                    >
+                        Download CV
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="hero-image">
+
+                <img
+                    src="Aftab_Ahmed_Modern_Professional_Portrait.jpeg"
+                    alt="Aftab Ahmed Professional Portrait"
+                >
+
+            </div>
 
         </div>
 
-      </div>
+    </section>
 
-      <div class="card">
 
-        <img
-          src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1000&q=85"
-          alt="Business professionals working"
-        >
 
-        <div class="card-content">
+    <!-- ABOUT -->
 
-          <h3>Business Administration</h3>
+    <section
+        class="about"
+        id="about"
+    >
 
-          <p>
-            Organized business administration,
-            planning, coordination and operational support.
-          </p>
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <h2>
+                    About Me
+                </h2>
+
+                <p>
+                    Professional Profile
+                </p>
+
+            </div>
+
+
+            <div class="about-content">
+
+                <p>
+                    I am Aftab Ahmed, a professional focused on business
+                    administration, operations management and entrepreneurship.
+                </p>
+
+
+                <br>
+
+
+                <p>
+                    My professional interests include business coordination,
+                    administrative support, operational efficiency,
+                    communication, organization and practical business growth.
+                    I aim to contribute to efficient processes, strong
+                    professional relationships and sustainable business
+                    development.
+                </p>
+
+            </div>
 
         </div>
 
-      </div>
+    </section>
+
+
+
+    <!-- PROFESSIONAL WORK -->
+
+    <section id="work">
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <h2>
+                    Professional Work
+                </h2>
+
+                <p>
+                    Areas of Professional Focus
+                </p>
+
+            </div>
+
+
+            <div class="work-grid">
+
+
+                <div class="work-card">
+
+                    <h3>
+                        Business Administration
+                    </h3>
+
+                    <p>
+                        Administrative coordination, documentation,
+                        communication and business support activities.
+                    </p>
+
+                </div>
+
+
+                <div class="work-card">
+
+                    <h3>
+                        Operations Management
+                    </h3>
+
+                    <p>
+                        Supporting daily operations, organization,
+                        coordination and process efficiency.
+                    </p>
+
+                </div>
+
+
+                <div class="work-card">
+
+                    <h3>
+                        Business Coordination
+                    </h3>
+
+                    <p>
+                        Coordinating business activities, maintaining
+                        communication and supporting smooth workflows.
+                    </p>
+
+                </div>
+
+
+                <div class="work-card">
+
+                    <h3>
+                        Administrative Support
+                    </h3>
+
+                    <p>
+                        Organizing information, documentation and
+                        administrative activities to support business needs.
+                    </p>
+
+                </div>
+
+
+                <div class="work-card">
+
+                    <h3>
+                        Business Development
+                    </h3>
+
+                    <p>
+                        Identifying practical opportunities, improving
+                        processes and supporting business growth.
+                    </p>
+
+                </div>
+
+
+                <div class="work-card">
+
+                    <h3>
+                        Entrepreneurship
+                    </h3>
+
+                    <p>
+                        Developing an entrepreneurial mindset focused on
+                        business ideas, opportunities and sustainable growth.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SKILLS -->
+
+    <section
+        class="skills"
+        id="skills"
+    >
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <h2>
+                    Skills
+                </h2>
+
+                <p>
+                    Professional Capabilities
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+
+                <div class="skill">
+
+                    <h3>
+                        Business Administration
+                    </h3>
+
+                    <p>
+                        Administrative organization, documentation and
+                        business support.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <h3>
+                        Operations Management
+                    </h3>
+
+                    <p>
+                        Supporting daily operations and improving workflow
+                        organization.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <h3>
+                        Business Coordination
+                    </h3>
+
+                    <p>
+                        Coordinating activities, tasks and professional
+                        communication.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <h3>
+                        Communication
+                    </h3>
+
+                    <p>
+                        Professional communication and relationship
+                        coordination.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <h3>
+                        Organization
+                    </h3>
+
+                    <p>
+                        Effective organization, planning and management of
+                        business activities.
+                    </p>
+
+                </div>
+
+
+                <div class="skill">
+
+                    <h3>
+                        Entrepreneurial Thinking
+                    </h3>
+
+                    <p>
+                        Business opportunity identification and practical
+                        problem solving.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- EXPERIENCE -->
+
+    <section
+        class="experience"
+        id="experience"
+    >
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <h2>
+                    Experience
+                </h2>
+
+                <p>
+                    Professional Journey
+                </p>
+
+            </div>
+
+
+            <div class="experience-box">
+
+                <h3>
+                    Business Administration & Operations
+                </h3>
+
+
+                <div class="role">
+                    Business Administration • Operations • Entrepreneurship
+                </div>
+
+
+                <p>
+                    Professional experience and interest in business
+                    administration, operational coordination, business
+                    communication and organizational support.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CALL TO ACTION -->
+
+    <section class="cta">
+
+        <div class="container">
+
+            <h2>
+                Let's Connect
+            </h2>
+
+
+            <p>
+                I am open to professional opportunities, business
+                discussions and networking.
+            </p>
+
+
+            <a
+                href="#contact"
+                class="btn btn-primary"
+            >
+                Get In Touch
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- CONTACT -->
+
+    <section
+        class="contact"
+        id="contact"
+    >
+
+        <div class="container">
+
+
+            <div class="section-title">
+
+                <h2>
+                    Contact
+                </h2>
+
+                <p>
+                    Let's stay connected
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+
+                <div class="contact-card">
+
+                    <h3>
+                        Email
+                    </h3>
+
+
+                    <a href="mailto:aftabchib085@gmail.com">
+                        aftabchib085@gmail.com
+                    </a>
+
+                </div>
+
+
+
+                <div class="contact-card">
+
+                    <h3>
+                        LinkedIn
+                    </h3>
+
+
+                    <a
+                        href="https://www.linkedin.com/in/chibaftabg143"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        LinkedIn Profile
+                    </a>
+
+                </div>
+
+
+
+                <div class="contact-card">
+
+                    <h3>
+                        WhatsApp
+                    </h3>
+
+
+                    <a
+                        href="https://wa.me/971569811547"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        +971 56 981 1547
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FLOATING WHATSAPP -->
+
+    <div class="whatsapp">
+
+        <a
+            href="https://wa.me/971569811547"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Contact me on WhatsApp"
+        >
+            ☎
+        </a>
 
     </div>
 
-  </section>
 
-  <!-- Team Environment -->
-  <section>
 
-    <h2>Professional Team Environment</h2>
+    <!-- FOOTER -->
 
-    <p class="section-text">
-      Effective teamwork and professional communication
-      are important parts of successful business operations.
-    </p>
+    <footer>
 
-    <img
-      class="team-image"
-      src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=1600&q=85"
-      alt="Business team working together"
-    >
+        <p>
+            © <span id="year"></span>
+            Aftab Ahmed. All Rights Reserved.
+        </p>
 
-  </section>
+    </footer>
 
-  <!-- Skills -->
-  <section id="skills">
 
-    <h2>Professional Skills</h2>
+</div>
 
-    <div class="skills">
 
-      <div class="skill">Procurement</div>
-      <div class="skill">Business Administration</div>
-      <div class="skill">Entrepreneurship</div>
-      <div class="skill">Vendor Management</div>
-      <div class="skill">Negotiation</div>
-      <div class="skill">Microsoft Office</div>
-      <div class="skill">Communication</div>
-      <div class="skill">Business Management</div>
-      <div class="skill">Teamwork</div>
-      <div class="skill">Planning</div>
 
-    </div>
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
-  </section>
+<script>
 
-  <!-- Contact -->
-  <section id="contact" class="contact">
 
-    <h2>Contact Me</h2>
+    /* LOGIN DETAILS */
 
-    <p>
-      <strong>Email:</strong>
-      <a href="mailto:your-aftabchib085@gmail.com">
-        your-aftabchib085@gmail.com
-      </a>
-    </p>
+    const correctUsername = "aftab";
 
-    <p>
-      <strong>LinkedIn:</strong>
-      <a
-        href="https://www.linkedin.com/in/chib-aftab-3a5a13289"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        View my LinkedIn profile
-      </a>
-    </p>
+    const correctPassword = "12345";
 
-    <a
-      class="button"
-      href="mailto:your-aftabchib085@gmail.com"
-    >
-      Send Me an Email
-    </a>
 
-  </section>
+    /* LOGIN */
 
-  <!-- Footer -->
-  <footer>
+    function login(event) {
 
-    <p>
-      &copy; 2026 Aftab Ahmed. All Rights Reserved.
-    </p>
+        event.preventDefault();
 
-    <p style="margin-top:8px;">
-      Professional Portfolio
-    </p>
 
-  </footer>
+        const username =
+            document.getElementById("username").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+
+        const error =
+            document.getElementById("loginError");
+
+
+        if (
+            username === correctUsername &&
+            password === correctPassword
+        ) {
+
+            sessionStorage.setItem(
+                "aftabLoggedIn",
+                "true"
+            );
+
+
+            document.getElementById(
+                "loginScreen"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "website"
+            ).style.display = "block";
+
+
+            error.style.display = "none";
+
+        }
+
+        else {
+
+            error.style.display = "block";
+
+        }
+
+    }
+
+
+    /* LOGOUT */
+
+    function logout() {
+
+        sessionStorage.removeItem(
+            "aftabLoggedIn"
+        );
+
+
+        document.getElementById(
+            "website"
+        ).style.display = "none";
+
+
+        document.getElementById(
+            "loginScreen"
+        ).style.display = "flex";
+
+
+        document.getElementById(
+            "username"
+        ).value = "";
+
+
+        document.getElementById(
+            "password"
+        ).value = "";
+
+
+        document.getElementById(
+            "loginError"
+        ).style.display = "none";
+
+    }
+
+
+    /* CHECK LOGIN */
+
+    function checkLogin() {
+
+        const loggedIn =
+            sessionStorage.getItem(
+                "aftabLoggedIn"
+            );
+
+
+        if (loggedIn === "true") {
+
+            document.getElementById(
+                "loginScreen"
+            ).style.display = "none";
+
+
+            document.getElementById(
+                "website"
+            ).style.display = "block";
+
+        }
+
+        else {
+
+            document.getElementById(
+                "loginScreen"
+            ).style.display = "flex";
+
+
+            document.getElementById(
+                "website"
+            ).style.display = "none";
+
+        }
+
+    }
+
+
+    /* MOBILE MENU */
+
+    function toggleMenu() {
+
+        document
+            .getElementById("navLinks")
+            .classList
+            .toggle("active");
+
+    }
+
+
+    function closeMenu() {
+
+        document
+            .getElementById("navLinks")
+            .classList
+            .remove("active");
+
+    }
+
+
+    /* YEAR */
+
+    const currentYear =
+        new Date().getFullYear();
+
+
+    document.getElementById(
+        "year"
+    ).textContent = currentYear;
+
+
+    document.getElementById(
+        "loginYear"
+    ).textContent = currentYear;
+
+
+    /* START */
+
+    checkLogin();
+
+</script>
+
 
 </body>
+
 </html>
