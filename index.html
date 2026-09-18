@@ -3,9 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Aftab Ahmed | Professional Portfolio</title>
 
 <style>
+
+/* =========================================================
+   GLOBAL
+========================================================= */
+
 *{
     margin:0;
     padding:0;
@@ -35,6 +41,10 @@ section{
     margin:auto;
 }
 
+a{
+    text-decoration:none;
+}
+
 .section-title{
     text-align:center;
     margin-bottom:45px;
@@ -50,30 +60,38 @@ section{
     color:#667085;
 }
 
-a{
-    text-decoration:none;
-}
 
-
-/* =========================
+/* =========================================================
    OPENING SCREEN
-========================= */
+========================================================= */
 
 #openingScreen{
     position:fixed;
     inset:0;
     z-index:99999;
+
     display:flex;
     align-items:center;
     justify-content:center;
+
     color:white;
 
     background:
-    radial-gradient(circle at 20% 30%,#0b4b78,transparent 30%),
-    radial-gradient(circle at 80% 70%,#30206b,transparent 30%),
-    #07111f;
+        radial-gradient(
+            circle at 20% 30%,
+            #0b4b78,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 70%,
+            #30206b,
+            transparent 30%
+        ),
+        #07111f;
 
-    transition:opacity 1s,visibility 1s;
+    transition:
+        opacity 1s ease,
+        visibility 1s ease;
 }
 
 #openingScreen.hide{
@@ -88,111 +106,174 @@ a{
 }
 
 .aa-logo{
-    width:100px;
-    height:100px;
+    width:105px;
+    height:105px;
+
     border:2px solid #38bdf8;
-    border-radius:25px;
+    border-radius:27px;
+
     display:grid;
     place-items:center;
+
     margin:auto;
-    font-size:38px;
+
+    font-size:40px;
     font-weight:bold;
 
-    box-shadow:0 0 35px #38bdf855;
+    box-shadow:
+        0 0 35px #38bdf855;
 
-    animation:pulse 2s infinite;
+    animation:
+        logoPulse 2s infinite;
 }
 
 .opening-content h1{
-    margin-top:24px;
-    font-size:34px;
+    margin-top:25px;
+    font-size:35px;
+    letter-spacing:2px;
 }
 
 .opening-content p{
     margin-top:8px;
     color:#94a3b8;
-    letter-spacing:3px;
+    letter-spacing:4px;
 }
 
 .opening-line{
     height:2px;
-    width:220px;
-    margin:24px auto;
+    width:230px;
+
+    margin:25px auto;
 
     background:
-    linear-gradient(
-        90deg,
-        transparent,
-        #38bdf8,
-        transparent
-    );
+        linear-gradient(
+            90deg,
+            transparent,
+            #38bdf8,
+            transparent
+        );
 
-    animation:line 2s infinite;
+    animation:
+        openingLine 2s infinite;
+}
+
+.opening-content small{
+    color:#64748b;
+    letter-spacing:1px;
 }
 
 .particle{
     position:absolute;
+
     width:4px;
     height:4px;
+
     border-radius:50%;
+
     background:#38bdf8;
-    opacity:.6;
-    animation:float 7s infinite;
+
+    opacity:.7;
+
+    animation:
+        particleFloat 7s infinite;
 }
 
-.p1{left:10%;top:20%}
-.p2{left:25%;top:70%;animation-duration:9s}
-.p3{left:70%;top:25%;animation-duration:8s}
-.p4{left:85%;top:75%;animation-duration:10s}
-.p5{left:50%;top:10%;animation-duration:6s}
+.p1{
+    left:10%;
+    top:20%;
+}
 
-@keyframes pulse{
+.p2{
+    left:25%;
+    top:70%;
+    animation-duration:9s;
+}
+
+.p3{
+    left:70%;
+    top:25%;
+    animation-duration:8s;
+}
+
+.p4{
+    left:85%;
+    top:75%;
+    animation-duration:10s;
+}
+
+.p5{
+    left:50%;
+    top:10%;
+    animation-duration:6s;
+}
+
+@keyframes logoPulse{
+
     50%{
         transform:scale(1.06);
-        box-shadow:0 0 55px #38bdf899;
+
+        box-shadow:
+            0 0 60px #38bdf899;
     }
+
 }
 
-@keyframes line{
+@keyframes openingLine{
+
     50%{
         transform:scaleX(.4);
         opacity:.4;
     }
+
 }
 
-@keyframes float{
+@keyframes particleFloat{
+
     50%{
         transform:translateY(-70px);
     }
+
 }
 
 
-/* =========================
+/* =========================================================
    LOGIN
-========================= */
+========================================================= */
 
 #loginScreen{
     position:fixed;
     inset:0;
+
     z-index:9998;
+
     display:none;
+
     align-items:center;
     justify-content:center;
+
     background:#07111f;
 }
 
 .login-box{
     width:90%;
     max-width:410px;
+
     padding:40px;
+
     border-radius:22px;
+
     text-align:center;
+
     color:white;
 
     background:#ffffff10;
+
     border:1px solid #ffffff22;
 
     backdrop-filter:blur(20px);
+
+    box-shadow:
+        0 30px 80px #0008;
 }
 
 .login-box h2{
@@ -206,35 +287,56 @@ a{
 
 .login-box input{
     width:100%;
+
     padding:14px;
+
     margin:7px 0;
 
-    border:1px solid #ffffff20;
+    border:
+        1px solid #ffffff20;
+
     border-radius:10px;
 
     background:#ffffff0d;
+
     color:white;
+
     outline:none;
+}
+
+.login-box input::placeholder{
+    color:#94a3b8;
 }
 
 .login-box button{
     width:100%;
+
     padding:14px;
+
     margin-top:12px;
 
     border:0;
+
     border-radius:10px;
 
     background:
-    linear-gradient(
-        90deg,
-        #0ea5e9,
-        #6366f1
-    );
+        linear-gradient(
+            90deg,
+            #0ea5e9,
+            #6366f1
+        );
 
     color:white;
+
     font-weight:bold;
+
     cursor:pointer;
+
+    transition:.3s;
+}
+
+.login-box button:hover{
+    transform:translateY(-2px);
 }
 
 #loginMessage{
@@ -243,36 +345,44 @@ a{
 }
 
 
-/* =========================
+/* =========================================================
    NAVIGATION
-========================= */
+========================================================= */
 
 nav{
     position:sticky;
     top:0;
+
     z-index:5000;
 
     background:#07111ff5;
+
     backdrop-filter:blur(15px);
 
-    border-bottom:1px solid #ffffff14;
+    border-bottom:
+        1px solid #ffffff14;
 }
 
 .nav-container{
     width:92%;
     max-width:1250px;
+
     min-height:75px;
 
     margin:auto;
 
     display:flex;
+
     align-items:center;
+
     justify-content:space-between;
 }
 
 .logo{
     color:white;
+
     font-size:23px;
+
     font-weight:bold;
 }
 
@@ -282,14 +392,19 @@ nav{
 
 .nav-links{
     display:flex;
-    gap:25px;
+
+    gap:23px;
+
     align-items:center;
 }
 
 .nav-links a{
     color:#cbd5e1;
+
     font-size:14px;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
@@ -299,53 +414,64 @@ nav{
 
 .menu-btn{
     display:none;
+
     color:white;
+
     font-size:28px;
+
     cursor:pointer;
 }
 
 
-/* =========================
+/* =========================================================
    HOME
-========================= */
+========================================================= */
 
 #home{
     min-height:90vh;
 
     display:flex;
+
     align-items:center;
 
     background:
-    radial-gradient(
-        circle at 10% 20%,
-        #0ea5e926,
-        transparent 30%
-    ),
-    radial-gradient(
-        circle at 90% 80%,
-        #6366f126,
-        transparent 30%
-    ),
-    #07111f;
+        radial-gradient(
+            circle at 10% 20%,
+            #0ea5e926,
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 80%,
+            #6366f126,
+            transparent 30%
+        ),
+        #07111f;
 
     color:white;
 }
 
 .hero-grid{
     display:grid;
-    grid-template-columns:1.1fr .9fr;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
     gap:60px;
+
     align-items:center;
 }
 
 .hero-content small{
     color:#38bdf8;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
 }
 
 .hero-content h1{
     font-size:58px;
+
     margin:15px 0;
 }
 
@@ -355,48 +481,65 @@ nav{
 
 #typing{
     color:#94a3b8;
+
     font-size:22px;
+
     min-height:32px;
 }
 
 .hero-content p{
     margin-top:20px;
+
     max-width:650px;
+
     line-height:1.8;
+
     color:#94a3b8;
 }
 
 .hero-buttons{
     display:flex;
+
     gap:15px;
+
     margin-top:30px;
+
     flex-wrap:wrap;
 }
 
 .btn{
     display:inline-block;
+
     padding:14px 23px;
+
     border-radius:10px;
+
     font-weight:bold;
+
     cursor:pointer;
+
     transition:.3s;
 }
 
 .btn-primary{
     background:
-    linear-gradient(
-        90deg,
-        #0ea5e9,
-        #6366f1
-    );
+        linear-gradient(
+            90deg,
+            #0ea5e9,
+            #6366f1
+        );
 
     color:white;
+
     border:0;
 }
 
 .btn-secondary{
-    border:1px solid #334155;
+    border:
+        1px solid #334155;
+
     color:white;
+
     background:transparent;
 }
 
@@ -406,6 +549,7 @@ nav{
 
 .hero-image{
     text-align:center;
+
     position:relative;
 }
 
@@ -420,20 +564,21 @@ nav{
     border-radius:50%;
 
     background:
-    linear-gradient(
-        135deg,
-        #0ea5e9,
-        #6366f1
-    );
+        linear-gradient(
+            135deg,
+            #0ea5e9,
+            #6366f1
+        );
 
     filter:blur(70px);
+
     opacity:.25;
 
     left:50%;
     top:50%;
 
     transform:
-    translate(-50%,-50%);
+        translate(-50%,-50%);
 }
 
 .hero-image img{
@@ -446,16 +591,17 @@ nav{
 
     border-radius:30px;
 
-    border:1px solid #ffffff33;
+    border:
+        1px solid #ffffff33;
 
     box-shadow:
-    0 30px 80px #0008;
+        0 30px 80px #0008;
 }
 
 
-/* =========================
+/* =========================================================
    ABOUT
-========================= */
+========================================================= */
 
 #about{
     background:white;
@@ -463,14 +609,20 @@ nav{
 
 .about-grid{
     display:grid;
-    grid-template-columns:1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap:50px;
+
     align-items:center;
 }
 
 .about-text p{
     line-height:1.9;
+
     color:#667085;
+
     margin-bottom:15px;
 }
 
@@ -481,18 +633,21 @@ nav{
 
     background:#f8fafc;
 
-    border:1px solid #e2e8f0;
+    border:
+        1px solid #e2e8f0;
 }
 
 .info-row{
     display:flex;
+
     justify-content:space-between;
+
     gap:20px;
 
     padding:15px 0;
 
     border-bottom:
-    1px solid #e2e8f0;
+        1px solid #e2e8f0;
 }
 
 .info-row:last-child{
@@ -500,25 +655,26 @@ nav{
 }
 
 
-/* =========================
+/* =========================================================
    BUSINESS STRATEGY
-========================= */
+========================================================= */
 
 #strategy{
     background:
-    radial-gradient(
-        circle at 20% 20%,
-        #0ea5e926,
-        transparent 25%
-    ),
-    radial-gradient(
-        circle at 80% 80%,
-        #6366f126,
-        transparent 25%
-    ),
-    #07111f;
+        radial-gradient(
+            circle at 20% 20%,
+            #0ea5e926,
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            #6366f126,
+            transparent 25%
+        ),
+        #07111f;
 
     color:white;
+
     overflow:hidden;
 }
 
@@ -538,7 +694,7 @@ nav{
     padding:35px;
 
     border:
-    1px solid #ffffff18;
+        1px solid #ffffff18;
 
     border-radius:28px;
 
@@ -553,28 +709,51 @@ nav{
     content:"";
 
     position:absolute;
+
     inset:0;
 
     background:
-    linear-gradient(
-        #38bdf80a 1px,
-        transparent 1px
-    ),
-    linear-gradient(
-        90deg,
-        #38bdf80a 1px,
-        transparent 1px
-    );
+        linear-gradient(
+            #38bdf80a 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            #38bdf80a 1px,
+            transparent 1px
+        );
 
     background-size:45px 45px;
+
+    animation:
+        gridMove 12s linear infinite;
+}
+
+@keyframes gridMove{
+
+    from{
+        background-position:
+            0 0,
+            0 0;
+    }
+
+    to{
+        background-position:
+            45px 45px,
+            45px 45px;
+    }
+
 }
 
 .strategy-header{
     position:relative;
+
     z-index:2;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
     margin-bottom:30px;
@@ -582,10 +761,13 @@ nav{
 
 .live{
     display:flex;
+
     align-items:center;
+
     gap:8px;
 
     color:#67e8f9;
+
     font-size:13px;
 }
 
@@ -598,24 +780,29 @@ nav{
     background:#22d3ee;
 
     box-shadow:
-    0 0 15px #22d3ee;
+        0 0 15px #22d3ee;
 
-    animation:blink 1.2s infinite;
+    animation:
+        blink 1.2s infinite;
 }
 
 @keyframes blink{
+
     50%{
         opacity:.2;
     }
+
 }
 
 .dashboard{
     position:relative;
+
     z-index:2;
 
     display:grid;
+
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,1fr);
 
     gap:20px;
 }
@@ -627,7 +814,8 @@ nav{
 
     background:#0f172acc;
 
-    border:1px solid #ffffff12;
+    border:
+        1px solid #ffffff12;
 
     transition:.4s;
 }
@@ -640,22 +828,27 @@ nav{
 
 .dashboard-card h3{
     color:#94a3b8;
+
     font-size:14px;
 }
 
 .metric{
     font-size:34px;
+
     font-weight:bold;
+
     margin:12px 0;
 }
 
 .growth{
     color:#67e8f9;
+
     font-size:13px;
 }
 
 .chart{
     height:125px;
+
     margin-top:15px;
 }
 
@@ -672,27 +865,32 @@ nav{
     stroke-width:3;
 
     stroke-dasharray:500;
+
     stroke-dashoffset:500;
 
     animation:
-    draw 3s ease forwards infinite alternate;
+        drawChart 3s ease forwards infinite alternate;
 }
 
-@keyframes draw{
+@keyframes drawChart{
+
     to{
         stroke-dashoffset:0;
     }
+
 }
 
 .strategy-cards{
     position:relative;
+
     z-index:2;
 
     margin-top:25px;
 
     display:grid;
+
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,1fr);
 
     gap:20px;
 }
@@ -704,7 +902,16 @@ nav{
 
     background:#ffffff08;
 
-    border:1px solid #ffffff12;
+    border:
+        1px solid #ffffff12;
+
+    transition:.4s;
+}
+
+.strategy-card:hover{
+    transform:translateY(-5px);
+
+    background:#ffffff0d;
 }
 
 .strategy-card strong{
@@ -724,9 +931,9 @@ nav{
 }
 
 
-/* =========================
+/* =========================================================
    PROFESSIONAL WORK
-========================= */
+========================================================= */
 
 #work{
     background:#f8fafc;
@@ -734,8 +941,9 @@ nav{
 
 .work-grid{
     display:grid;
+
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,1fr);
 
     gap:25px;
 }
@@ -747,7 +955,8 @@ nav{
 
     border-radius:18px;
 
-    border:1px solid #e2e8f0;
+    border:
+        1px solid #e2e8f0;
 
     transition:.4s;
 }
@@ -756,7 +965,7 @@ nav{
     transform:translateY(-8px);
 
     box-shadow:
-    0 20px 50px #0f172a1f;
+        0 20px 50px #0f172a1f;
 }
 
 .work-icon{
@@ -770,6 +979,7 @@ nav{
     color:#0284c7;
 
     display:grid;
+
     place-items:center;
 
     font-size:25px;
@@ -783,13 +993,14 @@ nav{
 
 .work-card p{
     color:#667085;
+
     line-height:1.7;
 }
 
 
-/* =========================
+/* =========================================================
    BUSINESS IMAGES
-========================= */
+========================================================= */
 
 .business-image-section{
     margin-top:50px;
@@ -797,7 +1008,7 @@ nav{
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,1fr);
 
     gap:25px;
 }
@@ -812,7 +1023,7 @@ nav{
     border-radius:18px;
 
     box-shadow:
-    0 15px 40px #0f172a26;
+        0 15px 40px #0f172a26;
 }
 
 .business-image-card img{
@@ -830,26 +1041,28 @@ nav{
 
 .business-image-overlay{
     position:absolute;
+
     inset:0;
 
     display:flex;
+
     align-items:flex-end;
 
     padding:25px;
 
     background:
-    linear-gradient(
-        transparent,
-        #07111fe8
-    );
+        linear-gradient(
+            transparent,
+            #07111fe8
+        );
 
     color:white;
 }
 
 
-/* =========================
+/* =========================================================
    SKILLS
-========================= */
+========================================================= */
 
 #skills{
     background:white;
@@ -859,7 +1072,7 @@ nav{
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,1fr);
 
     gap:20px;
 }
@@ -871,7 +1084,8 @@ nav{
 
     border-radius:18px;
 
-    border:1px solid #e2e8f0;
+    border:
+        1px solid #e2e8f0;
 
     transition:.4s;
 }
@@ -880,7 +1094,7 @@ nav{
     transform:translateY(-8px);
 
     box-shadow:
-    0 20px 50px #0f172a1f;
+        0 20px 50px #0f172a1f;
 }
 
 .skill-card h3{
@@ -889,13 +1103,41 @@ nav{
 
 .skill-card p{
     color:#667085;
+
     line-height:1.7;
 }
 
 
-/* =========================
+/* =========================================================
+   LEARNING
+========================================================= */
+
+#learning{
+    background:
+        linear-gradient(
+            135deg,
+            #eef8ff,
+            #f8f5ff
+        );
+}
+
+.learning-intro{
+    max-width:750px;
+
+    margin:
+        -20px auto 35px;
+
+    text-align:center;
+
+    color:#667085;
+
+    line-height:1.7;
+}
+
+
+/* =========================================================
    EXPERIENCE
-========================= */
+========================================================= */
 
 #experience{
     background:#f8fafc;
@@ -903,7 +1145,9 @@ nav{
 
 .timeline{
     max-width:850px;
+
     margin:auto;
+
     position:relative;
 }
 
@@ -913,6 +1157,7 @@ nav{
     position:absolute;
 
     left:20px;
+
     top:0;
     bottom:0;
 
@@ -943,6 +1188,9 @@ nav{
     border-radius:50%;
 
     border:4px solid #e0f2fe;
+
+    box-shadow:
+        0 0 15px #0ea5e955;
 }
 
 .timeline-item h3{
@@ -951,6 +1199,7 @@ nav{
 
 .timeline-item span{
     color:#0284c7;
+
     font-size:14px;
 }
 
@@ -963,17 +1212,17 @@ nav{
 }
 
 
-/* =========================
+/* =========================================================
    CTA
-========================= */
+========================================================= */
 
 #cta{
     background:
-    linear-gradient(
-        135deg,
-        #07111f,
-        #102a43
-    );
+        linear-gradient(
+            135deg,
+            #07111f,
+            #102a43
+        );
 
     color:white;
 
@@ -982,18 +1231,20 @@ nav{
 
 #cta h2{
     font-size:40px;
+
     margin-bottom:15px;
 }
 
 #cta p{
     color:#94a3b8;
+
     margin-bottom:25px;
 }
 
 
-/* =========================
+/* =========================================================
    CONTACT
-========================= */
+========================================================= */
 
 #contact{
     background:white;
@@ -1003,7 +1254,7 @@ nav{
     display:grid;
 
     grid-template-columns:
-    repeat(3,1fr);
+        repeat(3,1fr);
 
     gap:25px;
 }
@@ -1015,9 +1266,19 @@ nav{
 
     background:#f8fafc;
 
-    border:1px solid #e2e8f0;
+    border:
+        1px solid #e2e8f0;
 
     text-align:center;
+
+    transition:.4s;
+}
+
+.contact-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 20px 50px #0f172a18;
 }
 
 .contact-card h3{
@@ -1026,6 +1287,7 @@ nav{
 
 .contact-card p{
     color:#667085;
+
     word-break:break-word;
 }
 
@@ -1034,9 +1296,9 @@ nav{
 }
 
 
-/* =========================
+/* =========================================================
    WHATSAPP
-========================= */
+========================================================= */
 
 .whatsapp{
     position:fixed;
@@ -1054,6 +1316,7 @@ nav{
     color:white;
 
     display:grid;
+
     place-items:center;
 
     font-size:25px;
@@ -1061,22 +1324,24 @@ nav{
     z-index:4000;
 
     box-shadow:
-    0 10px 30px #0003;
+        0 10px 30px #0003;
 
     animation:
-    wPulse 2s infinite;
+        whatsappPulse 2s infinite;
 }
 
-@keyframes wPulse{
+@keyframes whatsappPulse{
+
     50%{
         transform:scale(1.08);
     }
+
 }
 
 
-/* =========================
+/* =========================================================
    SCROLL TOP
-========================= */
+========================================================= */
 
 #scrollTop{
     position:fixed;
@@ -1088,6 +1353,7 @@ nav{
     height:45px;
 
     border:0;
+
     border-radius:50%;
 
     background:#0f172a;
@@ -1099,12 +1365,14 @@ nav{
     display:none;
 
     z-index:4000;
+
+    font-size:20px;
 }
 
 
-/* =========================
+/* =========================================================
    FOOTER
-========================= */
+========================================================= */
 
 footer{
     background:#050b14;
@@ -1121,32 +1389,32 @@ footer strong{
 }
 
 
-/* =========================
-   REVEAL
-========================= */
+/* =========================================================
+   REVEAL ANIMATION
+========================================================= */
 
 .reveal{
     opacity:0;
 
     transform:
-    translateY(35px);
+        translateY(35px);
 
     transition:
-    opacity .8s,
-    transform .8s;
+        opacity .8s ease,
+        transform .8s ease;
 }
 
 .reveal.active{
     opacity:1;
 
     transform:
-    translateY(0);
+        translateY(0);
 }
 
 
-/* =========================
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
 @media(max-width:900px){
 
@@ -1179,6 +1447,7 @@ footer strong{
     .hero-content h1{
         font-size:42px;
     }
+
 }
 
 @media(max-width:750px){
@@ -1189,6 +1458,7 @@ footer strong{
         position:absolute;
 
         top:75px;
+
         left:0;
         right:0;
 
@@ -1201,7 +1471,7 @@ footer strong{
         gap:20px;
 
         border-bottom:
-        1px solid #ffffff12;
+            1px solid #ffffff12;
     }
 
     .nav-links.active{
@@ -1218,7 +1488,9 @@ footer strong{
 
     .strategy-header{
         flex-direction:column;
+
         align-items:flex-start;
+
         gap:15px;
     }
 
@@ -1234,7 +1506,9 @@ footer strong{
         width:290px;
         height:370px;
     }
+
 }
+
 </style>
 </head>
 
@@ -1242,9 +1516,9 @@ footer strong{
 <body>
 
 
-<!-- =========================
-     OPENING
-========================= -->
+<!-- =========================================================
+     OPENING SCREEN
+========================================================= -->
 
 <div id="openingScreen">
 
@@ -1279,9 +1553,9 @@ footer strong{
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      LOGIN
-========================= -->
+========================================================= -->
 
 <div id="loginScreen">
 
@@ -1299,12 +1573,14 @@ footer strong{
             id="username"
             type="text"
             placeholder="Username"
+            autocomplete="username"
         >
 
         <input
             id="password"
             type="password"
             placeholder="Password"
+            autocomplete="current-password"
         >
 
         <button onclick="login()">
@@ -1318,15 +1594,16 @@ footer strong{
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      MAIN WEBSITE
-========================= -->
+========================================================= -->
 
-<div id="mainWebsite"
-     style="display:none;">
+<div id="mainWebsite" style="display:none;">
 
 
-<!-- NAVIGATION -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
 
 <nav>
 
@@ -1356,12 +1633,20 @@ footer strong{
                 About
             </a>
 
+            <a onclick="goToSection('strategy')">
+                Strategy
+            </a>
+
             <a onclick="goToSection('work')">
                 Professional Work
             </a>
 
             <a onclick="goToSection('skills')">
                 Skills
+            </a>
+
+            <a onclick="goToSection('learning')">
+                Learning
             </a>
 
             <a onclick="goToSection('experience')">
@@ -1379,14 +1664,13 @@ footer strong{
 </nav>
 
 
-<!-- =========================
+<!-- =========================================================
      HOME
-========================= -->
+========================================================= -->
 
 <section id="home">
 
     <div class="container hero-grid">
-
 
         <div class="hero-content reveal">
 
@@ -1410,20 +1694,18 @@ footer strong{
                 safety compliance and team management.
             </p>
 
-
             <div class="hero-buttons">
 
                 <a
                     class="btn btn-primary"
                     href="#work"
                     onclick="
-                    goToSection('work');
-                    return false;
+                        goToSection('work');
+                        return false;
                     "
                 >
                     Explore My Work
                 </a>
-
 
                 <button
                     class="btn btn-secondary"
@@ -1441,7 +1723,7 @@ footer strong{
 
             <img
                 src="Aftab_Ahmed_Modern_Professional_Portrait.jpeg"
-                alt="Aftab Ahmed"
+                alt="Aftab Ahmed professional portrait"
             >
 
         </div>
@@ -1451,9 +1733,9 @@ footer strong{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      ABOUT
-========================= -->
+========================================================= -->
 
 <section id="about">
 
@@ -1475,7 +1757,6 @@ footer strong{
 
 
         <div class="about-grid">
-
 
             <div class="about-text reveal">
 
@@ -1546,14 +1827,13 @@ footer strong{
 </section>
 
 
-<!-- =========================
-     UNIQUE BUSINESS THEME
-========================= -->
+<!-- =========================================================
+     UNIQUE BUSINESS STRATEGY
+========================================================= -->
 
 <section id="strategy">
 
     <div class="container">
-
 
         <div class="section-title reveal">
 
@@ -1570,7 +1850,6 @@ footer strong{
 
         <div class="command-center reveal">
 
-
             <div class="strategy-header">
 
                 <div>
@@ -1581,15 +1860,14 @@ footer strong{
 
                     <p
                         style="
-                        color:#64748b;
-                        margin-top:8px;
+                            color:#64748b;
+                            margin-top:8px;
                         "
                     >
                         Professional operations overview
                     </p>
 
                 </div>
-
 
                 <div class="live">
 
@@ -1619,7 +1897,6 @@ footer strong{
                         ↑ Performance Tracking
                     </div>
 
-
                     <div class="chart">
 
                         <svg viewBox="0 0 300 130">
@@ -1627,14 +1904,14 @@ footer strong{
                             <polyline
                                 class="chart-line"
                                 points="
-                                0,110
-                                40,95
-                                80,105
-                                120,65
-                                160,80
-                                200,45
-                                240,55
-                                300,20
+                                    0,110
+                                    40,95
+                                    80,105
+                                    120,65
+                                    160,80
+                                    200,45
+                                    240,55
+                                    300,20
                                 "
                             />
 
@@ -1659,7 +1936,6 @@ footer strong{
                         ↑ Coordination & Support
                     </div>
 
-
                     <div class="chart">
 
                         <svg viewBox="0 0 300 130">
@@ -1667,13 +1943,13 @@ footer strong{
                             <polyline
                                 class="chart-line"
                                 points="
-                                0,100
-                                50,90
-                                100,70
-                                150,85
-                                200,45
-                                250,50
-                                300,25
+                                    0,100
+                                    50,90
+                                    100,70
+                                    150,85
+                                    200,45
+                                    250,50
+                                    300,25
                                 "
                             />
 
@@ -1698,7 +1974,6 @@ footer strong{
                         ✓ Safety & Quality Mindset
                     </div>
 
-
                     <div class="chart">
 
                         <svg viewBox="0 0 300 130">
@@ -1706,13 +1981,13 @@ footer strong{
                             <polyline
                                 class="chart-line"
                                 points="
-                                0,105
-                                45,100
-                                90,75
-                                135,80
-                                180,55
-                                225,60
-                                300,25
+                                    0,105
+                                    45,100
+                                    90,75
+                                    135,80
+                                    180,55
+                                    225,60
+                                    300,25
                                 "
                             />
 
@@ -1726,7 +2001,6 @@ footer strong{
 
 
             <div class="strategy-cards">
-
 
                 <div class="strategy-card">
 
@@ -1783,14 +2057,13 @@ footer strong{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      PROFESSIONAL WORK
-========================= -->
+========================================================= -->
 
 <section id="work">
 
     <div class="container">
-
 
         <div class="section-title reveal">
 
@@ -1930,12 +2203,11 @@ footer strong{
 
         <div class="business-image-section">
 
-
             <div class="business-image-card reveal">
 
                 <img
                     src="https://images.pexels.com/photos/36766669/pexels-photo-36766669.jpeg"
-                    alt="Business professionals in a modern office"
+                    alt="Modern business strategy meeting"
                 >
 
                 <div class="business-image-overlay">
@@ -1991,14 +2263,13 @@ footer strong{
 </section>
 
 
-<!-- =========================
-     SKILLS
-========================= -->
+<!-- =========================================================
+     PROFESSIONAL SKILLS
+========================================================= -->
 
 <section id="skills">
 
     <div class="container">
-
 
         <div class="section-title reveal">
 
@@ -2019,7 +2290,7 @@ footer strong{
             <div class="skill-card reveal">
 
                 <h3>
-                    Site Supervision
+                    👷 Site Supervision
                 </h3>
 
                 <p>
@@ -2033,7 +2304,7 @@ footer strong{
             <div class="skill-card reveal">
 
                 <h3>
-                    Manpower Management
+                    👥 Manpower Management
                 </h3>
 
                 <p>
@@ -2047,7 +2318,7 @@ footer strong{
             <div class="skill-card reveal">
 
                 <h3>
-                    Safety Awareness
+                    🦺 Safety Awareness
                 </h3>
 
                 <p>
@@ -2061,7 +2332,7 @@ footer strong{
             <div class="skill-card reveal">
 
                 <h3>
-                    Quality Control
+                    🔍 Quality Control
                 </h3>
 
                 <p>
@@ -2075,7 +2346,7 @@ footer strong{
             <div class="skill-card reveal">
 
                 <h3>
-                    Communication
+                    💬 Communication
                 </h3>
 
                 <p>
@@ -2089,7 +2360,7 @@ footer strong{
             <div class="skill-card reveal">
 
                 <h3>
-                    Leadership
+                    🤝 Leadership
                 </h3>
 
                 <p>
@@ -2106,14 +2377,179 @@ footer strong{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
+     LEARNING & DEVELOPMENT
+========================================================= -->
+
+<section id="learning">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <h2>
+                Learning & Development
+            </h2>
+
+            <p>
+                Continuous professional growth
+            </p>
+
+        </div>
+
+
+        <p class="learning-intro reveal">
+
+            I believe continuous learning is important
+            for professional growth. I am focused on
+            developing stronger leadership, technical,
+            communication and operational skills.
+
+        </p>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    🎯 Leadership & Team Management
+                </h3>
+
+                <p>
+                    Developing stronger leadership,
+                    delegation and team coordination skills.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    📋 Project Planning
+                </h3>
+
+                <p>
+                    Learning better planning, scheduling,
+                    resource coordination and project execution.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    🦺 Construction Safety & HSE
+                </h3>
+
+                <p>
+                    Improving knowledge of workplace safety,
+                    risk awareness and safe working practices.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    🔍 Quality Control
+                </h3>
+
+                <p>
+                    Developing practical knowledge of quality
+                    monitoring and construction standards.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    💬 Communication Skills
+                </h3>
+
+                <p>
+                    Improving professional communication with
+                    workers, supervisors and project teams.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    💡 Problem Solving
+                </h3>
+
+                <p>
+                    Learning practical methods to identify
+                    problems and find effective solutions.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    ⏱️ Time Management
+                </h3>
+
+                <p>
+                    Improving task planning, prioritization
+                    and efficient use of working time.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    💻 Digital & Computer Skills
+                </h3>
+
+                <p>
+                    Building knowledge of digital tools,
+                    documentation and professional reporting.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    📐 Technical Drawing Basics
+                </h3>
+
+                <p>
+                    Developing understanding of drawings,
+                    measurements and technical information.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
      EXPERIENCE
-========================= -->
+========================================================= -->
 
 <section id="experience">
 
     <div class="container">
-
 
         <div class="section-title reveal">
 
@@ -2203,9 +2639,9 @@ footer strong{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      CTA
-========================= -->
+========================================================= -->
 
 <section id="cta">
 
@@ -2224,8 +2660,8 @@ footer strong{
             class="btn btn-primary"
             href="#contact"
             onclick="
-            goToSection('contact');
-            return false;
+                goToSection('contact');
+                return false;
             "
         >
             Contact Me
@@ -2236,14 +2672,13 @@ footer strong{
 </section>
 
 
-<!-- =========================
+<!-- =========================================================
      CONTACT
-========================= -->
+========================================================= -->
 
 <section id="contact">
 
     <div class="container">
-
 
         <div class="section-title reveal">
 
@@ -2291,6 +2726,7 @@ footer strong{
                     <a
                         href="https://www.linkedin.com/in/chibaftabg143"
                         target="_blank"
+                        rel="noopener"
                     >
                         View LinkedIn Profile
                     </a>
@@ -2311,6 +2747,7 @@ footer strong{
                     <a
                         href="https://wa.me/971569811547"
                         target="_blank"
+                        rel="noopener"
                     >
                         Message on WhatsApp
                     </a>
@@ -2326,34 +2763,42 @@ footer strong{
 </section>
 
 
-<!-- SCROLL TOP -->
+<!-- =========================================================
+     SCROLL TOP
+========================================================= -->
 
 <button
     id="scrollTop"
     onclick="
-    window.scrollTo({
-        top:0,
-        behavior:'smooth'
-    })
-"
+        window.scrollTo({
+            top:0,
+            behavior:'smooth'
+        })
+    "
+    aria-label="Back to top"
 >
     ↑
 </button>
 
 
-<!-- WHATSAPP -->
+<!-- =========================================================
+     WHATSAPP
+========================================================= -->
 
 <a
     class="whatsapp"
     href="https://wa.me/971569811547"
     target="_blank"
+    rel="noopener"
     aria-label="WhatsApp"
 >
     ☎
 </a>
 
 
-<!-- FOOTER -->
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
 <footer>
 
@@ -2375,13 +2820,15 @@ footer strong{
 </div>
 
 
-<!-- =========================
+<!-- =========================================================
      JAVASCRIPT
-========================= -->
+========================================================= -->
 
 <script>
 
-/* OPENING SCREEN */
+/* =========================================================
+   OPENING SCREEN
+========================================================= */
 
 window.addEventListener(
     "load",
@@ -2391,10 +2838,9 @@ window.addEventListener(
             function(){
 
                 document
-                .getElementById(
-                    "openingScreen"
-                )
-                .classList.add("hide");
+                    .getElementById("openingScreen")
+                    .classList
+                    .add("hide");
 
                 checkLogin();
 
@@ -2406,25 +2852,27 @@ window.addEventListener(
 );
 
 
-/* LOGIN */
+/* =========================================================
+   LOGIN
+========================================================= */
 
 function login(){
 
     const username =
         document
-        .getElementById("username")
-        .value
-        .trim();
+            .getElementById("username")
+            .value
+            .trim();
 
     const password =
         document
-        .getElementById("password")
-        .value
-        .trim();
+            .getElementById("password")
+            .value
+            .trim();
 
     const message =
         document
-        .getElementById("loginMessage");
+            .getElementById("loginMessage");
 
 
     if(
@@ -2439,18 +2887,16 @@ function login(){
 
 
         document
-        .getElementById(
-            "loginScreen"
-        )
-        .style.display="none";
+            .getElementById("loginScreen")
+            .style.display = "none";
 
 
         document
-        .getElementById(
-            "mainWebsite"
-        )
-        .style.display="block";
+            .getElementById("mainWebsite")
+            .style.display = "block";
 
+
+        message.textContent = "";
 
         startWebsite();
 
@@ -2466,7 +2912,9 @@ function login(){
 }
 
 
-/* CHECK LOGIN */
+/* =========================================================
+   CHECK LOGIN
+========================================================= */
 
 function checkLogin(){
 
@@ -2481,17 +2929,13 @@ function checkLogin(){
     ){
 
         document
-        .getElementById(
-            "mainWebsite"
-        )
-        .style.display="block";
+            .getElementById("mainWebsite")
+            .style.display = "block";
 
 
         document
-        .getElementById(
-            "loginScreen"
-        )
-        .style.display="none";
+            .getElementById("loginScreen")
+            .style.display = "none";
 
 
         startWebsite();
@@ -2501,17 +2945,17 @@ function checkLogin(){
     else{
 
         document
-        .getElementById(
-            "loginScreen"
-        )
-        .style.display="flex";
+            .getElementById("loginScreen")
+            .style.display = "flex";
 
     }
 
 }
 
 
-/* START WEBSITE */
+/* =========================================================
+   START WEBSITE
+========================================================= */
 
 function startWebsite(){
 
@@ -2522,7 +2966,9 @@ function startWebsite(){
 }
 
 
-/* NAVIGATION */
+/* =========================================================
+   NAVIGATION
+========================================================= */
 
 function goToSection(id){
 
@@ -2545,36 +2991,35 @@ function goToSection(id){
 
 
     document
-    .getElementById(
-        "navLinks"
-    )
-    .classList
-    .remove("active");
+        .getElementById("navLinks")
+        .classList
+        .remove("active");
 
 }
 
 
-/* MOBILE MENU */
+/* =========================================================
+   MOBILE MENU
+========================================================= */
 
 function toggleMenu(){
 
     document
-    .getElementById(
-        "navLinks"
-    )
-    .classList
-    .toggle("active");
+        .getElementById("navLinks")
+        .classList
+        .toggle("active");
 
 }
 
 
-/* TYPING EFFECT */
+/* =========================================================
+   TYPING EFFECT
+========================================================= */
 
 function startTyping(){
 
     const element =
-        document
-        .getElementById("typing");
+        document.getElementById("typing");
 
 
     if(!element){
@@ -2679,7 +3124,9 @@ function startTyping(){
 }
 
 
-/* SCROLL REVEAL */
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
 
 function revealSections(){
 
@@ -2696,8 +3143,8 @@ function revealSections(){
 
                 const top =
                     element
-                    .getBoundingClientRect()
-                    .top;
+                        .getBoundingClientRect()
+                        .top;
 
 
                 if(
@@ -2706,8 +3153,8 @@ function revealSections(){
                 ){
 
                     element
-                    .classList
-                    .add("active");
+                        .classList
+                        .add("active");
 
                 }
 
@@ -2728,15 +3175,16 @@ function revealSections(){
 }
 
 
-/* SCROLL TOP */
+/* =========================================================
+   SCROLL TOP
+========================================================= */
 
 window.addEventListener(
     "scroll",
     function(){
 
         const button =
-            document
-            .getElementById(
+            document.getElementById(
                 "scrollTop"
             );
 
@@ -2761,27 +3209,33 @@ window.addEventListener(
 );
 
 
-/* YEAR */
+/* =========================================================
+   CURRENT YEAR
+========================================================= */
 
 document
-.getElementById("year")
-.textContent =
+    .getElementById("year")
+    .textContent =
     new Date().getFullYear();
 
 
-/* ENTER LOGIN */
+/* =========================================================
+   ENTER KEY LOGIN
+========================================================= */
 
 document.addEventListener(
     "keydown",
     function(event){
 
+        const loginScreen =
+            document.getElementById(
+                "loginScreen"
+            );
+
+
         if(
             event.key === "Enter" &&
-            document
-            .getElementById(
-                "loginScreen"
-            )
-            .style.display === "flex"
+            loginScreen.style.display === "flex"
         ){
 
             login();
