@@ -1,1528 +1,1776 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aftab Ahmed | Professional Portfolio</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+html{
+    scroll-padding-top:80px;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f4f7fb;
+    color:#172033;
+    overflow-x:hidden;
+}
+
+section{
+    padding:90px 0;
+    scroll-margin-top:80px;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title h2{
+    font-size:38px;
+    margin-bottom:10px;
+    color:#101828;
+}
+
+.section-title p{
+    color:#667085;
+}
+
+a{
+    text-decoration:none;
+}
+
+
+/* =========================
+   OPENING SCREEN
+========================= */
+
+#openingScreen{
+    position:fixed;
+    inset:0;
+    z-index:99999;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+
+    background:
+    radial-gradient(circle at 20% 30%,#0b4b78,transparent 30%),
+    radial-gradient(circle at 80% 70%,#30206b,transparent 30%),
+    #07111f;
+
+    transition:opacity 1s,visibility 1s;
+}
+
+#openingScreen.hide{
+    opacity:0;
+    visibility:hidden;
+}
+
+.opening-content{
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
+.aa-logo{
+    width:100px;
+    height:100px;
+    border:2px solid #38bdf8;
+    border-radius:25px;
+    display:grid;
+    place-items:center;
+    margin:auto;
+    font-size:38px;
+    font-weight:bold;
+
+    box-shadow:0 0 35px #38bdf855;
+
+    animation:pulse 2s infinite;
+}
+
+.opening-content h1{
+    margin-top:24px;
+    font-size:34px;
+}
+
+.opening-content p{
+    margin-top:8px;
+    color:#94a3b8;
+    letter-spacing:3px;
+}
+
+.opening-line{
+    height:2px;
+    width:220px;
+    margin:24px auto;
+
+    background:
+    linear-gradient(
+        90deg,
+        transparent,
+        #38bdf8,
+        transparent
+    );
+
+    animation:line 2s infinite;
+}
+
+.particle{
+    position:absolute;
+    width:4px;
+    height:4px;
+    border-radius:50%;
+    background:#38bdf8;
+    opacity:.6;
+    animation:float 7s infinite;
+}
+
+.p1{left:10%;top:20%}
+.p2{left:25%;top:70%;animation-duration:9s}
+.p3{left:70%;top:25%;animation-duration:8s}
+.p4{left:85%;top:75%;animation-duration:10s}
+.p5{left:50%;top:10%;animation-duration:6s}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.06);
+        box-shadow:0 0 55px #38bdf899;
+    }
+}
+
+@keyframes line{
+    50%{
+        transform:scaleX(.4);
+        opacity:.4;
+    }
+}
+
+@keyframes float{
+    50%{
+        transform:translateY(-70px);
+    }
+}
+
+
+/* =========================
+   LOGIN
+========================= */
+
+#loginScreen{
+    position:fixed;
+    inset:0;
+    z-index:9998;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    background:#07111f;
+}
+
+.login-box{
+    width:90%;
+    max-width:410px;
+    padding:40px;
+    border-radius:22px;
+    text-align:center;
+    color:white;
+
+    background:#ffffff10;
+    border:1px solid #ffffff22;
+
+    backdrop-filter:blur(20px);
+}
+
+.login-box h2{
+    font-size:30px;
+}
+
+.login-box p{
+    color:#94a3b8;
+    margin:10px 0 25px;
+}
+
+.login-box input{
+    width:100%;
+    padding:14px;
+    margin:7px 0;
+
+    border:1px solid #ffffff20;
+    border-radius:10px;
+
+    background:#ffffff0d;
+    color:white;
+    outline:none;
+}
+
+.login-box button{
+    width:100%;
+    padding:14px;
+    margin-top:12px;
+
+    border:0;
+    border-radius:10px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #0ea5e9,
+        #6366f1
+    );
+
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+#loginMessage{
+    margin-top:14px;
+    color:#f87171;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:5000;
+
+    background:#07111ff5;
+    backdrop-filter:blur(15px);
+
+    border-bottom:1px solid #ffffff14;
+}
+
+.nav-container{
+    width:92%;
+    max-width:1250px;
+    min-height:75px;
+
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:white;
+    font-size:23px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#38bdf8;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    color:#cbd5e1;
+    font-size:14px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:#38bdf8;
+}
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:28px;
+    cursor:pointer;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+#home{
+    min-height:90vh;
+
+    display:flex;
+    align-items:center;
+
+    background:
+    radial-gradient(
+        circle at 10% 20%,
+        #0ea5e926,
+        transparent 30%
+    ),
+    radial-gradient(
+        circle at 90% 80%,
+        #6366f126,
+        transparent 30%
+    ),
+    #07111f;
+
+    color:white;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1.1fr .9fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero-content small{
+    color:#38bdf8;
+    letter-spacing:3px;
+    text-transform:uppercase;
+}
+
+.hero-content h1{
+    font-size:58px;
+    margin:15px 0;
+}
+
+.hero-content h1 span{
+    color:#38bdf8;
+}
+
+#typing{
+    color:#94a3b8;
+    font-size:22px;
+    min-height:32px;
+}
+
+.hero-content p{
+    margin-top:20px;
+    max-width:650px;
+    line-height:1.8;
+    color:#94a3b8;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:15px;
+    margin-top:30px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 23px;
+    border-radius:10px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:
+    linear-gradient(
+        90deg,
+        #0ea5e9,
+        #6366f1
+    );
+
+    color:white;
+    border:0;
+}
+
+.btn-secondary{
+    border:1px solid #334155;
+    color:white;
+    background:transparent;
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+.hero-image{
+    text-align:center;
+    position:relative;
+}
+
+.hero-image:before{
+    content:"";
+
+    position:absolute;
+
+    width:330px;
+    height:330px;
+
+    border-radius:50%;
+
+    background:
+    linear-gradient(
+        135deg,
+        #0ea5e9,
+        #6366f1
+    );
+
+    filter:blur(70px);
+    opacity:.25;
+
+    left:50%;
+    top:50%;
+
+    transform:
+    translate(-50%,-50%);
+}
+
+.hero-image img{
+    position:relative;
+
+    width:330px;
+    height:420px;
+
+    object-fit:cover;
+
+    border-radius:30px;
+
+    border:1px solid #ffffff33;
+
+    box-shadow:
+    0 30px 80px #0008;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+#about{
+    background:white;
+}
+
+.about-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about-text p{
+    line-height:1.9;
+    color:#667085;
+    margin-bottom:15px;
+}
+
+.info-card{
+    padding:30px;
+
+    border-radius:20px;
+
+    background:#f8fafc;
+
+    border:1px solid #e2e8f0;
+}
+
+.info-row{
+    display:flex;
+    justify-content:space-between;
+    gap:20px;
+
+    padding:15px 0;
+
+    border-bottom:
+    1px solid #e2e8f0;
+}
+
+.info-row:last-child{
+    border:0;
+}
+
+
+/* =========================
+   BUSINESS STRATEGY
+========================= */
+
+#strategy{
+    background:
+    radial-gradient(
+        circle at 20% 20%,
+        #0ea5e926,
+        transparent 25%
+    ),
+    radial-gradient(
+        circle at 80% 80%,
+        #6366f126,
+        transparent 25%
+    ),
+    #07111f;
+
+    color:white;
+    overflow:hidden;
+}
+
+#strategy .section-title h2{
+    color:white;
+}
+
+#strategy .section-title p{
+    color:#94a3b8;
+}
+
+.command-center{
+    position:relative;
+
+    min-height:480px;
+
+    padding:35px;
+
+    border:
+    1px solid #ffffff18;
+
+    border-radius:28px;
+
+    background:#ffffff08;
+
+    backdrop-filter:blur(20px);
+
+    overflow:hidden;
+}
+
+.command-center:before{
+    content:"";
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+        #38bdf80a 1px,
+        transparent 1px
+    ),
+    linear-gradient(
+        90deg,
+        #38bdf80a 1px,
+        transparent 1px
+    );
+
+    background-size:45px 45px;
+}
+
+.strategy-header{
+    position:relative;
+    z-index:2;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:30px;
+}
+
+.live{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    color:#67e8f9;
+    font-size:13px;
+}
+
+.live-dot{
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#22d3ee;
+
+    box-shadow:
+    0 0 15px #22d3ee;
+
+    animation:blink 1.2s infinite;
+}
+
+@keyframes blink{
+    50%{
+        opacity:.2;
+    }
+}
+
+.dashboard{
+    position:relative;
+    z-index:2;
+
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+}
+
+.dashboard-card{
+    padding:25px;
+
+    border-radius:18px;
+
+    background:#0f172acc;
+
+    border:1px solid #ffffff12;
+
+    transition:.4s;
+}
+
+.dashboard-card:hover{
+    transform:translateY(-8px);
+
+    border-color:#38bdf866;
+}
+
+.dashboard-card h3{
+    color:#94a3b8;
+    font-size:14px;
+}
+
+.metric{
+    font-size:34px;
+    font-weight:bold;
+    margin:12px 0;
+}
+
+.growth{
+    color:#67e8f9;
+    font-size:13px;
+}
+
+.chart{
+    height:125px;
+    margin-top:15px;
+}
+
+.chart svg{
+    width:100%;
+    height:100%;
+}
+
+.chart-line{
+    fill:none;
+
+    stroke:#38bdf8;
+
+    stroke-width:3;
+
+    stroke-dasharray:500;
+    stroke-dashoffset:500;
 
-    <meta charset="UTF-8">
+    animation:
+    draw 3s ease forwards infinite alternate;
+}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@keyframes draw{
+    to{
+        stroke-dashoffset:0;
+    }
+}
 
-    <title>Aftab Ahmed | Professional Portfolio</title>
+.strategy-cards{
+    position:relative;
+    z-index:2;
 
-    <meta
-        name="description"
-        content="Professional portfolio of Aftab Ahmed - Business Administration, Operations and Entrepreneur."
-    >
+    margin-top:25px;
 
-    <style>
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            scroll-behavior: smooth;
-        }
+    gap:20px;
+}
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            line-height: 1.6;
-            color: #1f2937;
-            background: #f5f7fa;
-        }
+.strategy-card{
+    padding:25px;
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
+    border-radius:18px;
 
-        img {
-            max-width: 100%;
-            display: block;
-        }
+    background:#ffffff08;
 
+    border:1px solid #ffffff12;
+}
 
-        /* ========================================
-           LOGIN SCREEN
-        ======================================== */
+.strategy-card strong{
+    display:block;
 
-        #loginScreen {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
+    margin-bottom:8px;
 
-            display: flex;
-            justify-content: center;
-            align-items: center;
+    color:#67e8f9;
+}
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #020617,
-                    #0f172a,
-                    #1e3a5f
-                );
+.strategy-card p{
+    color:#94a3b8;
 
-            padding: 20px;
-        }
+    font-size:14px;
 
-        .login-box {
-            width: 100%;
-            max-width: 420px;
+    line-height:1.6;
+}
 
-            background: rgba(255,255,255,0.97);
 
-            padding: 45px 35px;
+/* =========================
+   PROFESSIONAL WORK
+========================= */
 
-            border-radius: 20px;
+#work{
+    background:#f8fafc;
+}
 
-            box-shadow:
-                0 25px 70px rgba(0,0,0,0.35);
+.work-grid{
+    display:grid;
+    grid-template-columns:
+    repeat(3,1fr);
 
-            text-align: center;
-        }
+    gap:25px;
+}
 
-        .login-logo {
-            width: 75px;
-            height: 75px;
+.work-card{
+    background:white;
 
-            margin: 0 auto 20px;
+    padding:30px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    border-radius:18px;
 
-            border-radius: 50%;
+    border:1px solid #e2e8f0;
 
-            background: #0f172a;
+    transition:.4s;
+}
 
-            color: white;
+.work-card:hover{
+    transform:translateY(-8px);
 
-            font-size: 30px;
-            font-weight: bold;
-        }
+    box-shadow:
+    0 20px 50px #0f172a1f;
+}
 
-        .login-box h1 {
-            color: #0f172a;
-            margin-bottom: 8px;
-            font-size: 30px;
-        }
+.work-icon{
+    width:55px;
+    height:55px;
 
-        .login-box .login-subtitle {
-            color: #64748b;
-            margin-bottom: 30px;
-        }
+    border-radius:14px;
 
-        .login-form {
-            text-align: left;
-        }
+    background:#e0f2fe;
 
-        .login-form label {
-            display: block;
-            margin-bottom: 7px;
+    color:#0284c7;
 
-            font-weight: bold;
-            color: #334155;
-        }
+    display:grid;
+    place-items:center;
 
-        .login-form input {
-            width: 100%;
+    font-size:25px;
 
-            padding: 14px 15px;
+    margin-bottom:20px;
+}
 
-            margin-bottom: 18px;
+.work-card h3{
+    margin-bottom:12px;
+}
 
-            border: 1px solid #cbd5e1;
+.work-card p{
+    color:#667085;
+    line-height:1.7;
+}
 
-            border-radius: 8px;
 
-            font-size: 16px;
+/* =========================
+   BUSINESS IMAGES
+========================= */
 
-            outline: none;
+.business-image-section{
+    margin-top:50px;
 
-            transition: 0.3s;
-        }
+    display:grid;
 
-        .login-form input:focus {
-            border-color: #0284c7;
+    grid-template-columns:
+    repeat(3,1fr);
 
-            box-shadow:
-                0 0 0 3px rgba(2,132,199,0.12);
-        }
+    gap:25px;
+}
 
-        .login-button {
-            width: 100%;
+.business-image-card{
+    position:relative;
 
-            padding: 14px;
+    height:240px;
 
-            border: none;
+    overflow:hidden;
 
-            border-radius: 8px;
+    border-radius:18px;
 
-            background: #0284c7;
+    box-shadow:
+    0 15px 40px #0f172a26;
+}
 
-            color: white;
+.business-image-card img{
+    width:100%;
+    height:100%;
 
-            font-size: 16px;
+    object-fit:cover;
 
-            font-weight: bold;
+    transition:.6s;
+}
 
-            cursor: pointer;
+.business-image-card:hover img{
+    transform:scale(1.08);
+}
 
-            transition: 0.3s;
-        }
+.business-image-overlay{
+    position:absolute;
+    inset:0;
 
-        .login-button:hover {
-            background: #0369a1;
-        }
+    display:flex;
+    align-items:flex-end;
 
-        .login-error {
-            display: none;
+    padding:25px;
 
-            margin-top: 15px;
+    background:
+    linear-gradient(
+        transparent,
+        #07111fe8
+    );
 
-            padding: 10px;
+    color:white;
+}
 
-            border-radius: 7px;
 
-            background: #fee2e2;
+/* =========================
+   SKILLS
+========================= */
 
-            color: #b91c1c;
+#skills{
+    background:white;
+}
 
-            font-size: 14px;
-        }
+.skills-grid{
+    display:grid;
 
-        .login-footer {
-            margin-top: 25px;
+    grid-template-columns:
+    repeat(3,1fr);
 
-            font-size: 13px;
+    gap:20px;
+}
 
-            color: #94a3b8;
-        }
+.skill-card{
+    background:white;
 
+    padding:30px;
 
-        /* ========================================
-           HIDE WEBSITE BEFORE LOGIN
-        ======================================== */
+    border-radius:18px;
 
-        #website {
-            display: none;
-        }
+    border:1px solid #e2e8f0;
 
+    transition:.4s;
+}
 
-        /* ========================================
-           NAVIGATION
-        ======================================== */
+.skill-card:hover{
+    transform:translateY(-8px);
 
-        nav {
-            position: sticky;
-            top: 0;
+    box-shadow:
+    0 20px 50px #0f172a1f;
+}
 
-            z-index: 1000;
+.skill-card h3{
+    margin-bottom:10px;
+}
 
-            background: #0f172a;
+.skill-card p{
+    color:#667085;
+    line-height:1.7;
+}
 
-            box-shadow:
-                0 3px 15px rgba(0,0,0,0.15);
-        }
 
-        .nav-container {
-            max-width: 1200px;
+/* =========================
+   EXPERIENCE
+========================= */
 
-            margin: auto;
+#experience{
+    background:#f8fafc;
+}
 
-            padding: 15px 25px;
+.timeline{
+    max-width:850px;
+    margin:auto;
+    position:relative;
+}
 
-            display: flex;
+.timeline:before{
+    content:"";
 
-            justify-content: space-between;
+    position:absolute;
 
-            align-items: center;
-        }
+    left:20px;
+    top:0;
+    bottom:0;
 
-        .logo {
-            color: white;
+    width:2px;
 
-            font-size: 22px;
+    background:#bae6fd;
+}
 
-            font-weight: bold;
-        }
+.timeline-item{
+    position:relative;
 
-        .nav-links {
-            display: flex;
+    padding-left:65px;
 
-            list-style: none;
+    margin-bottom:40px;
+}
 
-            gap: 28px;
+.timeline-dot{
+    position:absolute;
 
-            align-items: center;
-        }
+    left:11px;
+    top:5px;
 
-        .nav-links a {
-            color: #e5e7eb;
+    width:20px;
+    height:20px;
 
-            font-weight: 600;
+    background:#0ea5e9;
 
-            transition: 0.3s;
-        }
+    border-radius:50%;
 
-        .nav-links a:hover {
-            color: #38bdf8;
-        }
+    border:4px solid #e0f2fe;
+}
 
-        .logout-button {
-            border: 1px solid #38bdf8;
+.timeline-item h3{
+    margin-bottom:7px;
+}
 
-            background: transparent;
+.timeline-item span{
+    color:#0284c7;
+    font-size:14px;
+}
 
-            color: white;
+.timeline-item p{
+    margin-top:12px;
 
-            padding: 7px 13px;
+    color:#667085;
 
-            border-radius: 6px;
+    line-height:1.7;
+}
 
-            cursor: pointer;
 
-            font-weight: bold;
-        }
+/* =========================
+   CTA
+========================= */
 
-        .logout-button:hover {
-            background: #38bdf8;
+#cta{
+    background:
+    linear-gradient(
+        135deg,
+        #07111f,
+        #102a43
+    );
 
-            color: #0f172a;
-        }
+    color:white;
 
-        .menu-btn {
-            display: none;
+    text-align:center;
+}
 
-            color: white;
+#cta h2{
+    font-size:40px;
+    margin-bottom:15px;
+}
 
-            font-size: 28px;
+#cta p{
+    color:#94a3b8;
+    margin-bottom:25px;
+}
 
-            cursor: pointer;
-        }
 
+/* =========================
+   CONTACT
+========================= */
 
-        /* ========================================
-           HERO
-        ======================================== */
+#contact{
+    background:white;
+}
 
-        .hero {
-            min-height: 88vh;
+.contact-grid{
+    display:grid;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #0f172a,
-                    #1e3a5f
-                );
+    grid-template-columns:
+    repeat(3,1fr);
 
-            color: white;
+    gap:25px;
+}
 
-            display: flex;
+.contact-card{
+    padding:30px;
 
-            align-items: center;
-        }
+    border-radius:18px;
 
-        .hero-container {
-            max-width: 1200px;
+    background:#f8fafc;
 
-            width: 100%;
+    border:1px solid #e2e8f0;
 
-            margin: auto;
+    text-align:center;
+}
 
-            padding: 70px 25px;
+.contact-card h3{
+    margin-bottom:10px;
+}
 
-            display: grid;
+.contact-card p{
+    color:#667085;
+    word-break:break-word;
+}
 
-            grid-template-columns: 1.5fr 1fr;
+.contact-card a{
+    color:#0284c7;
+}
 
-            gap: 50px;
 
-            align-items: center;
-        }
+/* =========================
+   WHATSAPP
+========================= */
 
-        .hero h1 {
-            font-size: 58px;
+.whatsapp{
+    position:fixed;
 
-            margin-bottom: 15px;
-        }
+    right:25px;
+    bottom:25px;
 
-        .hero h2 {
-            font-size: 28px;
+    width:58px;
+    height:58px;
 
-            color: #38bdf8;
+    border-radius:50%;
 
-            margin-bottom: 18px;
-        }
+    background:#25d366;
 
-        .hero p {
-            font-size: 19px;
+    color:white;
 
-            color: #dbeafe;
+    display:grid;
+    place-items:center;
 
-            margin-bottom: 30px;
-        }
+    font-size:25px;
 
-        .hero-buttons {
-            display: flex;
+    z-index:4000;
 
-            gap: 15px;
+    box-shadow:
+    0 10px 30px #0003;
 
-            flex-wrap: wrap;
-        }
+    animation:
+    wPulse 2s infinite;
+}
 
-        .btn {
-            display: inline-block;
+@keyframes wPulse{
+    50%{
+        transform:scale(1.08);
+    }
+}
 
-            padding: 13px 25px;
 
-            border-radius: 8px;
+/* =========================
+   SCROLL TOP
+========================= */
 
-            font-weight: bold;
+#scrollTop{
+    position:fixed;
 
-            transition: 0.3s;
-        }
+    right:25px;
+    bottom:95px;
 
-        .btn-primary {
-            background: #38bdf8;
+    width:45px;
+    height:45px;
 
-            color: #0f172a;
-        }
+    border:0;
+    border-radius:50%;
 
-        .btn-primary:hover {
-            background: #7dd3fc;
-        }
+    background:#0f172a;
 
-        .btn-outline {
-            border: 2px solid #38bdf8;
+    color:white;
 
-            color: white;
-        }
+    cursor:pointer;
 
-        .btn-outline:hover {
-            background: #38bdf8;
+    display:none;
 
-            color: #0f172a;
-        }
+    z-index:4000;
+}
 
-        .hero-image {
-            display: flex;
 
-            justify-content: center;
-        }
+/* =========================
+   FOOTER
+========================= */
 
-        .hero-image img {
-            width: 330px;
+footer{
+    background:#050b14;
 
-            height: 400px;
+    color:#94a3b8;
 
-            object-fit: cover;
+    text-align:center;
 
-            border-radius: 20px;
+    padding:30px;
+}
 
-            border: 5px solid rgba(255,255,255,0.2);
+footer strong{
+    color:white;
+}
 
-            box-shadow:
-                0 20px 50px rgba(0,0,0,0.35);
-        }
 
+/* =========================
+   REVEAL
+========================= */
 
-        /* ========================================
-           GENERAL SECTIONS
-        ======================================== */
+.reveal{
+    opacity:0;
 
-        section {
-            padding: 80px 25px;
-        }
+    transform:
+    translateY(35px);
 
-        .container {
-            max-width: 1100px;
+    transition:
+    opacity .8s,
+    transform .8s;
+}
 
-            margin: auto;
-        }
+.reveal.active{
+    opacity:1;
 
-        .section-title {
-            text-align: center;
+    transform:
+    translateY(0);
+}
 
-            margin-bottom: 50px;
-        }
 
-        .section-title h2 {
-            font-size: 38px;
+/* =========================
+   MOBILE
+========================= */
 
-            color: #0f172a;
+@media(max-width:900px){
 
-            margin-bottom: 10px;
-        }
+    .hero-grid,
+    .about-grid{
+        grid-template-columns:1fr;
+    }
 
-        .section-title p {
-            color: #64748b;
-        }
+    .hero-content{
+        text-align:center;
+    }
 
+    .hero-buttons{
+        justify-content:center;
+    }
 
-        /* ========================================
-           ABOUT
-        ======================================== */
+    .hero-image{
+        margin-top:30px;
+    }
 
-        .about {
-            background: white;
-        }
+    .work-grid,
+    .skills-grid,
+    .contact-grid,
+    .dashboard,
+    .strategy-cards,
+    .business-image-section{
+        grid-template-columns:1fr;
+    }
 
-        .about-content {
-            max-width: 900px;
+    .hero-content h1{
+        font-size:42px;
+    }
+}
 
-            margin: auto;
+@media(max-width:750px){
 
-            text-align: center;
+    .nav-links{
+        display:none;
 
-            font-size: 18px;
+        position:absolute;
 
-            color: #475569;
-        }
+        top:75px;
+        left:0;
+        right:0;
 
+        flex-direction:column;
 
-        /* ========================================
-           PROFESSIONAL WORK
-        ======================================== */
+        background:#07111f;
 
-        .work-grid {
-            display: grid;
+        padding:25px;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+        gap:20px;
 
-            gap: 25px;
-        }
+        border-bottom:
+        1px solid #ffffff12;
+    }
 
-        .work-card {
-            background: white;
+    .nav-links.active{
+        display:flex;
+    }
 
-            padding: 30px;
+    .menu-btn{
+        display:block;
+    }
 
-            border-radius: 15px;
+    .command-center{
+        padding:20px;
+    }
 
-            box-shadow:
-                0 8px 25px rgba(15,23,42,0.08);
+    .strategy-header{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:15px;
+    }
 
-            transition: 0.3s;
-        }
+    section{
+        padding:70px 0;
+    }
 
-        .work-card:hover {
-            transform: translateY(-7px);
+    .section-title h2{
+        font-size:30px;
+    }
 
-            box-shadow:
-                0 15px 35px rgba(15,23,42,0.14);
-        }
-
-        .work-card h3 {
-            color: #0f172a;
-
-            margin-bottom: 12px;
-        }
-
-        .work-card p {
-            color: #64748b;
-        }
-
-
-        /* ========================================
-           SKILLS
-        ======================================== */
-
-        .skills {
-            background: #eef4f8;
-        }
-
-        .skills-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(2, 1fr);
-
-            gap: 20px;
-        }
-
-        .skill {
-            background: white;
-
-            padding: 22px;
-
-            border-radius: 12px;
-
-            box-shadow:
-                0 5px 18px rgba(15,23,42,0.06);
-        }
-
-        .skill h3 {
-            margin-bottom: 8px;
-
-            color: #0f172a;
-        }
-
-        .skill p {
-            color: #64748b;
-        }
-
-
-        /* ========================================
-           EXPERIENCE
-        ======================================== */
-
-        .experience {
-            background: white;
-        }
-
-        .experience-box {
-            max-width: 900px;
-
-            margin: auto;
-
-            background: #f8fafc;
-
-            border-left: 5px solid #38bdf8;
-
-            padding: 30px;
-
-            border-radius: 10px;
-        }
-
-        .experience-box h3 {
-            font-size: 25px;
-
-            color: #0f172a;
-
-            margin-bottom: 5px;
-        }
-
-        .experience-box .role {
-            color: #0284c7;
-
-            font-weight: bold;
-
-            margin-bottom: 15px;
-        }
-
-        .experience-box p {
-            color: #64748b;
-        }
-
-
-        /* ========================================
-           CTA
-        ======================================== */
-
-        .cta {
-            background:
-                linear-gradient(
-                    135deg,
-                    #0f172a,
-                    #1e3a5f
-                );
-
-            color: white;
-
-            text-align: center;
-        }
-
-        .cta h2 {
-            font-size: 38px;
-
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            color: #dbeafe;
-
-            margin-bottom: 25px;
-        }
-
-
-        /* ========================================
-           CONTACT
-        ======================================== */
-
-        .contact {
-            background: #f8fafc;
-        }
-
-        .contact-grid {
-            display: grid;
-
-            grid-template-columns:
-                repeat(3, 1fr);
-
-            gap: 20px;
-        }
-
-        .contact-card {
-            background: white;
-
-            padding: 30px;
-
-            border-radius: 12px;
-
-            text-align: center;
-
-            box-shadow:
-                0 7px 22px rgba(15,23,42,0.07);
-        }
-
-        .contact-card h3 {
-            margin-bottom: 10px;
-
-            color: #0f172a;
-        }
-
-        .contact-card a {
-            color: #0284c7;
-
-            word-break: break-word;
-        }
-
-
-        /* ========================================
-           FOOTER
-        ======================================== */
-
-        footer {
-            background: #0f172a;
-
-            color: #cbd5e1;
-
-            text-align: center;
-
-            padding: 25px;
-        }
-
-
-        /* ========================================
-           WHATSAPP
-        ======================================== */
-
-        .whatsapp {
-            position: fixed;
-
-            right: 25px;
-
-            bottom: 25px;
-
-            z-index: 999;
-        }
-
-        .whatsapp a {
-            display: flex;
-
-            align-items: center;
-
-            justify-content: center;
-
-            width: 58px;
-
-            height: 58px;
-
-            background: #25d366;
-
-            color: white;
-
-            border-radius: 50%;
-
-            font-size: 25px;
-
-            font-weight: bold;
-
-            box-shadow:
-                0 5px 20px rgba(0,0,0,0.25);
-        }
-
-
-        /* ========================================
-           MOBILE
-        ======================================== */
-
-        @media (max-width: 800px) {
-
-            .menu-btn {
-                display: block;
-            }
-
-            .nav-links {
-                display: none;
-
-                position: absolute;
-
-                top: 60px;
-
-                left: 0;
-
-                width: 100%;
-
-                background: #0f172a;
-
-                flex-direction: column;
-
-                align-items: flex-start;
-
-                padding: 20px 25px;
-
-                gap: 18px;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .hero-container {
-                grid-template-columns: 1fr;
-
-                text-align: center;
-            }
-
-            .hero {
-                min-height: auto;
-            }
-
-            .hero h1 {
-                font-size: 42px;
-            }
-
-            .hero h2 {
-                font-size: 23px;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .hero-image {
-                order: -1;
-            }
-
-            .hero-image img {
-                width: 250px;
-
-                height: 310px;
-            }
-
-            .work-grid,
-            .skills-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title h2 {
-                font-size: 32px;
-            }
-
-            .login-box {
-                padding: 35px 25px;
-            }
-        }
-
-    </style>
-
+    .hero-image img{
+        width:290px;
+        height:370px;
+    }
+}
+</style>
 </head>
 
 
 <body>
 
 
-<!-- =========================================
-     LOGIN SCREEN
-========================================= -->
+<!-- =========================
+     OPENING
+========================= -->
+
+<div id="openingScreen">
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+
+    <div class="opening-content">
+
+        <div class="aa-logo">
+            AA
+        </div>
+
+        <h1>
+            AFTAB AHMED
+        </h1>
+
+        <p>
+            PROFESSIONAL PORTFOLIO
+        </p>
+
+        <div class="opening-line"></div>
+
+        <small>
+            INITIALIZING BUSINESS PROFILE...
+        </small>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LOGIN
+========================= -->
 
 <div id="loginScreen">
 
     <div class="login-box">
 
-        <div class="login-logo">
-            AA
-        </div>
+        <h2>
+            Welcome Back
+        </h2>
 
-        <h1>Welcome</h1>
-
-        <p class="login-subtitle">
-            Aftab Ahmed Professional Portfolio
+        <p>
+            Enter your portfolio credentials
         </p>
 
-
-        <form
-            class="login-form"
-            onsubmit="login(event)"
+        <input
+            id="username"
+            type="text"
+            placeholder="Username"
         >
 
-            <label for="username">
-                Username
-            </label>
+        <input
+            id="password"
+            type="password"
+            placeholder="Password"
+        >
 
-            <input
-                type="text"
-                id="username"
-                placeholder="Enter username"
-                autocomplete="username"
-                required
-            >
+        <button onclick="login()">
+            LOGIN
+        </button>
 
-
-            <label for="password">
-                Password
-            </label>
-
-            <input
-                type="password"
-                id="password"
-                placeholder="Enter password"
-                autocomplete="current-password"
-                required
-            >
-
-
-            <button
-                type="submit"
-                class="login-button"
-            >
-                Login
-            </button>
-
-
-            <div
-                id="loginError"
-                class="login-error"
-            >
-                Incorrect username or password.
-            </div>
-
-        </form>
-
-
-        <div class="login-footer">
-            © <span id="loginYear"></span> Aftab Ahmed
-        </div>
+        <div id="loginMessage"></div>
 
     </div>
 
 </div>
 
 
+<!-- =========================
+     MAIN WEBSITE
+========================= -->
 
-<!-- =========================================
-     WEBSITE
-========================================= -->
-
-<div id="website">
-
-
-    <!-- NAVIGATION -->
-
-    <nav>
-
-        <div class="nav-container">
-
-            <div class="logo">
-                Aftab Ahmed
-            </div>
+<div id="mainWebsite"
+     style="display:none;">
 
 
-            <div
-                class="menu-btn"
-                onclick="toggleMenu()"
-            >
-                ☰
-            </div>
+<!-- NAVIGATION -->
 
+<nav>
 
-            <ul
-                class="nav-links"
-                id="navLinks"
-            >
+    <div class="nav-container">
 
-                <li>
-                    <a
-                        href="#home"
-                        onclick="closeMenu()"
-                    >
-                        Home
-                    </a>
-                </li>
-
-
-                <li>
-                    <a
-                        href="#about"
-                        onclick="closeMenu()"
-                    >
-                        About
-                    </a>
-                </li>
-
-
-                <li>
-                    <a
-                        href="#work"
-                        onclick="closeMenu()"
-                    >
-                        Professional Work
-                    </a>
-                </li>
-
-
-                <li>
-                    <a
-                        href="#skills"
-                        onclick="closeMenu()"
-                    >
-                        Skills
-                    </a>
-                </li>
-
-
-                <li>
-                    <a
-                        href="#experience"
-                        onclick="closeMenu()"
-                    >
-                        Experience
-                    </a>
-                </li>
-
-
-                <li>
-                    <a
-                        href="#contact"
-                        onclick="closeMenu()"
-                    >
-                        Contact
-                    </a>
-                </li>
-
-
-                <li>
-
-                    <button
-                        class="logout-button"
-                        onclick="logout()"
-                    >
-                        Logout
-                    </button>
-
-                </li>
-
-            </ul>
-
+        <div class="logo">
+            AFTAB<span>.</span>
         </div>
 
-    </nav>
-
-
-
-    <!-- HERO -->
-
-    <section
-        class="hero"
-        id="home"
-    >
-
-        <div class="hero-container">
-
-
-            <div>
-
-                <h1>
-                    Aftab Ahmed
-                </h1>
-
-
-                <h2>
-                    Business Administration & Operations
-                </h2>
-
-
-                <p>
-                    Business Administration • Operations • Entrepreneur
-                </p>
-
-
-                <div class="hero-buttons">
-
-                    <a
-                        href="#contact"
-                        class="btn btn-primary"
-                    >
-                        Contact Me
-                    </a>
-
-
-                    <a
-                        href="#work"
-                        class="btn btn-outline"
-                    >
-                        View My Work
-                    </a>
-
-
-                    <a
-                        href="#"
-                        onclick="window.print(); return false;"
-                        class="btn btn-outline"
-                    >
-                        Download CV
-                    </a>
-
-                </div>
-
-            </div>
-
-
-
-            <div class="hero-image">
-
-                <img
-                    src="Aftab_Ahmed_Modern_Professional_Portrait.jpeg"
-                    alt="Aftab Ahmed Professional Portrait"
-                >
-
-            </div>
-
+        <div
+            class="menu-btn"
+            onclick="toggleMenu()"
+        >
+            ☰
         </div>
 
-    </section>
-
-
-
-    <!-- ABOUT -->
-
-    <section
-        class="about"
-        id="about"
-    >
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-                    About Me
-                </h2>
-
-                <p>
-                    Professional Profile
-                </p>
-
-            </div>
-
-
-            <div class="about-content">
-
-                <p>
-                    I am Aftab Ahmed, a professional focused on business
-                    administration, operations management and entrepreneurship.
-                </p>
-
-
-                <br>
-
-
-                <p>
-                    My professional interests include business coordination,
-                    administrative support, operational efficiency,
-                    communication, organization and practical business growth.
-                    I aim to contribute to efficient processes, strong
-                    professional relationships and sustainable business
-                    development.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- PROFESSIONAL WORK -->
-
-    <section id="work">
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-                    Professional Work
-                </h2>
-
-                <p>
-                    Areas of Professional Focus
-                </p>
-
-            </div>
-
-
-            <div class="work-grid">
-
-
-                <div class="work-card">
-
-                    <h3>
-                        Business Administration
-                    </h3>
-
-                    <p>
-                        Administrative coordination, documentation,
-                        communication and business support activities.
-                    </p>
-
-                </div>
-
-
-                <div class="work-card">
-
-                    <h3>
-                        Operations Management
-                    </h3>
-
-                    <p>
-                        Supporting daily operations, organization,
-                        coordination and process efficiency.
-                    </p>
-
-                </div>
-
-
-                <div class="work-card">
-
-                    <h3>
-                        Business Coordination
-                    </h3>
-
-                    <p>
-                        Coordinating business activities, maintaining
-                        communication and supporting smooth workflows.
-                    </p>
-
-                </div>
-
-
-                <div class="work-card">
-
-                    <h3>
-                        Administrative Support
-                    </h3>
-
-                    <p>
-                        Organizing information, documentation and
-                        administrative activities to support business needs.
-                    </p>
-
-                </div>
-
-
-                <div class="work-card">
-
-                    <h3>
-                        Business Development
-                    </h3>
-
-                    <p>
-                        Identifying practical opportunities, improving
-                        processes and supporting business growth.
-                    </p>
-
-                </div>
-
-
-                <div class="work-card">
-
-                    <h3>
-                        Entrepreneurship
-                    </h3>
-
-                    <p>
-                        Developing an entrepreneurial mindset focused on
-                        business ideas, opportunities and sustainable growth.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- SKILLS -->
-
-    <section
-        class="skills"
-        id="skills"
-    >
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-                    Skills
-                </h2>
-
-                <p>
-                    Professional Capabilities
-                </p>
-
-            </div>
-
-
-            <div class="skills-grid">
-
-
-                <div class="skill">
-
-                    <h3>
-                        Business Administration
-                    </h3>
-
-                    <p>
-                        Administrative organization, documentation and
-                        business support.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        Operations Management
-                    </h3>
-
-                    <p>
-                        Supporting daily operations and improving workflow
-                        organization.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        Business Coordination
-                    </h3>
-
-                    <p>
-                        Coordinating activities, tasks and professional
-                        communication.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        Communication
-                    </h3>
-
-                    <p>
-                        Professional communication and relationship
-                        coordination.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        Organization
-                    </h3>
-
-                    <p>
-                        Effective organization, planning and management of
-                        business activities.
-                    </p>
-
-                </div>
-
-
-                <div class="skill">
-
-                    <h3>
-                        Entrepreneurial Thinking
-                    </h3>
-
-                    <p>
-                        Business opportunity identification and practical
-                        problem solving.
-                    </p>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- EXPERIENCE -->
-
-    <section
-        class="experience"
-        id="experience"
-    >
-
-        <div class="container">
-
-
-            <div class="section-title">
-
-                <h2>
-                    Experience
-                </h2>
-
-                <p>
-                    Professional Journey
-                </p>
-
-            </div>
-
-
-            <div class="experience-box">
-
-                <h3>
-                    Business Administration & Operations
-                </h3>
-
-
-                <div class="role">
-                    Business Administration • Operations • Entrepreneurship
-                </div>
-
-
-                <p>
-                    Professional experience and interest in business
-                    administration, operational coordination, business
-                    communication and organizational support.
-                </p>
-
-            </div>
-
-        </div>
-
-    </section>
-
-
-
-    <!-- CALL TO ACTION -->
-
-    <section class="cta">
-
-        <div class="container">
-
-            <h2>
-                Let's Connect
-            </h2>
-
-
-            <p>
-                I am open to professional opportunities, business
-                discussions and networking.
-            </p>
-
-
-            <a
-                href="#contact"
-                class="btn btn-primary"
-            >
-                Get In Touch
+        <div
+            class="nav-links"
+            id="navLinks"
+        >
+
+            <a onclick="goToSection('home')">
+                Home
+            </a>
+
+            <a onclick="goToSection('about')">
+                About
+            </a>
+
+            <a onclick="goToSection('work')">
+                Professional Work
+            </a>
+
+            <a onclick="goToSection('skills')">
+                Skills
+            </a>
+
+            <a onclick="goToSection('experience')">
+                Experience
+            </a>
+
+            <a onclick="goToSection('contact')">
+                Contact
             </a>
 
         </div>
 
-    </section>
+    </div>
+
+</nav>
 
 
+<!-- =========================
+     HOME
+========================= -->
 
-    <!-- CONTACT -->
+<section id="home">
 
-    <section
-        class="contact"
-        id="contact"
-    >
-
-        <div class="container">
+    <div class="container hero-grid">
 
 
-            <div class="section-title">
+        <div class="hero-content reveal">
 
-                <h2>
-                    Contact
-                </h2>
+            <small>
+                Professional Portfolio
+            </small>
+
+            <h1>
+                Hello, I'm
+                <span>
+                    Aftab Ahmed
+                </span>
+            </h1>
+
+            <div id="typing"></div>
+
+            <p>
+                Dedicated professional with experience
+                in site supervision, manpower
+                coordination, construction operations,
+                safety compliance and team management.
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a
+                    class="btn btn-primary"
+                    href="#work"
+                    onclick="
+                    goToSection('work');
+                    return false;
+                    "
+                >
+                    Explore My Work
+                </a>
+
+
+                <button
+                    class="btn btn-secondary"
+                    onclick="window.print()"
+                >
+                    Download CV
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image reveal">
+
+            <img
+                src="Aftab_Ahmed_Modern_Professional_Portrait.jpeg"
+                alt="Aftab Ahmed"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section id="about">
+
+    <div class="container">
+
+        <div class="section-title reveal">
+
+            <h2>
+                About Me
+            </h2>
+
+            <p>
+                Professional experience,
+                leadership and
+                business-focused operations
+            </p>
+
+        </div>
+
+
+        <div class="about-grid">
+
+
+            <div class="about-text reveal">
 
                 <p>
-                    Let's stay connected
+                    I am a dedicated and responsible
+                    professional with strong experience
+                    in construction site supervision,
+                    manpower coordination and
+                    day-to-day operational management.
+                </p>
+
+                <p>
+                    My professional approach focuses
+                    on safety, quality, teamwork,
+                    productivity and successful
+                    project completion.
+                </p>
+
+                <p>
+                    I believe effective communication,
+                    planning and leadership are
+                    essential for achieving strong
+                    results in any organization.
                 </p>
 
             </div>
 
 
-            <div class="contact-grid">
+            <div class="info-card reveal">
+
+                <div class="info-row">
+                    <strong>Name</strong>
+                    <span>Aftab Ahmed</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Profession</strong>
+                    <span>
+                        Construction Professional
+                    </span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Specialization</strong>
+                    <span>
+                        Site Supervision
+                    </span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Location</strong>
+                    <span>UAE</span>
+                </div>
+
+                <div class="info-row">
+                    <strong>Focus</strong>
+                    <span>
+                        Safety • Quality • Teamwork
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
-                <div class="contact-card">
+<!-- =========================
+     UNIQUE BUSINESS THEME
+========================= -->
 
-                    <h3>
-                        Email
-                    </h3>
+<section id="strategy">
+
+    <div class="container">
 
 
-                    <a href="mailto:aftabchib085@gmail.com">
-                        aftabchib085@gmail.com
-                    </a>
+        <div class="section-title reveal">
+
+            <h2>
+                Business Strategy in Motion
+            </h2>
+
+            <p>
+                Planning • Operations • Growth • Performance
+            </p>
+
+        </div>
+
+
+        <div class="command-center reveal">
+
+
+            <div class="strategy-header">
+
+                <div>
+
+                    <h2>
+                        BUSINESS COMMAND CENTER
+                    </h2>
+
+                    <p
+                        style="
+                        color:#64748b;
+                        margin-top:8px;
+                        "
+                    >
+                        Professional operations overview
+                    </p>
 
                 </div>
 
 
+                <div class="live">
 
-                <div class="contact-card">
+                    <span class="live-dot"></span>
+
+                    SYSTEM ACTIVE
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard">
+
+
+                <div class="dashboard-card">
 
                     <h3>
-                        LinkedIn
+                        PROJECT PERFORMANCE
                     </h3>
 
+                    <div class="metric">
+                        94%
+                    </div>
 
-                    <a
-                        href="https://www.linkedin.com/in/chibaftabg143"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        LinkedIn Profile
-                    </a>
+                    <div class="growth">
+                        ↑ Performance Tracking
+                    </div>
+
+
+                    <div class="chart">
+
+                        <svg viewBox="0 0 300 130">
+
+                            <polyline
+                                class="chart-line"
+                                points="
+                                0,110
+                                40,95
+                                80,105
+                                120,65
+                                160,80
+                                200,45
+                                240,55
+                                300,20
+                                "
+                            />
+
+                        </svg>
+
+                    </div>
 
                 </div>
 
 
-
-                <div class="contact-card">
+                <div class="dashboard-card">
 
                     <h3>
-                        WhatsApp
+                        TEAM OPERATIONS
                     </h3>
 
+                    <div class="metric">
+                        24/7
+                    </div>
 
-                    <a
-                        href="https://wa.me/971569811547"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        +971 56 981 1547
-                    </a>
+                    <div class="growth">
+                        ↑ Coordination & Support
+                    </div>
+
+
+                    <div class="chart">
+
+                        <svg viewBox="0 0 300 130">
+
+                            <polyline
+                                class="chart-line"
+                                points="
+                                0,100
+                                50,90
+                                100,70
+                                150,85
+                                200,45
+                                250,50
+                                300,25
+                                "
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <h3>
+                        QUALITY FOCUS
+                    </h3>
+
+                    <div class="metric">
+                        100%
+                    </div>
+
+                    <div class="growth">
+                        ✓ Safety & Quality Mindset
+                    </div>
+
+
+                    <div class="chart">
+
+                        <svg viewBox="0 0 300 130">
+
+                            <polyline
+                                class="chart-line"
+                                points="
+                                0,105
+                                45,100
+                                90,75
+                                135,80
+                                180,55
+                                225,60
+                                300,25
+                                "
+                            />
+
+                        </svg>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="strategy-cards">
+
+
+                <div class="strategy-card">
+
+                    <strong>
+                        01 • STRATEGY
+                    </strong>
+
+                    <p>
+                        Plan resources, understand
+                        project requirements and
+                        establish clear operational
+                        priorities.
+                    </p>
+
+                </div>
+
+
+                <div class="strategy-card">
+
+                    <strong>
+                        02 • EXECUTION
+                    </strong>
+
+                    <p>
+                        Coordinate manpower,
+                        monitor daily activities
+                        and maintain productivity
+                        across operations.
+                    </p>
+
+                </div>
+
+
+                <div class="strategy-card">
+
+                    <strong>
+                        03 • GROWTH
+                    </strong>
+
+                    <p>
+                        Improve teamwork, quality,
+                        safety awareness and
+                        overall project performance.
+                    </p>
 
                 </div>
 
@@ -1530,229 +1778,1020 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
+<!-- =========================
+     PROFESSIONAL WORK
+========================= -->
 
-    <!-- FLOATING WHATSAPP -->
+<section id="work">
 
-    <div class="whatsapp">
+    <div class="container">
+
+
+        <div class="section-title reveal">
+
+            <h2>
+                Professional Work
+            </h2>
+
+            <p>
+                Core professional responsibilities
+                and strengths
+            </p>
+
+        </div>
+
+
+        <div class="work-grid">
+
+
+            <div class="work-card reveal">
+
+                <div class="work-icon">
+                    👷
+                </div>
+
+                <h3>
+                    Site Supervision
+                </h3>
+
+                <p>
+                    Supervising daily construction
+                    activities, coordinating workers
+                    and ensuring work progresses
+                    according to project requirements.
+                </p>
+
+            </div>
+
+
+            <div class="work-card reveal">
+
+                <div class="work-icon">
+                    👥
+                </div>
+
+                <h3>
+                    Manpower Management
+                </h3>
+
+                <p>
+                    Managing workforce allocation,
+                    daily tasks, productivity
+                    and team coordination.
+                </p>
+
+            </div>
+
+
+            <div class="work-card reveal">
+
+                <div class="work-icon">
+                    🦺
+                </div>
+
+                <h3>
+                    Safety Compliance
+                </h3>
+
+                <p>
+                    Supporting safe working practices
+                    and maintaining awareness of
+                    site safety requirements.
+                </p>
+
+            </div>
+
+
+            <div class="work-card reveal">
+
+                <div class="work-icon">
+                    📋
+                </div>
+
+                <h3>
+                    Planning & Coordination
+                </h3>
+
+                <p>
+                    Coordinating activities,
+                    materials, manpower and
+                    daily operational requirements.
+                </p>
+
+            </div>
+
+
+            <div class="work-card reveal">
+
+                <div class="work-icon">
+                    🔍
+                </div>
+
+                <h3>
+                    Quality Control
+                </h3>
+
+                <p>
+                    Monitoring work quality and
+                    helping ensure tasks are completed
+                    according to required standards.
+                </p>
+
+            </div>
+
+
+            <div class="work-card reveal">
+
+                <div class="work-icon">
+                    🤝
+                </div>
+
+                <h3>
+                    Team Leadership
+                </h3>
+
+                <p>
+                    Encouraging teamwork,
+                    communication and responsible
+                    execution of assigned work.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BUSINESS IMAGES -->
+
+        <div class="business-image-section">
+
+
+            <div class="business-image-card reveal">
+
+                <img
+                    src="https://images.pexels.com/photos/36766669/pexels-photo-36766669.jpeg"
+                    alt="Business professionals in a modern office"
+                >
+
+                <div class="business-image-overlay">
+
+                    <h3>
+                        Business Strategy
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="business-image-card reveal">
+
+                <img
+                    src="https://images.pexels.com/photos/36733315/pexels-photo-36733315.jpeg"
+                    alt="Professional business meeting"
+                >
+
+                <div class="business-image-overlay">
+
+                    <h3>
+                        Professional Teamwork
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="business-image-card reveal">
+
+                <img
+                    src="https://images.pexels.com/photos/7710156/pexels-photo-7710156.jpeg"
+                    alt="Business team discussing strategy"
+                >
+
+                <div class="business-image-overlay">
+
+                    <h3>
+                        Business Planning
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SKILLS
+========================= -->
+
+<section id="skills">
+
+    <div class="container">
+
+
+        <div class="section-title reveal">
+
+            <h2>
+                Professional Skills
+            </h2>
+
+            <p>
+                Skills developed through practical experience
+            </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    Site Supervision
+                </h3>
+
+                <p>
+                    Daily monitoring and coordination
+                    of construction activities.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    Manpower Management
+                </h3>
+
+                <p>
+                    Workforce allocation and
+                    team coordination.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    Safety Awareness
+                </h3>
+
+                <p>
+                    Maintaining safe working
+                    practices and site awareness.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    Quality Control
+                </h3>
+
+                <p>
+                    Monitoring quality and
+                    work completion.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    Communication
+                </h3>
+
+                <p>
+                    Clear communication with
+                    workers and project teams.
+                </p>
+
+            </div>
+
+
+            <div class="skill-card reveal">
+
+                <h3>
+                    Leadership
+                </h3>
+
+                <p>
+                    Team leadership and responsible
+                    decision making.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     EXPERIENCE
+========================= -->
+
+<section id="experience">
+
+    <div class="container">
+
+
+        <div class="section-title reveal">
+
+            <h2>
+                Experience
+            </h2>
+
+            <p>
+                Professional career development
+            </p>
+
+        </div>
+
+
+        <div class="timeline">
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    Construction / Site Professional
+                </h3>
+
+                <span>
+                    UAE / Construction Industry
+                </span>
+
+                <p>
+                    Responsible for supervising workers,
+                    coordinating site activities,
+                    maintaining safety awareness and
+                    supporting project completion.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    Construction Experience
+                </h3>
+
+                <span>
+                    India
+                </span>
+
+                <p>
+                    Practical construction experience
+                    involving workforce coordination,
+                    site activities, quality awareness
+                    and project operations.
+                </p>
+
+            </div>
+
+
+            <div class="timeline-item reveal">
+
+                <div class="timeline-dot"></div>
+
+                <h3>
+                    Professional Development
+                </h3>
+
+                <span>
+                    Continuous Learning
+                </span>
+
+                <p>
+                    Developing leadership, technical,
+                    communication and operational
+                    management skills through
+                    practical experience.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     CTA
+========================= -->
+
+<section id="cta">
+
+    <div class="container reveal">
+
+        <h2>
+            Let's Build Success Together
+        </h2>
+
+        <p>
+            Professional leadership, teamwork
+            and operational excellence.
+        </p>
 
         <a
-            href="https://wa.me/971569811547"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Contact me on WhatsApp"
+            class="btn btn-primary"
+            href="#contact"
+            onclick="
+            goToSection('contact');
+            return false;
+            "
         >
-            ☎
+            Contact Me
         </a>
 
     </div>
 
+</section>
 
 
-    <!-- FOOTER -->
+<!-- =========================
+     CONTACT
+========================= -->
 
-    <footer>
+<section id="contact">
 
-        <p>
-            © <span id="year"></span>
-            Aftab Ahmed. All Rights Reserved.
-        </p>
+    <div class="container">
 
-    </footer>
 
+        <div class="section-title reveal">
+
+            <h2>
+                Contact Me
+            </h2>
+
+            <p>
+                Let's connect professionally
+            </p>
+
+        </div>
+
+
+        <div class="contact-grid">
+
+
+            <div class="contact-card reveal">
+
+                <h3>
+                    📧 Email
+                </h3>
+
+                <p>
+
+                    <a
+                        href="mailto:aftabchib085@gmail.com"
+                    >
+                        aftabchib085@gmail.com
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <h3>
+                    💼 LinkedIn
+                </h3>
+
+                <p>
+
+                    <a
+                        href="https://www.linkedin.com/in/chibaftabg143"
+                        target="_blank"
+                    >
+                        View LinkedIn Profile
+                    </a>
+
+                </p>
+
+            </div>
+
+
+            <div class="contact-card reveal">
+
+                <h3>
+                    💬 WhatsApp
+                </h3>
+
+                <p>
+
+                    <a
+                        href="https://wa.me/971569811547"
+                        target="_blank"
+                    >
+                        Message on WhatsApp
+                    </a>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SCROLL TOP -->
+
+<button
+    id="scrollTop"
+    onclick="
+    window.scrollTo({
+        top:0,
+        behavior:'smooth'
+    })
+"
+>
+    ↑
+</button>
+
+
+<!-- WHATSAPP -->
+
+<a
+    class="whatsapp"
+    href="https://wa.me/971569811547"
+    target="_blank"
+    aria-label="WhatsApp"
+>
+    ☎
+</a>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <p>
+
+        ©
+        <span id="year"></span>
+
+        <strong>
+            Aftab Ahmed
+        </strong>
+
+        . All Rights Reserved.
+
+    </p>
+
+</footer>
 
 </div>
 
 
-
-<!-- =========================================
+<!-- =========================
      JAVASCRIPT
-========================================= -->
+========================= -->
 
 <script>
 
+/* OPENING SCREEN */
 
-    /* LOGIN DETAILS */
+window.addEventListener(
+    "load",
+    function(){
 
-    const correctUsername = "aftab";
+        setTimeout(
+            function(){
 
-    const correctPassword = "12345";
+                document
+                .getElementById(
+                    "openingScreen"
+                )
+                .classList.add("hide");
 
+                checkLogin();
 
-    /* LOGIN */
+            },
+            2800
+        );
 
-    function login(event) {
-
-        event.preventDefault();
-
-
-        const username =
-            document.getElementById("username").value.trim();
-
-        const password =
-            document.getElementById("password").value;
-
-
-        const error =
-            document.getElementById("loginError");
-
-
-        if (
-            username === correctUsername &&
-            password === correctPassword
-        ) {
-
-            sessionStorage.setItem(
-                "aftabLoggedIn",
-                "true"
-            );
+    }
+);
 
 
-            document.getElementById(
-                "loginScreen"
-            ).style.display = "none";
+/* LOGIN */
+
+function login(){
+
+    const username =
+        document
+        .getElementById("username")
+        .value
+        .trim();
+
+    const password =
+        document
+        .getElementById("password")
+        .value
+        .trim();
+
+    const message =
+        document
+        .getElementById("loginMessage");
 
 
-            document.getElementById(
-                "website"
-            ).style.display = "block";
+    if(
+        username === "aftab" &&
+        password === "12345"
+    ){
+
+        sessionStorage.setItem(
+            "aftabLoggedIn",
+            "true"
+        );
 
 
-            error.style.display = "none";
+        document
+        .getElementById(
+            "loginScreen"
+        )
+        .style.display="none";
 
-        }
 
-        else {
+        document
+        .getElementById(
+            "mainWebsite"
+        )
+        .style.display="block";
 
-            error.style.display = "block";
 
-        }
+        startWebsite();
 
     }
 
+    else{
 
-    /* LOGOUT */
+        message.textContent =
+            "Incorrect username or password.";
 
-    function logout() {
+    }
 
-        sessionStorage.removeItem(
+}
+
+
+/* CHECK LOGIN */
+
+function checkLogin(){
+
+    const loggedIn =
+        sessionStorage.getItem(
             "aftabLoggedIn"
         );
 
 
-        document.getElementById(
-            "website"
-        ).style.display = "none";
+    if(
+        loggedIn === "true"
+    ){
+
+        document
+        .getElementById(
+            "mainWebsite"
+        )
+        .style.display="block";
 
 
-        document.getElementById(
+        document
+        .getElementById(
             "loginScreen"
-        ).style.display = "flex";
+        )
+        .style.display="none";
 
 
-        document.getElementById(
-            "username"
-        ).value = "";
+        startWebsite();
+
+    }
+
+    else{
+
+        document
+        .getElementById(
+            "loginScreen"
+        )
+        .style.display="flex";
+
+    }
+
+}
 
 
-        document.getElementById(
-            "password"
-        ).value = "";
+/* START WEBSITE */
+
+function startWebsite(){
+
+    startTyping();
+
+    revealSections();
+
+}
 
 
-        document.getElementById(
-            "loginError"
-        ).style.display = "none";
+/* NAVIGATION */
+
+function goToSection(id){
+
+    const section =
+        document.getElementById(id);
+
+
+    if(!section){
+        return;
+    }
+
+
+    section.scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"start"
+
+    });
+
+
+    document
+    .getElementById(
+        "navLinks"
+    )
+    .classList
+    .remove("active");
+
+}
+
+
+/* MOBILE MENU */
+
+function toggleMenu(){
+
+    document
+    .getElementById(
+        "navLinks"
+    )
+    .classList
+    .toggle("active");
+
+}
+
+
+/* TYPING EFFECT */
+
+function startTyping(){
+
+    const element =
+        document
+        .getElementById("typing");
+
+
+    if(!element){
+        return;
+    }
+
+
+    const words = [
+
+        "Construction Foreman",
+
+        "Site Supervisor",
+
+        "Team Leader",
+
+        "Operations Professional"
+
+    ];
+
+
+    let wordIndex = 0;
+
+    let characterIndex = 0;
+
+    let deleting = false;
+
+
+    function type(){
+
+        const word =
+            words[wordIndex];
+
+
+        if(!deleting){
+
+            element.textContent =
+                word.substring(
+                    0,
+                    characterIndex + 1
+                );
+
+            characterIndex++;
+
+
+            if(
+                characterIndex ===
+                word.length
+            ){
+
+                deleting = true;
+
+                setTimeout(
+                    type,
+                    1800
+                );
+
+                return;
+
+            }
+
+        }
+
+        else{
+
+            element.textContent =
+                word.substring(
+                    0,
+                    characterIndex - 1
+                );
+
+            characterIndex--;
+
+
+            if(
+                characterIndex === 0
+            ){
+
+                deleting = false;
+
+                wordIndex =
+                    (
+                        wordIndex + 1
+                    )
+                    %
+                    words.length;
+
+            }
+
+        }
+
+
+        setTimeout(
+            type,
+            deleting ? 50 : 90
+        );
 
     }
 
 
-    /* CHECK LOGIN */
+    type();
 
-    function checkLogin() {
+}
 
-        const loggedIn =
-            sessionStorage.getItem(
-                "aftabLoggedIn"
+
+/* SCROLL REVEAL */
+
+function revealSections(){
+
+    const elements =
+        document.querySelectorAll(
+            ".reveal"
+        );
+
+
+    function checkReveal(){
+
+        elements.forEach(
+            function(element){
+
+                const top =
+                    element
+                    .getBoundingClientRect()
+                    .top;
+
+
+                if(
+                    top <
+                    window.innerHeight - 80
+                ){
+
+                    element
+                    .classList
+                    .add("active");
+
+                }
+
+            }
+        );
+
+    }
+
+
+    window.addEventListener(
+        "scroll",
+        checkReveal
+    );
+
+
+    checkReveal();
+
+}
+
+
+/* SCROLL TOP */
+
+window.addEventListener(
+    "scroll",
+    function(){
+
+        const button =
+            document
+            .getElementById(
+                "scrollTop"
             );
 
 
-        if (loggedIn === "true") {
+        if(
+            window.scrollY > 500
+        ){
 
-            document.getElementById(
-                "loginScreen"
-            ).style.display = "none";
-
-
-            document.getElementById(
-                "website"
-            ).style.display = "block";
+            button.style.display =
+                "block";
 
         }
 
-        else {
+        else{
 
-            document.getElementById(
-                "loginScreen"
-            ).style.display = "flex";
-
-
-            document.getElementById(
-                "website"
-            ).style.display = "none";
+            button.style.display =
+                "none";
 
         }
 
     }
+);
 
 
-    /* MOBILE MENU */
+/* YEAR */
 
-    function toggleMenu() {
+document
+.getElementById("year")
+.textContent =
+    new Date().getFullYear();
 
-        document
-            .getElementById("navLinks")
-            .classList
-            .toggle("active");
+
+/* ENTER LOGIN */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Enter" &&
+            document
+            .getElementById(
+                "loginScreen"
+            )
+            .style.display === "flex"
+        ){
+
+            login();
+
+        }
 
     }
-
-
-    function closeMenu() {
-
-        document
-            .getElementById("navLinks")
-            .classList
-            .remove("active");
-
-    }
-
-
-    /* YEAR */
-
-    const currentYear =
-        new Date().getFullYear();
-
-
-    document.getElementById(
-        "year"
-    ).textContent = currentYear;
-
-
-    document.getElementById(
-        "loginYear"
-    ).textContent = currentYear;
-
-
-    /* START */
-
-    checkLogin();
+);
 
 </script>
 
-
 </body>
-
 </html>
