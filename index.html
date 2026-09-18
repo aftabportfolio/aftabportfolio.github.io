@@ -3,3750 +3,598 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Aftab Ahmed | Business Administration & Development</title>
-
 <meta name="description" content="Aftab Ahmed - Business Administration, Business Development, Entrepreneurship, Strategy and Growth.">
 
 <style>
-
-/* =========================================================
-   RESET & GLOBAL
-========================================================= */
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
-html{
-    scroll-behavior:smooth;
-    scroll-padding-top:82px;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f4f7fb;
-    color:#172033;
-    overflow-x:hidden;
-}
-
-section{
-    scroll-margin-top:82px;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-button,
-textarea,
-input{
-    font-family:inherit;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-
-/* =========================================================
-   OPENING SCREEN
-========================================================= */
-
-#openingScreen{
-    position:fixed;
-    inset:0;
-    z-index:99999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-        radial-gradient(circle at 20% 20%,rgba(59,130,246,.22),transparent 30%),
-        radial-gradient(circle at 80% 70%,rgba(14,165,233,.18),transparent 30%),
-        #07111f;
-
-    transition:opacity 1s ease,visibility 1s ease;
-}
-
-#openingScreen.hide{
-    opacity:0;
-    visibility:hidden;
-}
-
-.opening-content{
-    position:relative;
-    z-index:2;
-    text-align:center;
-    color:white;
-}
-
-.aa-logo{
-    width:105px;
-    height:105px;
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-    border:2px solid rgba(255,255,255,.75);
-
-    font-size:40px;
-    font-weight:900;
-    letter-spacing:1px;
-
-    box-shadow:0 0 35px rgba(59,130,246,.55);
-
-    animation:logoPulse 2s infinite;
-}
-
-.opening-content h1{
-    margin-top:25px;
-    font-size:34px;
-    letter-spacing:3px;
-}
-
-.opening-content p{
-    margin-top:10px;
-    color:#b9c8dc;
-    font-size:14px;
-}
-
-.loading-line{
-    width:230px;
-    height:3px;
-    margin:28px auto 0;
-
-    overflow:hidden;
-    border-radius:20px;
-
-    background:rgba(255,255,255,.15);
-}
-
-.loading-line span{
-    display:block;
-    width:0;
-    height:100%;
-    background:#3b82f6;
-    animation:loading 2.5s forwards;
-}
-
-@keyframes loading{
-    to{width:100%;}
-}
-
-@keyframes logoPulse{
-    0%,100%{
-        transform:scale(1);
-    }
-    50%{
-        transform:scale(1.06);
-    }
-}
-
-.particle{
-    position:absolute;
-    width:4px;
-    height:4px;
-
-    border-radius:50%;
-    background:#60a5fa;
-
-    opacity:.5;
-
-    animation:particleMove 7s linear infinite;
-}
-
-.p1{left:10%;top:80%;}
-.p2{left:25%;top:20%;animation-delay:1s;}
-.p3{left:48%;top:75%;animation-delay:2s;}
-.p4{left:72%;top:25%;animation-delay:3s;}
-.p5{left:90%;top:70%;animation-delay:4s;}
-.p6{left:55%;top:10%;animation-delay:2.5s;}
-
-@keyframes particleMove{
-    0%{
-        transform:translateY(0);
-        opacity:0;
-    }
-    30%{
-        opacity:.7;
-    }
-    100%{
-        transform:translateY(-300px);
-        opacity:0;
-    }
-}
-
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
-#loginScreen{
-    position:fixed;
-    inset:0;
-    z-index:9999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
-        linear-gradient(135deg,#07111f,#10233d,#0b1729);
-}
-
-.login-box{
-    width:90%;
-    max-width:410px;
-
-    padding:40px 32px;
-
-    border-radius:22px;
-
-    background:rgba(255,255,255,.08);
-    border:1px solid rgba(255,255,255,.15);
-
-    backdrop-filter:blur(20px);
-
-    color:white;
-
-    box-shadow:0 30px 80px rgba(0,0,0,.35);
-}
-
-.login-logo{
-    width:70px;
-    height:70px;
-    margin:0 auto 20px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-    border:2px solid #60a5fa;
-
-    font-size:27px;
-    font-weight:bold;
-
-    box-shadow:0 0 25px rgba(59,130,246,.4);
-}
-
-.login-box h2{
-    text-align:center;
-    font-size:28px;
-}
-
-.login-box p{
-    margin:8px 0 25px;
-    text-align:center;
-    color:#b8c5d6;
-}
-
-.login-box input{
-    width:100%;
-
-    padding:14px 16px;
-    margin:8px 0;
-
-    border:none;
-    outline:none;
-
-    border-radius:10px;
-
-    background:rgba(255,255,255,.12);
-    color:white;
-
-    border:1px solid rgba(255,255,255,.12);
-}
-
-.login-box input::placeholder{
-    color:#aebdd0;
-}
-
-.login-box button{
-    width:100%;
-
-    padding:14px;
-    margin-top:15px;
-
-    border:none;
-    border-radius:10px;
-
-    background:#2563eb;
-    color:white;
-
-    font-size:16px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.login-box button:hover{
-    background:#1d4ed8;
-    transform:translateY(-2px);
-}
-
-#loginError{
-    display:none;
-
-    margin-top:12px;
-
-    text-align:center;
-    color:#fca5a5;
-}
-
-
-/* =========================================================
-   MAIN
-========================================================= */
-
-#mainWebsite{
-    display:none;
-}
-
-
-/* =========================================================
-   NAVBAR
-========================================================= */
-
-.navbar{
-    position:sticky;
-    top:0;
-    z-index:5000;
-
-    background:rgba(255,255,255,.94);
-
-    backdrop-filter:blur(15px);
-
-    border-bottom:1px solid #e4eaf2;
-
-    box-shadow:0 5px 20px rgba(15,23,42,.06);
-}
-
-.nav-inner{
-    width:92%;
-    max-width:1250px;
-    min-height:76px;
-
-    margin:auto;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:25px;
-    font-weight:900;
-}
-
-.logo span{
-    color:#2563eb;
-}
-
-.nav-links{
-    display:flex;
-    align-items:center;
-    gap:5px;
-
-    list-style:none;
-}
-
-.nav-links a{
-    display:block;
-
-    padding:11px 12px;
-
-    border-radius:9px;
-
-    color:#334155;
-
-    font-size:13px;
-    font-weight:600;
-
-    transition:.25s;
-}
-
-.nav-links a:hover{
-    background:#eff6ff;
-    color:#2563eb;
-}
-
-.menu-toggle{
-    display:none;
-
-    border:none;
-    background:none;
-
-    font-size:28px;
-    cursor:pointer;
-}
-
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.hero{
-    min-height:calc(100vh - 76px);
-
-    display:flex;
-    align-items:center;
-
-    position:relative;
-    overflow:hidden;
-
-    background:
-        radial-gradient(circle at 80% 20%,rgba(59,130,246,.13),transparent 35%),
-        radial-gradient(circle at 20% 80%,rgba(14,165,233,.10),transparent 30%),
-        #f7faff;
-}
-
-.hero-grid{
-    position:absolute;
-    inset:0;
-
-    background-image:
-        linear-gradient(rgba(37,99,235,.04) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(37,99,235,.04) 1px,transparent 1px);
-
-    background-size:45px 45px;
-
-    animation:gridMove 20s linear infinite;
-}
-
-@keyframes gridMove{
-    from{
-        transform:translate(0,0);
-    }
-    to{
-        transform:translate(45px,45px);
-    }
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
-
-    display:grid;
-    grid-template-columns:1.2fr .8fr;
-
-    align-items:center;
-
-    gap:60px;
-}
-
-.hero-text small{
-    display:inline-block;
-
-    padding:8px 13px;
-    margin-bottom:18px;
-
-    border-radius:20px;
-
-    background:#eaf2ff;
-    color:#2563eb;
-
-    font-weight:bold;
-    font-size:12px;
-    letter-spacing:1px;
-}
-
-.hero-text h1{
-    font-size:clamp(42px,6vw,72px);
-    line-height:1.05;
-
-    letter-spacing:-2px;
-}
-
-.hero-text h1 span{
-    color:#2563eb;
-}
-
-.typing{
-    min-height:38px;
-
-    margin-top:20px;
-
-    color:#475569;
-
-    font-size:23px;
-    font-weight:bold;
-}
-
-.cursor{
-    display:inline-block;
-
-    width:2px;
-    height:25px;
-
-    margin-left:4px;
-
-    background:#2563eb;
-
-    animation:blink .8s infinite;
-}
-
-@keyframes blink{
-    50%{opacity:0;}
-}
-
-.hero-description{
-    max-width:650px;
-
-    margin-top:20px;
-
-    color:#64748b;
-
-    line-height:1.8;
-}
-
-.hero-buttons{
-    display:flex;
-    flex-wrap:wrap;
-
-    gap:14px;
-
-    margin-top:30px;
-}
-
-.btn{
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-
-    padding:13px 21px;
-
-    border-radius:10px;
-
-    font-size:14px;
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.btn-primary{
-    background:#2563eb;
-    color:white;
-    border:1px solid #2563eb;
-}
-
-.btn-primary:hover{
-    transform:translateY(-3px);
-    box-shadow:0 12px 25px rgba(37,99,235,.25);
-}
-
-.btn-secondary{
-    border:1px solid #cbd5e1;
-    background:white;
-    color:#172033;
-}
-
-.btn-secondary:hover{
-    border-color:#2563eb;
-    color:#2563eb;
-}
-
-.hero-photo{
-    display:flex;
-    justify-content:center;
-}
-
-.photo-frame{
-    width:330px;
-    height:420px;
-
-    padding:8px;
-
-    border-radius:25px;
-
-    background:linear-gradient(145deg,#2563eb,#38bdf8);
-
-    box-shadow:0 35px 70px rgba(15,23,42,.20);
-
-    transform:rotate(2deg);
-
-    transition:.5s;
-}
-
-.photo-frame:hover{
-    transform:rotate(0deg) translateY(-8px);
-}
-
-.photo-frame img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    border-radius:20px;
-
-    background:#e2e8f0;
-}
-
-
-/* =========================================================
-   SECTIONS
-========================================================= */
-
-.section{
-    padding:100px 0;
-}
-
-.section-light{
-    background:white;
-}
-
-.section-dark{
-    background:#0b1628;
-    color:white;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:55px;
-}
-
-.section-title small{
-    color:#2563eb;
-
-    font-weight:bold;
-    letter-spacing:2px;
-}
-
-.section-title h2{
-    margin-top:10px;
-
-    font-size:clamp(30px,4vw,46px);
-}
-
-.section-title p{
-    max-width:700px;
-
-    margin:15px auto 0;
-
-    color:#64748b;
-
-    line-height:1.7;
-}
-
-.section-dark .section-title p{
-    color:#a8b6ca;
-}
-
-
-/* =========================================================
-   ABOUT
-========================================================= */
-
-.about-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:55px;
-
-    align-items:center;
-}
-
-.about-text h3{
-    margin-bottom:18px;
-
-    font-size:30px;
-}
-
-.about-text p{
-    margin-bottom:16px;
-
-    color:#64748b;
-
-    line-height:1.85;
-}
-
-.about-points{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:15px;
-
-    margin-top:25px;
-}
-
-.about-point{
-    padding:18px;
-
-    background:#f8fafc;
-
-    border:1px solid #e5eaf1;
-
-    border-radius:14px;
-}
-
-.about-point strong{
-    display:block;
-    margin-bottom:5px;
-}
-
-.about-point span{
-    color:#64748b;
-    font-size:13px;
-}
-
-.about-card{
-    padding:35px;
-
-    border-radius:22px;
-
-    background:linear-gradient(145deg,#0b1628,#152b48);
-
-    color:white;
-
-    box-shadow:0 25px 55px rgba(15,23,42,.18);
-}
-
-.about-card h3{
-    margin-bottom:20px;
-    font-size:27px;
-}
-
-.about-card p{
-    color:#b8c7da;
-    line-height:1.8;
-}
-
-.about-stat{
-    display:flex;
-    justify-content:space-between;
-
-    padding:18px 0;
-
-    border-bottom:1px solid rgba(255,255,255,.1);
-}
-
-.about-stat:last-child{
-    border-bottom:none;
-}
-
-.about-stat span:last-child{
-    color:#60a5fa;
-    font-weight:bold;
-}
-
-
-/* =========================================================
-   STRATEGY DASHBOARD
-========================================================= */
-
-.strategy-dashboard{
-    position:relative;
-
-    padding:35px;
-
-    border-radius:25px;
-
-    background:linear-gradient(145deg,#0a1628,#102542);
-
-    overflow:hidden;
-
-    box-shadow:0 30px 70px rgba(0,0,0,.25);
-}
-
-.dashboard-grid{
-    position:absolute;
-    inset:0;
-
-    background-image:
-        linear-gradient(rgba(96,165,250,.08) 1px,transparent 1px),
-        linear-gradient(90deg,rgba(96,165,250,.08) 1px,transparent 1px);
-
-    background-size:35px 35px;
-}
-
-.dashboard-content{
-    position:relative;
-    z-index:2;
-}
-
-.dashboard-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    margin-bottom:30px;
-}
-
-.dashboard-header h3{
-    font-size:25px;
-}
-
-.live-dot{
-    display:flex;
-    align-items:center;
-
-    gap:8px;
-
-    color:#86efac;
-
-    font-size:12px;
-}
-
-.live-dot span{
-    width:8px;
-    height:8px;
-
-    border-radius:50%;
-
-    background:#22c55e;
-
-    animation:livePulse 1.5s infinite;
-}
-
-@keyframes livePulse{
-    50%{
-        opacity:.3;
-        transform:scale(.7);
-    }
-}
-
-.strategy-cards{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
-}
-
-.strategy-card{
-    padding:24px;
-
-    border-radius:16px;
-
-    background:rgba(255,255,255,.07);
-    border:1px solid rgba(255,255,255,.09);
-
-    transition:.3s;
-}
-
-.strategy-card:hover{
-    transform:translateY(-6px);
-    background:rgba(255,255,255,.11);
-}
-
-.strategy-number{
-    color:#60a5fa;
-
-    font-size:12px;
-    font-weight:bold;
-
-    letter-spacing:2px;
-}
-
-.strategy-card h4{
-    margin:12px 0 8px;
-    font-size:20px;
-}
-
-.strategy-card p{
-    color:#9fb0c7;
-
-    line-height:1.6;
-    font-size:13px;
-}
-
-.chart-area{
-    margin-top:25px;
-
-    padding:20px;
-
-    border-radius:15px;
-
-    background:rgba(255,255,255,.05);
-}
-
-.chart-area svg{
-    width:100%;
-    height:180px;
-}
-
-.chart-line{
-    fill:none;
-
-    stroke:#60a5fa;
-    stroke-width:4;
-
-    stroke-dasharray:700;
-    stroke-dashoffset:700;
-
-    animation:drawChart 3s ease forwards;
-}
-
-@keyframes drawChart{
-    to{
-        stroke-dashoffset:0;
-    }
-}
-
-
-/* =========================================================
-   BUSINESS IMAGES
-========================================================= */
-
-.business-image-section{
-    margin-top:45px;
-
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-
-    gap:25px;
-}
-
-.business-image-card{
-    position:relative;
-
-    height:230px;
-
-    overflow:hidden;
-
-    border-radius:16px;
-
-    box-shadow:0 10px 30px rgba(15,23,42,.15);
-}
-
-.business-image-card img{
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    transition:transform .5s ease;
-}
-
-.business-image-card:hover img{
-    transform:scale(1.07);
-}
-
-.business-image-overlay{
-    position:absolute;
-    inset:0;
-
-    display:flex;
-    align-items:flex-end;
-
-    padding:25px;
-
-    color:white;
-
-    background:linear-gradient(
-        transparent,
-        rgba(15,23,42,.88)
-    );
-}
-
-.business-image-overlay h3{
-    font-size:20px;
-}
-
-
-/* =========================================================
-   BUSINESS WORK
-========================================================= */
-
-.work-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-
-    gap:22px;
-}
-
-.work-card{
-    padding:30px;
-
-    background:white;
-
-    border:1px solid #e3e8ef;
-
-    border-radius:18px;
-
-    box-shadow:0 8px 25px rgba(15,23,42,.04);
-
-    transition:.35s;
-}
-
-.work-card:hover{
-    transform:translateY(-8px);
-
-    border-color:#bfdbfe;
-
-    box-shadow:0 20px 45px rgba(15,23,42,.10);
-}
-
-.work-icon{
-    width:52px;
-    height:52px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    margin-bottom:20px;
-
-    border-radius:13px;
-
-    background:#eff6ff;
-    color:#2563eb;
-
-    font-size:20px;
-    font-weight:bold;
-}
-
-.work-card h3{
-    margin-bottom:10px;
-    font-size:20px;
-}
-
-.work-card p{
-    color:#64748b;
-
-    line-height:1.7;
-    font-size:14px;
-}
-
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.skills-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
-}
-
-.skill-box{
-    padding:25px;
-
-    background:#f8fafc;
-
-    border:1px solid #e2e8f0;
-
-    border-radius:15px;
-}
-
-.skill-top{
-    display:flex;
-    justify-content:space-between;
-
-    margin-bottom:12px;
-
-    font-weight:bold;
-}
-
-.skill-top span:last-child{
-    color:#2563eb;
-}
-
-.skill-bar{
-    height:7px;
-
-    overflow:hidden;
-
-    border-radius:20px;
-
-    background:#e2e8f0;
-}
-
-.skill-fill{
-    height:100%;
-
-    border-radius:20px;
-
-    background:linear-gradient(
-        90deg,
-        #2563eb,
-        #38bdf8
-    );
-}
-
-
-/* =========================================================
-   AI LEARNING SECTION
-========================================================= */
-
-.learning-section{
-    background:#f7faff;
-}
-
-.ai-learning-box{
-    max-width:900px;
-
-    margin:0 auto;
-
-    background:white;
-
-    border:1px solid #e2e8f0;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    box-shadow:0 20px 55px rgba(15,23,42,.10);
-}
-
-.ai-header{
-    display:flex;
-    align-items:center;
-
-    gap:15px;
-
-    padding:22px 25px;
-
-    background:#f8fafc;
-
-    border-bottom:1px solid #e2e8f0;
-}
-
-.ai-avatar{
-    width:45px;
-    height:45px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:12px;
-
-    background:#2563eb;
-    color:white;
-
-    font-size:13px;
-    font-weight:bold;
-}
-
-.ai-header h3{
-    margin-bottom:4px;
-    font-size:18px;
-}
-
-.ai-header span{
-    color:#64748b;
-    font-size:13px;
-}
-
-.chat-messages{
-    min-height:220px;
-    max-height:450px;
-
-    padding:25px;
-
-    overflow-y:auto;
-
-    background:white;
-}
-
-.chat-message{
-    display:flex;
-
-    gap:12px;
-
-    margin-bottom:25px;
-
-    animation:messageIn .35s ease;
-}
-
-@keyframes messageIn{
-    from{
-        opacity:0;
-        transform:translateY(8px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.message-avatar{
-    flex-shrink:0;
-
-    width:34px;
-    height:34px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:10px;
-
-    background:#2563eb;
-    color:white;
-
-    font-size:10px;
-    font-weight:bold;
-}
-
-.message-content{
-    max-width:750px;
-
-    padding:14px 17px;
-
-    border-radius:4px 15px 15px 15px;
-
-    background:#f1f5f9;
-
-    color:#334155;
-
-    line-height:1.7;
-
-    font-size:14px;
-}
-
-.user-message{
-    flex-direction:row-reverse;
-}
-
-.user-message .message-avatar{
-    background:#172033;
-}
-
-.user-message .message-content{
-    border-radius:15px 4px 15px 15px;
-
-    background:#2563eb;
-    color:white;
-}
-
-.question-area{
-    display:flex;
-
-    gap:12px;
-
-    padding:20px;
-
-    border-top:1px solid #e2e8f0;
-
-    background:white;
-}
-
-.question-area textarea{
-    flex:1;
-
-    resize:none;
-
-    padding:14px 16px;
-
-    border:1px solid #cbd5e1;
-
-    border-radius:12px;
-
-    outline:none;
-
-    font-size:14px;
-
-    color:#172033;
-
-    transition:.25s;
-}
-
-.question-area textarea:focus{
-    border-color:#2563eb;
-
-    box-shadow:0 0 0 3px rgba(37,99,235,.08);
-}
-
-.ask-ai-button{
-    align-self:flex-end;
-
-    padding:13px 20px;
-
-    border:none;
-
-    border-radius:11px;
-
-    background:#2563eb;
-    color:white;
-
-    font-weight:bold;
-
-    cursor:pointer;
-
-    transition:.3s;
-}
-
-.ask-ai-button:hover{
-    background:#1d4ed8;
-
-    transform:translateY(-2px);
-}
-
-.example-questions{
-    display:flex;
-    align-items:center;
-    flex-wrap:wrap;
-
-    gap:8px;
-
-    padding:0 20px 20px;
-}
-
-.example-questions span{
-    color:#64748b;
-
-    font-size:12px;
-    font-weight:bold;
-}
-
-.example-questions button{
-    padding:7px 11px;
-
-    border:1px solid #dbe3ec;
-
-    border-radius:20px;
-
-    background:#f8fafc;
-
-    color:#475569;
-
-    font-size:12px;
-
-    cursor:pointer;
-
-    transition:.25s;
-}
-
-.example-questions button:hover{
-    border-color:#2563eb;
-
-    color:#2563eb;
-
-    background:#eff6ff;
-}
-
-.typing-answer{
-    color:#64748b;
-    font-style:italic;
-}
-
-
-/* =========================================================
-   DEVELOPMENT
-========================================================= */
-
-.development-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-
-    gap:20px;
-}
-
-.development-card{
-    padding:28px;
-
-    border-radius:18px;
-
-    background:white;
-
-    border:1px solid #e3e8ef;
-}
-
-.development-card h3{
-    margin-bottom:12px;
-}
-
-.development-card p{
-    color:#64748b;
-    line-height:1.7;
-}
-
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.cta{
-    padding:80px 0;
-
-    background:linear-gradient(
-        135deg,
-        #0b1628,
-        #15365d
-    );
-
-    color:white;
-}
-
-.cta-content{
-    max-width:850px;
-
-    margin:auto;
-
-    text-align:center;
-}
-
-.cta h2{
-    font-size:clamp(32px,5vw,52px);
-}
-
-.cta p{
-    margin:18px auto 28px;
-
-    color:#b8c7da;
-
-    line-height:1.8;
-}
-
-
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact-grid{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-
-    gap:35px;
-}
-
-.contact-card{
-    padding:32px;
-
-    background:white;
-
-    border-radius:18px;
-
-    border:1px solid #e2e8f0;
-}
-
-.contact-card h3{
-    margin-bottom:20px;
-}
-
-.contact-item{
-    padding:16px 0;
-
-    border-bottom:1px solid #e8edf3;
-}
-
-.contact-item:last-child{
-    border-bottom:none;
-}
-
-.contact-item strong{
-    display:block;
-    margin-bottom:5px;
-}
-
-.contact-item a{
-    color:#2563eb;
-    word-break:break-word;
-}
-
-.contact-note{
-    padding:35px;
-
-    border-radius:20px;
-
-    background:#eff6ff;
-
-    border:1px solid #dbeafe;
-}
-
-.contact-note h3{
-    margin-bottom:15px;
-    font-size:28px;
-}
-
-.contact-note p{
-    color:#64748b;
-    line-height:1.8;
-}
-
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-footer{
-    padding:30px 0;
-
-    background:#07111f;
-
-    color:#94a3b8;
-
-    text-align:center;
-
-    font-size:13px;
-}
-
-footer strong{
-    color:white;
-}
-
-
-/* =========================================================
-   FLOATING BUTTONS
-========================================================= */
-
-.whatsapp-float{
-    position:fixed;
-
-    right:22px;
-    bottom:22px;
-
-    z-index:4000;
-
-    width:58px;
-    height:58px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#25D366;
-    color:white;
-
-    font-size:25px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.20);
-
-    transition:.3s;
-}
-
-.whatsapp-float:hover{
-    transform:scale(1.08);
-}
-
-#scrollTop{
-    position:fixed;
-
-    right:25px;
-    bottom:95px;
-
-    z-index:3999;
-
-    width:45px;
-    height:45px;
-
-    display:none;
-
-    border:none;
-    border-radius:50%;
-
-    background:#172033;
-    color:white;
-
-    cursor:pointer;
-
-    font-size:18px;
-}
-
-#scrollTop.show{
-    display:block;
-}
-
-
-/* =========================================================
-   REVEAL
-========================================================= */
-
-.reveal{
-    opacity:0;
-
-    transform:translateY(35px);
-
-    transition:
-        opacity .8s ease,
-        transform .8s ease;
-}
-
-.reveal.visible{
-    opacity:1;
-
-    transform:translateY(0);
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:82px}
+body{font-family:Arial,Helvetica,sans-serif;background:#f4f7fb;color:#172033;overflow-x:hidden}
+section{scroll-margin-top:82px}
+a{text-decoration:none;color:inherit}
+button,textarea,input{font-family:inherit}
+.container{width:90%;max-width:1200px;margin:auto}
+
+/* OPENING */
+#openingScreen{position:fixed;inset:0;z-index:99999;display:flex;align-items:center;justify-content:center;overflow:hidden;background:#07111f;transition:opacity .35s ease,visibility .35s ease}
+#openingScreen.hide{opacity:0;visibility:hidden;pointer-events:none}
+.opening-office-bg{position:absolute;inset:0;background-image:url("https://images.pexels.com/photos/36766669/pexels-photo-36766669.jpeg");background-size:cover;background-position:center;filter:brightness(.48) saturate(.9);transform:scale(1.03)}
+.opening-office-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(7,17,31,.78),rgba(15,43,75,.55),rgba(7,17,31,.82))}
+.opening-content{position:relative;z-index:2;text-align:center;color:white;padding:30px}
+.aa-logo{width:105px;height:105px;margin:auto;display:flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid rgba(255,255,255,.85);font-size:40px;font-weight:900;letter-spacing:1px;box-shadow:0 0 35px rgba(59,130,246,.65);animation:logoPulse 1.6s infinite}
+.opening-content h1{margin-top:25px;font-size:clamp(28px,5vw,44px);letter-spacing:3px;text-shadow:0 3px 20px rgba(0,0,0,.4)}
+.opening-content p{margin-top:10px;color:#dbeafe;font-size:14px}
+@keyframes logoPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+.particle{position:absolute;width:4px;height:4px;border-radius:50%;background:#60a5fa;opacity:.5;animation:particleMove 7s linear infinite}
+.p1{left:10%;top:80%}.p2{left:25%;top:20%;animation-delay:1s}.p3{left:48%;top:75%;animation-delay:2s}.p4{left:72%;top:25%;animation-delay:3s}.p5{left:90%;top:70%;animation-delay:4s}.p6{left:55%;top:10%;animation-delay:2.5s}
+@keyframes particleMove{0%{transform:translateY(0);opacity:0}30%{opacity:.7}100%{transform:translateY(-300px);opacity:0}}
+
+/* LOGIN */
+#loginScreen{position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#07111f,#10233d,#0b1729)}
+.login-box{width:90%;max-width:410px;padding:40px 32px;border-radius:22px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(20px);color:white;box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.login-logo{width:70px;height:70px;margin:0 auto 20px;display:flex;align-items:center;justify-content:center;border-radius:50%;border:2px solid #60a5fa;font-size:27px;font-weight:bold;box-shadow:0 0 25px rgba(59,130,246,.4)}
+.login-box h2{text-align:center;font-size:28px}.login-box p{margin:8px 0 25px;text-align:center;color:#b8c5d6}
+.login-box input{width:100%;padding:14px 16px;margin:8px 0;border:none;outline:none;border-radius:10px;background:rgba(255,255,255,.12);color:white;border:1px solid rgba(255,255,255,.12)}
+.login-box input::placeholder{color:#aebdd0}
+.login-box button{width:100%;padding:14px;margin-top:15px;border:none;border-radius:10px;background:#2563eb;color:white;font-size:16px;font-weight:bold;cursor:pointer;transition:.3s}
+.login-box button:hover{background:#1d4ed8;transform:translateY(-2px)}
+#loginError{display:none;margin-top:12px;text-align:center;color:#fca5a5}
+#mainWebsite{display:none}
+
+/* NAV */
+.navbar{position:sticky;top:0;z-index:5000;background:rgba(255,255,255,.94);backdrop-filter:blur(15px);border-bottom:1px solid #e4eaf2;box-shadow:0 5px 20px rgba(15,23,42,.06)}
+.nav-inner{width:92%;max-width:1250px;min-height:76px;margin:auto;display:flex;align-items:center;justify-content:space-between}
+.logo{font-size:25px;font-weight:900;white-space:nowrap}.logo span{color:#2563eb}
+.nav-links{display:flex;align-items:center;gap:5px;list-style:none}
+.nav-links a{display:block;padding:11px 12px;border-radius:9px;color:#334155;font-size:13px;font-weight:600;transition:.25s}
+.nav-links a:hover{background:#eff6ff;color:#2563eb}
+.menu-toggle{display:none;border:none;background:none;font-size:28px;cursor:pointer}
+
+/* HERO */
+.hero{min-height:calc(100vh - 76px);display:flex;align-items:center;position:relative;overflow:hidden;background:radial-gradient(circle at 80% 20%,rgba(59,130,246,.13),transparent 35%),radial-gradient(circle at 20% 80%,rgba(14,165,233,.10),transparent 30%),#f7faff}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,.04) 1px,transparent 1px);background-size:45px 45px;animation:gridMove 20s linear infinite}
+@keyframes gridMove{from{transform:translate(0,0)}to{transform:translate(45px,45px)}}
+.hero-content{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:60px}
+.hero-text small{display:inline-block;padding:8px 13px;margin-bottom:18px;border-radius:20px;background:#eaf2ff;color:#2563eb;font-weight:bold;font-size:12px;letter-spacing:1px}
+.hero-text h1{font-size:clamp(42px,6vw,72px);line-height:1.05;letter-spacing:-2px}.hero-text h1 span{color:#2563eb}
+.typing{min-height:38px;margin-top:20px;color:#475569;font-size:23px;font-weight:bold}
+.cursor{display:inline-block;width:2px;height:25px;margin-left:4px;background:#2563eb;animation:blink .8s infinite}
+@keyframes blink{50%{opacity:0}}
+.hero-description{max-width:650px;margin-top:20px;color:#64748b;line-height:1.8}
+.hero-buttons{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:10px;font-size:14px;font-weight:bold;cursor:pointer;transition:.3s}
+.btn-primary{background:#2563eb;color:white;border:1px solid #2563eb}.btn-primary:hover{transform:translateY(-3px);box-shadow:0 12px 25px rgba(37,99,235,.25)}
+.btn-secondary{border:1px solid #cbd5e1;background:white;color:#172033}.btn-secondary:hover{border-color:#2563eb;color:#2563eb}
+.hero-photo{display:flex;justify-content:center}
+.photo-frame{width:330px;height:420px;padding:8px;border-radius:25px;background:linear-gradient(145deg,#2563eb,#38bdf8);box-shadow:0 35px 70px rgba(15,23,42,.20);transform:rotate(2deg);transition:.5s}
+.photo-frame:hover{transform:rotate(0deg) translateY(-8px)}
+.photo-frame img{width:100%;height:100%;object-fit:cover;border-radius:20px;background:#e2e8f0;display:block}
+
+/* SECTIONS */
+.section{padding:100px 0}.section-light{background:white}.section-dark{background:#0b1628;color:white}
+.section-title{text-align:center;margin-bottom:55px}.section-title small{color:#2563eb;font-weight:bold;letter-spacing:2px}
+.section-title h2{margin-top:10px;font-size:clamp(30px,4vw,46px)}.section-title p{max-width:700px;margin:15px auto 0;color:#64748b;line-height:1.7}
+.section-dark .section-title p{color:#a8b6ca}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-text h3{margin-bottom:18px;font-size:30px}.about-text p{margin-bottom:16px;color:#64748b;line-height:1.85}
+.about-points{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:25px}
+.about-point{padding:18px;background:#f8fafc;border:1px solid #e5eaf1;border-radius:14px}.about-point strong{display:block;margin-bottom:5px}.about-point span{color:#64748b;font-size:13px}
+.about-card{padding:35px;border-radius:22px;background:linear-gradient(145deg,#0b1628,#152b48);color:white;box-shadow:0 25px 55px rgba(15,23,42,.18)}
+.about-card h3{margin-bottom:20px;font-size:27px}.about-card p{color:#b8c7da;line-height:1.8}
+.about-stat{display:flex;justify-content:space-between;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.1)}.about-stat:last-child{border-bottom:none}.about-stat span:last-child{color:#60a5fa;font-weight:bold}
+
+/* STRATEGY */
+.strategy-dashboard{position:relative;padding:35px;border-radius:25px;background:linear-gradient(145deg,#0a1628,#102542);overflow:hidden;box-shadow:0 30px 70px rgba(0,0,0,.25)}
+.dashboard-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(96,165,250,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(96,165,250,.08) 1px,transparent 1px);background-size:35px 35px}
+.dashboard-content{position:relative;z-index:2}.dashboard-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px}.dashboard-header h3{font-size:25px}
+.live-dot{display:flex;align-items:center;gap:8px;color:#86efac;font-size:12px}.live-dot span{width:8px;height:8px;border-radius:50%;background:#22c55e;animation:livePulse 1.5s infinite}
+@keyframes livePulse{50%{opacity:.3;transform:scale(.7)}}
+.strategy-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.strategy-card{padding:24px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.09);transition:.3s}
+.strategy-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.11)}
+.strategy-number{color:#60a5fa;font-size:12px;font-weight:bold;letter-spacing:2px}.strategy-card h4{margin:12px 0 8px;font-size:20px}.strategy-card p{color:#9fb0c7;line-height:1.6;font-size:13px}
+.chart-area{margin-top:25px;padding:20px;border-radius:15px;background:rgba(255,255,255,.05)}.chart-area svg{width:100%;height:180px}
+.chart-line{fill:none;stroke:#60a5fa;stroke-width:4;stroke-dasharray:700;stroke-dashoffset:700;animation:drawChart 3s ease forwards}
+@keyframes drawChart{to{stroke-dashoffset:0}}
+
+/* BUSINESS IMAGES */
+.business-image-section{margin-top:45px;display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.business-image-card{position:relative;height:230px;overflow:hidden;border-radius:16px;box-shadow:0 10px 30px rgba(15,23,42,.15)}
+.business-image-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}.business-image-card:hover img{transform:scale(1.07)}
+.business-image-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;padding:25px;color:white;background:linear-gradient(transparent,rgba(15,23,42,.88))}.business-image-overlay h3{font-size:20px}
+
+/* BUSINESS WORK */
+.work-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.work-card{padding:30px;background:white;border:1px solid #e3e8ef;border-radius:18px;box-shadow:0 8px 25px rgba(15,23,42,.04);transition:.35s}
+.work-card:hover{transform:translateY(-8px);border-color:#bfdbfe;box-shadow:0 20px 45px rgba(15,23,42,.10)}
+.work-icon{width:52px;height:52px;display:flex;align-items:center;justify-content:center;margin-bottom:20px;border-radius:13px;background:#eff6ff;color:#2563eb;font-size:20px;font-weight:bold}
+.work-card h3{margin-bottom:10px;font-size:20px}.work-card p{color:#64748b;line-height:1.7;font-size:14px}
+
+/* SKILLS */
+.skills-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.skill-box{padding:25px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:15px}
+.skill-top{display:flex;justify-content:space-between;margin-bottom:12px;font-weight:bold}.skill-top span:last-child{color:#2563eb}.skill-bar{height:7px;overflow:hidden;border-radius:20px;background:#e2e8f0}.skill-fill{height:100%;border-radius:20px;background:linear-gradient(90deg,#2563eb,#38bdf8)}
+
+/* LEARNING */
+.learning-section{background:#f7faff}.ai-learning-box{max-width:900px;margin:0 auto;background:white;border:1px solid #e2e8f0;border-radius:22px;overflow:hidden;box-shadow:0 20px 55px rgba(15,23,42,.10)}
+.ai-header{display:flex;align-items:center;gap:15px;padding:22px 25px;background:#f8fafc;border-bottom:1px solid #e2e8f0}
+.ai-avatar{width:45px;height:45px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:#2563eb;color:white;font-size:13px;font-weight:bold}
+.ai-header h3{margin-bottom:4px;font-size:18px}.ai-header span{color:#64748b;font-size:13px}
+.chat-messages{min-height:220px;max-height:450px;padding:25px;overflow-y:auto;background:white}.chat-message{display:flex;gap:12px;margin-bottom:25px;animation:messageIn .35s ease}
+@keyframes messageIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+.message-avatar{flex-shrink:0;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:10px;background:#2563eb;color:white;font-size:10px;font-weight:bold}
+.message-content{max-width:750px;padding:14px 17px;border-radius:4px 15px 15px 15px;background:#f1f5f9;color:#334155;line-height:1.7;font-size:14px}
+.user-message{flex-direction:row-reverse}.user-message .message-avatar{background:#172033}.user-message .message-content{border-radius:15px 4px 15px 15px;background:#2563eb;color:white}
+.question-area{display:flex;gap:12px;padding:20px;border-top:1px solid #e2e8f0;background:white}
+.question-area textarea{flex:1;resize:none;padding:14px 16px;border:1px solid #cbd5e1;border-radius:12px;outline:none;font-size:14px;color:#172033;transition:.25s}
+.question-area textarea:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.08)}
+.ask-ai-button{align-self:flex-end;padding:13px 20px;border:none;border-radius:11px;background:#2563eb;color:white;font-weight:bold;cursor:pointer;transition:.3s}.ask-ai-button:hover{background:#1d4ed8;transform:translateY(-2px)}
+.example-questions{display:flex;align-items:center;flex-wrap:wrap;gap:8px;padding:0 20px 20px}.example-questions span{color:#64748b;font-size:12px;font-weight:bold}
+.example-questions button{padding:7px 11px;border:1px solid #dbe3ec;border-radius:20px;background:#f8fafc;color:#475569;font-size:12px;cursor:pointer;transition:.25s}
+.example-questions button:hover{border-color:#2563eb;color:#2563eb;background:#eff6ff}.typing-answer{color:#64748b;font-style:italic}
+
+/* DEVELOPMENT */
+.development-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.development-card{padding:28px;border-radius:18px;background:white;border:1px solid #e3e8ef}.development-card h3{margin-bottom:12px}.development-card p{color:#64748b;line-height:1.7}
+
+/* CTA */
+.cta{padding:80px 0;background:linear-gradient(135deg,#0b1628,#15365d);color:white}.cta-content{max-width:850px;margin:auto;text-align:center}.cta h2{font-size:clamp(32px,5vw,52px)}.cta p{margin:18px auto 28px;color:#b8c7da;line-height:1.8}
+
+/* CONTACT */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px}.contact-card{padding:32px;background:white;border-radius:18px;border:1px solid #e2e8f0}.contact-card h3{margin-bottom:20px}
+.contact-item{padding:16px 0;border-bottom:1px solid #e8edf3}.contact-item:last-child{border-bottom:none}.contact-item strong{display:block;margin-bottom:5px}.contact-item a{color:#2563eb;word-break:break-word}
+.contact-note{padding:35px;border-radius:20px;background:#eff6ff;border:1px solid #dbeafe}.contact-note h3{margin-bottom:15px;font-size:28px}.contact-note p{color:#64748b;line-height:1.8}
+
+/* FOOTER */
+footer{padding:30px 0;background:#07111f;color:#94a3b8;text-align:center;font-size:13px}footer strong{color:white}
+
+/* FLOATING */
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:4000;width:58px;height:58px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#25D366;color:white;font-size:25px;box-shadow:0 10px 30px rgba(0,0,0,.20);transition:.3s}.whatsapp-float:hover{transform:scale(1.08)}
+#scrollTop{position:fixed;right:25px;bottom:95px;z-index:3999;width:45px;height:45px;display:none;border:none;border-radius:50%;background:#172033;color:white;cursor:pointer;font-size:18px}#scrollTop.show{display:block}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(35px);transition:opacity .8s ease,transform .8s ease}.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media print{
+#openingScreen,#loginScreen,.navbar,.whatsapp-float,#scrollTop,.hero-buttons{display:none!important}
+#mainWebsite{display:block!important}
+body{background:white}
+.section{padding:45px 0}
+}
+
+/* MOBILE */
 @media(max-width:950px){
-
-    .nav-links{
-        position:absolute;
-
-        top:76px;
-        left:0;
-        right:0;
-
-        display:none;
-
-        flex-direction:column;
-
-        padding:15px;
-
-        background:white;
-
-        border-bottom:1px solid #e2e8f0;
-
-        box-shadow:0 15px 25px rgba(15,23,42,.08);
-    }
-
-    .nav-links.active{
-        display:flex;
-    }
-
-    .nav-links a{
-        text-align:center;
-    }
-
-    .menu-toggle{
-        display:block;
-    }
-
-    .hero-content{
-        grid-template-columns:1fr;
-
-        gap:40px;
-
-        padding:70px 0;
-
-        text-align:center;
-    }
-
-    .hero-description{
-        margin-left:auto;
-        margin-right:auto;
-    }
-
-    .hero-buttons{
-        justify-content:center;
-    }
-
-    .about-grid,
-    .contact-grid{
-        grid-template-columns:1fr;
-    }
-
-    .work-grid,
-    .skills-grid,
-    .development-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .business-image-section{
-        grid-template-columns:1fr;
-    }
+.nav-links{position:absolute;top:76px;left:0;right:0;display:none;flex-direction:column;padding:15px;background:white;border-bottom:1px solid #e2e8f0;box-shadow:0 15px 25px rgba(15,23,42,.08)}
+.nav-links.active{display:flex}.nav-links a{text-align:center}.menu-toggle{display:block}
+.hero-content{grid-template-columns:1fr;gap:40px;padding:70px 0;text-align:center}.hero-description{margin-left:auto;margin-right:auto}.hero-buttons{justify-content:center}
+.about-grid,.contact-grid{grid-template-columns:1fr}.work-grid,.skills-grid,.development-grid{grid-template-columns:repeat(2,1fr)}.business-image-section{grid-template-columns:1fr}
 }
-
 @media(max-width:600px){
-
-    .section{
-        padding:75px 0;
-    }
-
-    .hero-text h1{
-        font-size:43px;
-    }
-
-    .typing{
-        font-size:18px;
-    }
-
-    .photo-frame{
-        width:280px;
-        height:355px;
-    }
-
-    .work-grid,
-    .skills-grid,
-    .development-grid,
-    .strategy-cards{
-        grid-template-columns:1fr;
-    }
-
-    .about-points{
-        grid-template-columns:1fr;
-    }
-
-    .strategy-dashboard{
-        padding:22px;
-    }
-
-    .dashboard-header{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:10px;
-    }
-
-    .question-area{
-        flex-direction:column;
-    }
-
-    .ask-ai-button{
-        width:100%;
-    }
-
-    .login-box{
-        padding:32px 22px;
-    }
+.section{padding:75px 0}.hero-text h1{font-size:43px}.typing{font-size:18px}.photo-frame{width:280px;height:355px}
+.work-grid,.skills-grid,.development-grid,.strategy-cards{grid-template-columns:1fr}.about-points{grid-template-columns:1fr}.strategy-dashboard{padding:22px}
+.dashboard-header{flex-direction:column;align-items:flex-start;gap:10px}.question-area{flex-direction:column}.ask-ai-button{width:100%}.login-box{padding:32px 22px}
 }
-
 </style>
 </head>
 
 <body>
 
-
-<!-- =========================================================
-     OPENING
-========================================================= -->
-
 <div id="openingScreen">
-
-    <div class="particle p1"></div>
-    <div class="particle p2"></div>
-    <div class="particle p3"></div>
-    <div class="particle p4"></div>
-    <div class="particle p5"></div>
-    <div class="particle p6"></div>
-
-    <div class="opening-content">
-
-        <div class="aa-logo">AA</div>
-
-        <h1>AFTAB AHMED</h1>
-
-        <p>
-            Business Administration • Development • Entrepreneurship
-        </p>
-
-        <div class="loading-line">
-            <span></span>
-        </div>
-
-    </div>
-
+  <div class="opening-office-bg"></div>
+  <div class="opening-office-overlay"></div>
+  <div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div>
+  <div class="particle p4"></div><div class="particle p5"></div><div class="particle p6"></div>
+  <div class="opening-content">
+    <div class="aa-logo">AA</div>
+    <h1>AFTAB AHMED</h1>
+    <p>Business Administration • Development • Entrepreneurship</p>
+  </div>
 </div>
-
-
-<!-- =========================================================
-     LOGIN
-========================================================= -->
 
 <div id="loginScreen">
-
-    <div class="login-box">
-
-        <div class="login-logo">AA</div>
-
-        <h2>Welcome</h2>
-
-        <p>
-            Access Aftab Ahmed's Professional Portfolio
-        </p>
-
-        <input
-            type="text"
-            id="username"
-            placeholder="Username"
-            autocomplete="username"
-        >
-
-        <input
-            type="password"
-            id="password"
-            placeholder="Password"
-            autocomplete="current-password"
-        >
-
-        <button onclick="login()">
-            Enter Portfolio
-        </button>
-
-        <div id="loginError">
-            Incorrect username or password.
-        </div>
-
-    </div>
-
+  <div class="login-box">
+    <div class="login-logo">AA</div>
+    <h2>Welcome</h2>
+    <p>Access Aftab Ahmed's Professional Portfolio</p>
+    <input type="text" id="username" placeholder="Username" autocomplete="username">
+    <input type="password" id="password" placeholder="Password" autocomplete="current-password">
+    <button onclick="login()">Enter Portfolio</button>
+    <div id="loginError">Incorrect username or password.</div>
+  </div>
 </div>
-
-
-<!-- =========================================================
-     MAIN WEBSITE
-========================================================= -->
 
 <div id="mainWebsite">
 
-
-<!-- NAVBAR -->
-
 <header class="navbar">
-
-    <div class="nav-inner">
-
-        <a
-            href="#home"
-            class="logo"
-            onclick="goToSection('home');return false;"
-        >
-            Aftab<span>.</span>
-        </a>
-
-        <button
-            class="menu-toggle"
-            onclick="toggleMenu()"
-            aria-label="Open menu"
-        >
-            ☰
-        </button>
-
-        <ul class="nav-links" id="navLinks">
-
-            <li>
-                <a href="#home"
-                   onclick="goToSection('home');return false;">
-                    Home
-                </a>
-            </li>
-
-            <li>
-                <a href="#about"
-                   onclick="goToSection('about');return false;">
-                    About
-                </a>
-            </li>
-
-            <li>
-                <a href="#strategy"
-                   onclick="goToSection('strategy');return false;">
-                    Strategy
-                </a>
-            </li>
-
-            <li>
-                <a href="#work"
-                   onclick="goToSection('work');return false;">
-                    Business
-                </a>
-            </li>
-
-            <li>
-                <a href="#skills"
-                   onclick="goToSection('skills');return false;">
-                    Skills
-                </a>
-            </li>
-
-            <li>
-                <a href="#learning"
-                   onclick="goToSection('learning');return false;">
-                    Learning
-                </a>
-            </li>
-
-            <li>
-                <a href="#experience"
-                   onclick="goToSection('experience');return false;">
-                    Development
-                </a>
-            </li>
-
-            <li>
-                <a href="#contact"
-                   onclick="goToSection('contact');return false;">
-                    Contact
-                </a>
-            </li>
-
-        </ul>
-
-    </div>
-
+  <div class="nav-inner">
+    <a href="#home" class="logo" onclick="goToSection('home');return false;">Aftab Ahmed<span>.</span></a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="Open menu">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#home" onclick="goToSection('home');return false;">Home</a></li>
+      <li><a href="#about" onclick="goToSection('about');return false;">About</a></li>
+      <li><a href="#strategy" onclick="goToSection('strategy');return false;">Strategy</a></li>
+      <li><a href="#work" onclick="goToSection('work');return false;">Business</a></li>
+      <li><a href="#skills" onclick="goToSection('skills');return false;">Skills</a></li>
+      <li><a href="#learning" onclick="goToSection('learning');return false;">Learning</a></li>
+      <li><a href="#experience" onclick="goToSection('experience');return false;">Development</a></li>
+      <li><a href="#contact" onclick="goToSection('contact');return false;">Contact</a></li>
+    </ul>
+  </div>
 </header>
 
-
-<!-- =========================================================
-     HOME
-========================================================= -->
-
 <section id="home" class="hero">
-
-    <div class="hero-grid"></div>
-
-    <div class="container hero-content">
-
-        <div class="hero-text reveal">
-
-            <small>
-                BUSINESS • STRATEGY • GROWTH
-            </small>
-
-            <h1>
-                Building Ideas
-                <br>
-                Into <span>Business Growth.</span>
-            </h1>
-
-            <div class="typing">
-                <span id="typingText"></span>
-                <span class="cursor"></span>
-            </div>
-
-            <p class="hero-description">
-                A modern professional portfolio focused on business
-                administration, business development, strategic thinking,
-                entrepreneurship, operations and sustainable growth.
-            </p>
-
-            <div class="hero-buttons">
-
-                <a
-                    href="#about"
-                    class="btn btn-primary"
-                    onclick="goToSection('about');return false;"
-                >
-                    Explore My Profile
-                </a>
-
-                <button
-                    class="btn btn-secondary"
-                    onclick="window.print()"
-                >
-                    Download / Print CV
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-photo reveal">
-
-            <div class="photo-frame">
-
-                <img
-                    src="Aftab_Ahmed_Modern_Professional_Portrait.jpeg"
-                    alt="Aftab Ahmed Professional Portrait"
-                >
-
-            </div>
-
-        </div>
-
+  <div class="hero-grid"></div>
+  <div class="container hero-content">
+    <div class="hero-text reveal">
+      <small>BUSINESS • STRATEGY • GROWTH</small>
+      <h1>Building Ideas<br>Into <span>Business Growth.</span></h1>
+      <div class="typing"><span id="typingText"></span><span class="cursor"></span></div>
+      <p class="hero-description">A modern professional portfolio focused on business administration, business development, strategic thinking, entrepreneurship, operations and sustainable growth.</p>
+      <div class="hero-buttons">
+        <a href="#about" class="btn btn-primary" onclick="goToSection('about');return false;">Explore My Profile</a>
+        <button class="btn btn-secondary" onclick="window.print()">Download / Print CV</button>
+      </div>
     </div>
 
+    <div class="hero-photo reveal">
+      <div class="photo-frame">
+        <img src="./Aftab_Ahmed_Modern_Professional_Portrait.jpeg"
+             alt="Aftab Ahmed Professional Portrait"
+             loading="eager"
+             onerror="showPhotoFallback(this)">
+      </div>
+    </div>
+  </div>
 </section>
-
-
-<!-- =========================================================
-     ABOUT
-========================================================= -->
 
 <section id="about" class="section section-light">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <small>ABOUT ME</small>
-
-            <h2>Business Mindset. Growth Focus.</h2>
-
-            <p>
-                Combining administration, communication, strategic
-                thinking and entrepreneurial development to create
-                practical business opportunities.
-            </p>
-
-        </div>
-
-
-        <div class="about-grid">
-
-            <div class="about-text reveal">
-
-                <h3>
-                    Turning Business Challenges Into Opportunities
-                </h3>
-
-                <p>
-                    I am focused on developing a professional path in
-                    business administration, business development and
-                    entrepreneurship.
-                </p>
-
-                <p>
-                    My interests include business operations, strategic
-                    planning, relationship management, market development,
-                    leadership, innovation and sustainable growth.
-                </p>
-
-                <p>
-                    My approach is practical: understand the objective,
-                    organize resources, communicate clearly and continuously
-                    look for better ways to create value.
-                </p>
-
-
-                <div class="about-points">
-
-                    <div class="about-point">
-                        <strong>Business Administration</strong>
-                        <span>
-                            Organization, coordination and operations
-                        </span>
-                    </div>
-
-                    <div class="about-point">
-                        <strong>Business Development</strong>
-                        <span>
-                            Opportunities, relationships and growth
-                        </span>
-                    </div>
-
-                    <div class="about-point">
-                        <strong>Strategic Thinking</strong>
-                        <span>
-                            Planning, analysis and decision support
-                        </span>
-                    </div>
-
-                    <div class="about-point">
-                        <strong>Entrepreneurship</strong>
-                        <span>
-                            Ideas, innovation and value creation
-                        </span>
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <div class="about-card reveal">
-
-                <h3>Professional Focus</h3>
-
-                <p>
-                    Building knowledge and practical capability across
-                    modern business functions.
-                </p>
-
-                <div class="about-stat">
-                    <span>Business Operations</span>
-                    <span>FOCUS</span>
-                </div>
-
-                <div class="about-stat">
-                    <span>Business Development</span>
-                    <span>GROWTH</span>
-                </div>
-
-                <div class="about-stat">
-                    <span>Entrepreneurship</span>
-                    <span>INNOVATION</span>
-                </div>
-
-                <div class="about-stat">
-                    <span>Leadership</span>
-                    <span>PEOPLE</span>
-                </div>
-
-            </div>
-
-        </div>
-
+  <div class="container">
+    <div class="section-title reveal">
+      <small>ABOUT ME</small>
+      <h2>Business Mindset. Growth Focus.</h2>
+      <p>Combining administration, communication, strategic thinking and entrepreneurial development to create practical business opportunities.</p>
     </div>
-
+    <div class="about-grid">
+      <div class="about-text reveal">
+        <h3>Turning Business Challenges Into Opportunities</h3>
+        <p>I am focused on developing a professional path in business administration, business development and entrepreneurship.</p>
+        <p>My interests include business operations, strategic planning, relationship management, market development, leadership, innovation and sustainable growth.</p>
+        <p>My approach is practical: understand the objective, organize resources, communicate clearly and continuously look for better ways to create value.</p>
+        <div class="about-points">
+          <div class="about-point"><strong>Business Administration</strong><span>Organization, coordination and operations</span></div>
+          <div class="about-point"><strong>Business Development</strong><span>Opportunities, relationships and growth</span></div>
+          <div class="about-point"><strong>Strategic Thinking</strong><span>Planning, analysis and decision support</span></div>
+          <div class="about-point"><strong>Entrepreneurship</strong><span>Ideas, innovation and value creation</span></div>
+        </div>
+      </div>
+      <div class="about-card reveal">
+        <h3>Professional Focus</h3>
+        <p>Building knowledge and practical capability across modern business functions.</p>
+        <div class="about-stat"><span>Business Operations</span><span>FOCUS</span></div>
+        <div class="about-stat"><span>Business Development</span><span>GROWTH</span></div>
+        <div class="about-stat"><span>Entrepreneurship</span><span>INNOVATION</span></div>
+        <div class="about-stat"><span>Leadership</span><span>PEOPLE</span></div>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-<!-- =========================================================
-     STRATEGY
-========================================================= -->
 
 <section id="strategy" class="section section-dark">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <small>STRATEGIC THINKING</small>
-
-            <h2>Business Growth Command Center</h2>
-
-            <p>
-                A visual representation of how business ideas can move
-                from discovery to development and sustainable growth.
-            </p>
-
+  <div class="container">
+    <div class="section-title reveal">
+      <small>STRATEGIC THINKING</small>
+      <h2>Business Growth Command Center</h2>
+      <p>A visual representation of how business ideas can move from discovery to development and sustainable growth.</p>
+    </div>
+    <div class="strategy-dashboard reveal">
+      <div class="dashboard-grid"></div>
+      <div class="dashboard-content">
+        <div class="dashboard-header">
+          <h3>Growth Strategy System</h3>
+          <div class="live-dot"><span></span>BUSINESS MODE</div>
         </div>
-
-
-        <div class="strategy-dashboard reveal">
-
-            <div class="dashboard-grid"></div>
-
-            <div class="dashboard-content">
-
-                <div class="dashboard-header">
-
-                    <h3>
-                        Growth Strategy System
-                    </h3>
-
-                    <div class="live-dot">
-                        <span></span>
-                        BUSINESS MODE
-                    </div>
-
-                </div>
-
-
-                <div class="strategy-cards">
-
-                    <div class="strategy-card">
-
-                        <div class="strategy-number">
-                            01 / DISCOVER
-                        </div>
-
-                        <h4>Identify</h4>
-
-                        <p>
-                            Understand markets, customers, challenges,
-                            opportunities and business requirements.
-                        </p>
-
-                    </div>
-
-
-                    <div class="strategy-card">
-
-                        <div class="strategy-number">
-                            02 / DEVELOP
-                        </div>
-
-                        <h4>Build</h4>
-
-                        <p>
-                            Develop practical strategies, relationships,
-                            systems and solutions that create value.
-                        </p>
-
-                    </div>
-
-
-                    <div class="strategy-card">
-
-                        <div class="strategy-number">
-                            03 / GROW
-                        </div>
-
-                        <h4>Scale</h4>
-
-                        <p>
-                            Improve performance, strengthen operations and
-                            pursue sustainable business growth.
-                        </p>
-
-                    </div>
-
-                </div>
-
-
-                <div class="chart-area">
-
-                    <svg
-                        viewBox="0 0 800 180"
-                        preserveAspectRatio="none"
-                    >
-
-                        <polyline
-                            class="chart-line"
-                            points="
-                            0,150
-                            80,135
-                            150,145
-                            220,110
-                            300,120
-                            370,85
-                            440,95
-                            510,60
-                            580,75
-                            650,35
-                            720,50
-                            800,15"
-                        />
-
-                    </svg>
-
-                </div>
-
-            </div>
-
+        <div class="strategy-cards">
+          <div class="strategy-card"><div class="strategy-number">01 / DISCOVER</div><h4>Identify</h4><p>Understand markets, customers, challenges, opportunities and business requirements.</p></div>
+          <div class="strategy-card"><div class="strategy-number">02 / DEVELOP</div><h4>Build</h4><p>Develop practical strategies, relationships, systems and solutions that create value.</p></div>
+          <div class="strategy-card"><div class="strategy-number">03 / GROW</div><h4>Scale</h4><p>Improve performance, strengthen operations and pursue sustainable business growth.</p></div>
         </div>
-
-
-        <div class="business-image-section reveal">
-
-            <div class="business-image-card">
-
-                <img
-                    src="https://images.pexels.com/photos/36766669/pexels-photo-36766669.jpeg"
-                    alt="Business professionals in modern office"
-                >
-
-                <div class="business-image-overlay">
-                    <h3>Business Strategy</h3>
-                </div>
-
-            </div>
-
-
-            <div class="business-image-card">
-
-                <img
-                    src="https://images.pexels.com/photos/36733315/pexels-photo-36733315.jpeg"
-                    alt="Professional business meeting"
-                >
-
-                <div class="business-image-overlay">
-                    <h3>Professional Teamwork</h3>
-                </div>
-
-            </div>
-
-
-            <div class="business-image-card">
-
-                <img
-                    src="https://images.pexels.com/photos/7710156/pexels-photo-7710156.jpeg"
-                    alt="Business team discussing strategy"
-                >
-
-                <div class="business-image-overlay">
-                    <h3>Business Planning</h3>
-                </div>
-
-            </div>
-
+        <div class="chart-area">
+          <svg viewBox="0 0 800 180" preserveAspectRatio="none">
+            <polyline class="chart-line" points="0,150 80,135 150,145 220,110 300,120 370,85 440,95 510,60 580,75 650,35 720,50 800,15"/>
+          </svg>
         </div>
-
+      </div>
     </div>
 
+    <div class="business-image-section reveal">
+      <div class="business-image-card">
+        <img src="https://images.pexels.com/photos/36766669/pexels-photo-36766669.jpeg" alt="Business professionals in modern office">
+        <div class="business-image-overlay"><h3>Business Strategy</h3></div>
+      </div>
+      <div class="business-image-card">
+        <img src="https://images.pexels.com/photos/36733315/pexels-photo-36733315.jpeg" alt="Professional business meeting">
+        <div class="business-image-overlay"><h3>Professional Teamwork</h3></div>
+      </div>
+      <div class="business-image-card">
+        <img src="https://images.pexels.com/photos/7710156/pexels-photo-7710156.jpeg" alt="Business team discussing strategy">
+        <div class="business-image-overlay"><h3>Business Planning</h3></div>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-<!-- =========================================================
-     BUSINESS
-========================================================= -->
 
 <section id="work" class="section section-light">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <small>PROFESSIONAL WORK</small>
-
-            <h2>Business Capabilities</h2>
-
-            <p>
-                Areas of professional interest and development.
-            </p>
-
-        </div>
-
-
-        <div class="work-grid">
-
-
-            <div class="work-card reveal">
-
-                <div class="work-icon">BA</div>
-
-                <h3>Business Administration</h3>
-
-                <p>
-                    Supporting organized business operations,
-                    coordination, documentation, planning and
-                    administrative processes.
-                </p>
-
-            </div>
-
-
-            <div class="work-card reveal">
-
-                <div class="work-icon">BD</div>
-
-                <h3>Business Development</h3>
-
-                <p>
-                    Identifying opportunities, developing professional
-                    relationships and supporting business expansion.
-                </p>
-
-            </div>
-
-
-            <div class="work-card reveal">
-
-                <div class="work-icon">ET</div>
-
-                <h3>Entrepreneurial Thinking</h3>
-
-                <p>
-                    Exploring ideas, opportunities, innovation and
-                    practical approaches to creating business value.
-                </p>
-
-            </div>
-
-
-            <div class="work-card reveal">
-
-                <div class="work-icon">SP</div>
-
-                <h3>Strategic Planning</h3>
-
-                <p>
-                    Understanding objectives, organizing priorities and
-                    developing structured approaches to business challenges.
-                </p>
-
-            </div>
-
-
-            <div class="work-card reveal">
-
-                <div class="work-icon">RM</div>
-
-                <h3>Relationship Management</h3>
-
-                <p>
-                    Building professional communication, teamwork and
-                    productive long-term relationships.
-                </p>
-
-            </div>
-
-
-            <div class="work-card reveal">
-
-                <div class="work-icon">GI</div>
-
-                <h3>Growth & Innovation</h3>
-
-                <p>
-                    Continuously learning new approaches and exploring
-                    improvements that can support business growth.
-                </p>
-
-            </div>
-
-
-        </div>
-
+  <div class="container">
+    <div class="section-title reveal"><small>PROFESSIONAL WORK</small><h2>Business Capabilities</h2><p>Areas of professional interest and development.</p></div>
+    <div class="work-grid">
+      <div class="work-card reveal"><div class="work-icon">BA</div><h3>Business Administration</h3><p>Supporting organized business operations, coordination, documentation, planning and administrative processes.</p></div>
+      <div class="work-card reveal"><div class="work-icon">BD</div><h3>Business Development</h3><p>Identifying opportunities, developing professional relationships and supporting business expansion.</p></div>
+      <div class="work-card reveal"><div class="work-icon">ET</div><h3>Entrepreneurial Thinking</h3><p>Exploring ideas, opportunities, innovation and practical approaches to creating business value.</p></div>
+      <div class="work-card reveal"><div class="work-icon">SP</div><h3>Strategic Planning</h3><p>Understanding objectives, organizing priorities and developing structured approaches to business challenges.</p></div>
+      <div class="work-card reveal"><div class="work-icon">RM</div><h3>Relationship Management</h3><p>Building professional communication, teamwork and productive long-term relationships.</p></div>
+      <div class="work-card reveal"><div class="work-icon">GI</div><h3>Growth & Innovation</h3><p>Continuously learning new approaches and exploring improvements that can support business growth.</p></div>
     </div>
-
+  </div>
 </section>
-
-
-<!-- =========================================================
-     SKILLS
-========================================================= -->
 
 <section id="skills" class="section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <small>CORE SKILLS</small>
-
-            <h2>Professional Skillset</h2>
-
-            <p>
-                Key areas supporting business administration and development.
-            </p>
-
-        </div>
-
-
-        <div class="skills-grid">
-
-            <div class="skill-box reveal">
-
-                <div class="skill-top">
-                    <span>Business Administration</span>
-                    <span>90%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-fill" style="width:90%"></div>
-                </div>
-
-            </div>
-
-
-            <div class="skill-box reveal">
-
-                <div class="skill-top">
-                    <span>Business Development</span>
-                    <span>88%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-fill" style="width:88%"></div>
-                </div>
-
-            </div>
-
-
-            <div class="skill-box reveal">
-
-                <div class="skill-top">
-                    <span>Strategic Planning</span>
-                    <span>85%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-fill" style="width:85%"></div>
-                </div>
-
-            </div>
-
-
-            <div class="skill-box reveal">
-
-                <div class="skill-top">
-                    <span>Communication</span>
-                    <span>92%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-fill" style="width:92%"></div>
-                </div>
-
-            </div>
-
-
-            <div class="skill-box reveal">
-
-                <div class="skill-top">
-                    <span>Problem Solving</span>
-                    <span>88%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-fill" style="width:88%"></div>
-                </div>
-
-            </div>
-
-
-            <div class="skill-box reveal">
-
-                <div class="skill-top">
-                    <span>Growth Mindset</span>
-                    <span>94%</span>
-                </div>
-
-                <div class="skill-bar">
-                    <div class="skill-fill" style="width:94%"></div>
-                </div>
-
-            </div>
-
-        </div>
-
+  <div class="container">
+    <div class="section-title reveal"><small>CORE SKILLS</small><h2>Professional Skillset</h2><p>Key areas supporting business administration and development.</p></div>
+    <div class="skills-grid">
+      <div class="skill-box reveal"><div class="skill-top"><span>Business Administration</span><span>90%</span></div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+      <div class="skill-box reveal"><div class="skill-top"><span>Business Development</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      <div class="skill-box reveal"><div class="skill-top"><span>Strategic Planning</span><span>85%</span></div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+      <div class="skill-box reveal"><div class="skill-top"><span>Communication</span><span>92%</span></div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+      <div class="skill-box reveal"><div class="skill-top"><span>Problem Solving</span><span>88%</span></div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+      <div class="skill-box reveal"><div class="skill-top"><span>Growth Mindset</span><span>94%</span></div><div class="skill-bar"><div class="skill-fill" style="width:94%"></div></div></div>
     </div>
-
+  </div>
 </section>
-
-
-<!-- =========================================================
-     LEARNING — CHATGPT STYLE
-========================================================= -->
 
 <section id="learning" class="section learning-section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <small>AI BUSINESS LEARNING</small>
-
-            <h2>Ask a Business Question</h2>
-
-            <p>
-                Ask questions about business administration,
-                development, strategy, leadership or entrepreneurship.
-            </p>
-
-        </div>
-
-
-        <div class="ai-learning-box reveal">
-
-
-            <!-- AI HEADER -->
-
-            <div class="ai-header">
-
-                <div class="ai-avatar">
-                    AI
-                </div>
-
-                <div>
-
-                    <h3>
-                        Business Learning Assistant
-                    </h3>
-
-                    <span>
-                        Ask a question and explore the answer
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- CHAT -->
-
-            <div id="chatMessages" class="chat-messages">
-
-                <div class="chat-message ai-message">
-
-                    <div class="message-avatar">
-                        AI
-                    </div>
-
-                    <div class="message-content">
-
-                        Hello! 👋
-                        <br><br>
-
-                        I can help you learn about business
-                        administration, business development,
-                        strategy, leadership and entrepreneurship.
-
-                        <br><br>
-
-                        Ask me a business question below.
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-            <!-- QUESTION -->
-
-            <div class="question-area">
-
-                <textarea
-                    id="businessQuestion"
-                    placeholder="Ask your business question..."
-                    rows="3"
-                ></textarea>
-
-                <button
-                    class="ask-ai-button"
-                    onclick="askBusinessAI()"
-                >
-                    Ask AI →
-                </button>
-
-            </div>
-
-
-            <!-- EXAMPLES -->
-
-            <div class="example-questions">
-
-                <span>Try:</span>
-
-                <button
-                    onclick="setQuestion('How can I improve customer retention?')"
-                >
-                    Customer retention
-                </button>
-
-                <button
-                    onclick="setQuestion('How can a small business increase sales?')"
-                >
-                    Increase sales
-                </button>
-
-                <button
-                    onclick="setQuestion('What is business development?')"
-                >
-                    Business development
-                </button>
-
-                <button
-                    onclick="setQuestion('How can I create a business strategy?')"
-                >
-                    Business strategy
-                </button>
-
-            </div>
-
-
-        </div>
-
+  <div class="container">
+    <div class="section-title reveal">
+      <small>AI BUSINESS LEARNING</small>
+      <h2>Ask a Business Question</h2>
+      <p>Ask questions about business administration, development, strategy, leadership or entrepreneurship.</p>
     </div>
-
+    <div class="ai-learning-box reveal">
+      <div class="ai-header">
+        <div class="ai-avatar">AI</div>
+        <div><h3>Business Learning Assistant</h3><span>Ask a question and explore the answer</span></div>
+      </div>
+      <div id="chatMessages" class="chat-messages">
+        <div class="chat-message ai-message">
+          <div class="message-avatar">AI</div>
+          <div class="message-content">Hello! 👋<br><br>I can help you learn about business administration, business development, strategy, leadership and entrepreneurship.<br><br>Ask me a business question below.</div>
+        </div>
+      </div>
+      <div class="question-area">
+        <textarea id="businessQuestion" placeholder="Ask your business question..." rows="3"></textarea>
+        <button class="ask-ai-button" onclick="askBusinessAI()">Ask AI →</button>
+      </div>
+      <div class="example-questions">
+        <span>Try:</span>
+        <button onclick="setQuestion('How can I improve customer retention?')">Customer retention</button>
+        <button onclick="setQuestion('How can a small business increase sales?')">Increase sales</button>
+        <button onclick="setQuestion('What is business development?')">Business development</button>
+        <button onclick="setQuestion('How can I create a business strategy?')">Business strategy</button>
+      </div>
+    </div>
+  </div>
 </section>
-
-
-<!-- =========================================================
-     DEVELOPMENT
-========================================================= -->
 
 <section id="experience" class="section section-light">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <small>PROFESSIONAL DEVELOPMENT</small>
-
-            <h2>My Development Direction</h2>
-
-            <p>
-                A forward-looking path toward business administration,
-                development and entrepreneurship.
-            </p>
-
-        </div>
-
-
-        <div class="development-grid">
-
-            <div class="development-card reveal">
-
-                <h3>
-                    Business Operations
-                </h3>
-
-                <p>
-                    Developing capability in organization, coordination,
-                    administration, documentation and operational support.
-                </p>
-
-            </div>
-
-
-            <div class="development-card reveal">
-
-                <h3>
-                    Business Development
-                </h3>
-
-                <p>
-                    Building skills around opportunity identification,
-                    professional relationships, market awareness and growth.
-                </p>
-
-            </div>
-
-
-            <div class="development-card reveal">
-
-                <h3>
-                    Entrepreneurial Development
-                </h3>
-
-                <p>
-                    Learning to evaluate ideas, understand markets and
-                    develop practical approaches to business creation.
-                </p>
-
-            </div>
-
-        </div>
-
+  <div class="container">
+    <div class="section-title reveal"><small>PROFESSIONAL DEVELOPMENT</small><h2>My Development Direction</h2><p>A forward-looking path toward business administration, development and entrepreneurship.</p></div>
+    <div class="development-grid">
+      <div class="development-card reveal"><h3>Business Operations</h3><p>Developing capability in organization, coordination, administration, documentation and operational support.</p></div>
+      <div class="development-card reveal"><h3>Business Development</h3><p>Building skills around opportunity identification, professional relationships, market awareness and growth.</p></div>
+      <div class="development-card reveal"><h3>Entrepreneurial Development</h3><p>Learning to evaluate ideas, understand markets and develop practical approaches to business creation.</p></div>
     </div>
-
+  </div>
 </section>
-
-
-<!-- =========================================================
-     CTA
-========================================================= -->
 
 <section class="cta">
-
-    <div class="container">
-
-        <div class="cta-content reveal">
-
-            <h2>
-                Let's Build Something With Purpose.
-            </h2>
-
-            <p>
-                Interested in business administration, development,
-                entrepreneurship, strategy or professional collaboration?
-                Let's connect.
-            </p>
-
-            <a
-                href="#contact"
-                class="btn btn-primary"
-                onclick="goToSection('contact');return false;"
-            >
-                Contact Me
-            </a>
-
-        </div>
-
-    </div>
-
+  <div class="container"><div class="cta-content reveal"><h2>Let's Build Something With Purpose.</h2><p>Interested in business administration, development, entrepreneurship, strategy or professional collaboration? Let's connect.</p><a href="#contact" class="btn btn-primary" onclick="goToSection('contact');return false;">Contact Me</a></div></div>
 </section>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
 
 <section id="contact" class="section">
-
-    <div class="container">
-
-        <div class="section-title reveal">
-
-            <small>CONTACT</small>
-
-            <h2>Let's Connect</h2>
-
-            <p>
-                For professional opportunities, collaboration and
-                business discussions.
-            </p>
-
-        </div>
-
-
-        <div class="contact-grid">
-
-
-            <div class="contact-card reveal">
-
-                <h3>
-                    Contact Information
-                </h3>
-
-
-                <div class="contact-item">
-
-                    <strong>Email</strong>
-
-                    <a href="mailto:aftabchib085@gmail.com">
-                        aftabchib085@gmail.com
-                    </a>
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    <strong>LinkedIn</strong>
-
-                    <a
-                        href="https://www.linkedin.com/in/chibaftabg143"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        linkedin.com/in/chibaftabg143
-                    </a>
-
-                </div>
-
-
-                <div class="contact-item">
-
-                    <strong>WhatsApp</strong>
-
-                    <a
-                        href="https://wa.me/971569811547"
-                        target="_blank"
-                        rel="noopener"
-                    >
-                        +971 56 981 1547
-                    </a>
-
-                </div>
-
-            </div>
-
-
-            <div class="contact-note reveal">
-
-                <h3>
-                    Professional Networking
-                </h3>
-
-                <p>
-                    I am interested in connecting with professionals,
-                    businesses and organizations where I can continue
-                    to develop my capabilities in business administration,
-                    business development, strategy and entrepreneurship.
-                </p>
-
-                <br>
-
-                <a
-                    href="mailto:aftabchib085@gmail.com"
-                    class="btn btn-primary"
-                >
-                    Send Email
-                </a>
-
-            </div>
-
-
-        </div>
-
+  <div class="container">
+    <div class="section-title reveal"><small>CONTACT</small><h2>Let's Connect</h2><p>For professional opportunities, collaboration and business discussions.</p></div>
+    <div class="contact-grid">
+      <div class="contact-card reveal">
+        <h3>Contact Information</h3>
+        <div class="contact-item"><strong>Email</strong><a href="mailto:aftabchib085@gmail.com">aftabchib085@gmail.com</a></div>
+        <div class="contact-item"><strong>LinkedIn</strong><a href="https://www.linkedin.com/in/chibaftabg143" target="_blank" rel="noopener">linkedin.com/in/chibaftabg143</a></div>
+        <div class="contact-item"><strong>WhatsApp</strong><a href="https://wa.me/971569811547" target="_blank" rel="noopener">+971 56 981 1547</a></div>
+      </div>
+      <div class="contact-note reveal">
+        <h3>Professional Networking</h3>
+        <p>I am interested in connecting with professionals, businesses and organizations where I can continue to develop my capabilities in business administration, business development, strategy and entrepreneurship.</p><br>
+        <a href="mailto:aftabchib085@gmail.com" class="btn btn-primary">Send Email</a>
+      </div>
     </div>
-
+  </div>
 </section>
 
+<footer><div class="container">© 2026 <strong>Aftab Ahmed</strong>. Business Administration • Development • Entrepreneurship</div></footer>
 
-<!-- =========================================================
-     FOOTER
-========================================================= -->
-
-<footer>
-
-    <div class="container">
-
-        © 2026 <strong>Aftab Ahmed</strong>.
-        Business Administration • Development • Entrepreneurship
-
-    </div>
-
-</footer>
-
-
-<!-- WHATSAPP -->
-
-<a
-    href="https://wa.me/971569811547"
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener"
-    aria-label="WhatsApp"
->
-    ☎
-</a>
-
-
-<!-- SCROLL TOP -->
-
-<button
-    id="scrollTop"
-    onclick="window.scrollTo({top:0,behavior:'smooth'})"
-    aria-label="Scroll to top"
->
-    ↑
-</button>
-
+<a href="https://wa.me/971569811547" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">☎</a>
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Scroll to top">↑</button>
 
 </div>
 
-
-<!-- =========================================================
-     JAVASCRIPT
-========================================================= -->
-
 <script>
-
-
-/* =========================================================
-   OPENING
-========================================================= */
-
+/* OPENING */
 window.addEventListener("load",function(){
-
-    setTimeout(function(){
-
-        const opening =
-            document.getElementById("openingScreen");
-
-        if(opening){
-            opening.classList.add("hide");
-        }
-
-    },2800);
-
+  const opening=document.getElementById("openingScreen");
+  if(opening)opening.classList.add("hide");
 });
 
-
-/* =========================================================
-   LOGIN
-========================================================= */
-
+/* LOGIN */
 function login(){
-
-    const username =
-        document.getElementById("username").value.trim();
-
-    const password =
-        document.getElementById("password").value;
-
-    const error =
-        document.getElementById("loginError");
-
-
-    if(
-        username === "aftab" &&
-        password === "12345"
-    ){
-
-        sessionStorage.setItem(
-            "aftabLoggedIn",
-            "true"
-        );
-
-        startWebsite();
-
-    }else{
-
-        error.style.display = "block";
-
-    }
-
+  const username=document.getElementById("username").value.trim();
+  const password=document.getElementById("password").value;
+  const error=document.getElementById("loginError");
+  if(username==="aftab"&&password==="12345"){
+    sessionStorage.setItem("aftabLoggedIn","true");
+    error.style.display="none";
+    startWebsite();
+  }else{error.style.display="block"}
 }
-
-
-/* ENTER TO LOGIN */
 
 document.addEventListener("keydown",function(event){
-
-    if(event.key === "Enter"){
-
-        const loginScreen =
-            document.getElementById("loginScreen");
-
-        if(
-            loginScreen &&
-            loginScreen.style.display !== "none"
-        ){
-
-            login();
-
-        }
-
-    }
-
+  const loginScreen=document.getElementById("loginScreen");
+  if(event.key==="Enter"&&loginScreen&&loginScreen.style.display!=="none"){login()}
 });
 
-
-/* =========================================================
-   START WEBSITE
-========================================================= */
-
+/* START */
 function startWebsite(){
-
-    document.getElementById("loginScreen").style.display =
-        "none";
-
-    document.getElementById("mainWebsite").style.display =
-        "block";
-
-    startTyping();
-
-    revealSections();
-
+  document.getElementById("loginScreen").style.display="none";
+  document.getElementById("mainWebsite").style.display="block";
+  startTyping();
+  revealSections();
 }
-
-
-/* =========================================================
-   CHECK LOGIN
-========================================================= */
-
 window.addEventListener("DOMContentLoaded",function(){
-
-    if(
-        sessionStorage.getItem("aftabLoggedIn")
-        === "true"
-    ){
-
-        startWebsite();
-
-    }
-
+  if(sessionStorage.getItem("aftabLoggedIn")==="true")startWebsite();
 });
 
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
+/* NAVIGATION */
 function goToSection(id){
-
-    const section =
-        document.getElementById(id);
-
-
-    if(!section){
-
-        console.log(
-            "Section not found:",
-            id
-        );
-
-        return;
-
-    }
-
-
-    section.scrollIntoView({
-
-        behavior:"smooth",
-
-        block:"start"
-
-    });
-
-
-    const nav =
-        document.getElementById("navLinks");
-
-
-    if(nav){
-
-        nav.classList.remove("active");
-
-    }
-
+  const section=document.getElementById(id);
+  if(!section){console.log("Section not found:",id);return}
+  section.scrollIntoView({behavior:"smooth",block:"start"});
+  const nav=document.getElementById("navLinks");
+  if(nav)nav.classList.remove("active");
 }
-
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
 function toggleMenu(){
-
-    const nav =
-        document.getElementById("navLinks");
-
-    nav.classList.toggle("active");
-
+  const nav=document.getElementById("navLinks");
+  if(nav)nav.classList.toggle("active");
 }
 
-
-/* =========================================================
-   TYPING EFFECT
-========================================================= */
-
+/* TYPING */
 function startTyping(){
-
-    const typingElement =
-        document.getElementById("typingText");
-
-
-    if(!typingElement){
-        return;
-    }
-
-
-    const words = [
-
-        "Business Administration",
-
-        "Business Development",
-
-        "Entrepreneurial Strategy",
-
-        "Operations & Growth",
-
-        "Leadership & Innovation"
-
-    ];
-
-
-    let wordIndex = 0;
-
-    let characterIndex = 0;
-
-    let deleting = false;
-
-
-    function type(){
-
-        const currentWord =
-            words[wordIndex];
-
-
-        if(!deleting){
-
-            typingElement.textContent =
-                currentWord.substring(
-                    0,
-                    characterIndex + 1
-                );
-
-            characterIndex++;
-
-
-            if(
-                characterIndex ===
-                currentWord.length
-            ){
-
-                deleting = true;
-
-                setTimeout(type,1500);
-
-                return;
-
-            }
-
-        }else{
-
-            typingElement.textContent =
-                currentWord.substring(
-                    0,
-                    characterIndex - 1
-                );
-
-            characterIndex--;
-
-
-            if(characterIndex === 0){
-
-                deleting = false;
-
-                wordIndex =
-                    (wordIndex + 1)
-                    % words.length;
-
-            }
-
-        }
-
-
-        setTimeout(
-            type,
-            deleting ? 45 : 80
-        );
-
-    }
-
-
-    type();
-
-}
-
-
-/* =========================================================
-   SCROLL REVEAL
-========================================================= */
-
-function revealSections(){
-
-    const elements =
-        document.querySelectorAll(".reveal");
-
-
-    function reveal(){
-
-        elements.forEach(function(element){
-
-            const position =
-                element.getBoundingClientRect();
-
-
-            if(
-                position.top <
-                window.innerHeight - 80
-            ){
-
-                element.classList.add("visible");
-
-            }
-
-        });
-
-    }
-
-
-    window.addEventListener(
-        "scroll",
-        reveal
-    );
-
-    reveal();
-
-}
-
-
-/* =========================================================
-   SCROLL TOP
-========================================================= */
-
-window.addEventListener("scroll",function(){
-
-    const button =
-        document.getElementById("scrollTop");
-
-
-    if(window.scrollY > 500){
-
-        button.classList.add("show");
-
+  const typingElement=document.getElementById("typingText");
+  if(!typingElement)return;
+  const words=["Business Administration","Business Development","Entrepreneurial Strategy","Operations & Growth","Leadership & Innovation"];
+  let wordIndex=0,characterIndex=0,deleting=false;
+  function type(){
+    const currentWord=words[wordIndex];
+    if(!deleting){
+      typingElement.textContent=currentWord.substring(0,characterIndex+1);
+      characterIndex++;
+      if(characterIndex===currentWord.length){deleting=true;setTimeout(type,1500);return}
     }else{
-
-        button.classList.remove("show");
-
+      typingElement.textContent=currentWord.substring(0,characterIndex-1);
+      characterIndex--;
+      if(characterIndex===0){deleting=false;wordIndex=(wordIndex+1)%words.length}
     }
+    setTimeout(type,deleting?45:80);
+  }
+  type();
+}
 
-});
+/* REVEAL */
+function revealSections(){
+  const elements=document.querySelectorAll(".reveal");
+  function reveal(){
+    elements.forEach(function(element){
+      const position=element.getBoundingClientRect();
+      if(position.top<window.innerHeight-80)element.classList.add("visible");
+    });
+  }
+  window.addEventListener("scroll",reveal,{passive:true});
+  reveal();
+}
 
+/* SCROLL TOP */
+window.addEventListener("scroll",function(){
+  const button=document.getElementById("scrollTop");
+  if(button){if(window.scrollY>500)button.classList.add("show");else button.classList.remove("show")}
+},{passive:true});
 
-/* =========================================================
-   BUSINESS AI
-========================================================= */
+/* PROFILE IMAGE FALLBACK */
+function showPhotoFallback(img){
+  img.style.display="none";
+  const frame=img.parentElement;
+  if(!frame.querySelector(".photo-fallback")){
+    const fallback=document.createElement("div");
+    fallback.className="photo-fallback";
+    fallback.style.cssText="width:100%;height:100%;border-radius:20px;background:linear-gradient(145deg,#0b1628,#2563eb);display:flex;align-items:center;justify-content:center;color:white;font-size:54px;font-weight:900";
+    fallback.textContent="AA";
+    frame.appendChild(fallback);
+  }
+}
 
+/* BUSINESS AI DEMO */
 function setQuestion(question){
-
-    const input =
-        document.getElementById("businessQuestion");
-
-    input.value = question;
-
-    input.focus();
-
+  const input=document.getElementById("businessQuestion");
+  input.value=question;
+  input.focus();
 }
-
-
-function askBusinessAI(){
-
-    const input =
-        document.getElementById("businessQuestion");
-
-    const question =
-        input.value.trim();
-
-    const chat =
-        document.getElementById("chatMessages");
-
-
-    if(!question){
-
-        input.focus();
-
-        return;
-
-    }
-
-
-    /* USER */
-
-    const userMessage =
-        document.createElement("div");
-
-    userMessage.className =
-        "chat-message user-message";
-
-    userMessage.innerHTML = `
-
-        <div class="message-avatar">
-            YOU
-        </div>
-
-        <div class="message-content">
-            ${escapeHTML(question)}
-        </div>
-
-    `;
-
-    chat.appendChild(userMessage);
-
-
-    input.value = "";
-
-
-    /* THINKING */
-
-    const thinking =
-        document.createElement("div");
-
-    thinking.className =
-        "chat-message";
-
-    thinking.innerHTML = `
-
-        <div class="message-avatar">
-            AI
-        </div>
-
-        <div class="message-content">
-
-            <span class="typing-answer">
-                Thinking about your business question...
-            </span>
-
-        </div>
-
-    `;
-
-    chat.appendChild(thinking);
-
-    chat.scrollTop =
-        chat.scrollHeight;
-
-
-    /* ANSWER */
-
-    setTimeout(function(){
-
-        thinking.remove();
-
-
-        const answer =
-            getBusinessAnswer(question);
-
-
-        const aiMessage =
-            document.createElement("div");
-
-        aiMessage.className =
-            "chat-message";
-
-        aiMessage.innerHTML = `
-
-            <div class="message-avatar">
-                AI
-            </div>
-
-            <div class="message-content">
-                ${answer}
-            </div>
-
-        `;
-
-        chat.appendChild(aiMessage);
-
-        chat.scrollTop =
-            chat.scrollHeight;
-
-    },900);
-
-}
-
-
-/* =========================================================
-   BUSINESS ANSWERS
-========================================================= */
-
-function getBusinessAnswer(question){
-
-    const q =
-        question.toLowerCase();
-
-
-    if(
-        q.includes("customer") ||
-        q.includes("retention")
-    ){
-
-        return `
-
-            <strong>Customer Retention</strong>
-
-            <br><br>
-
-            To improve customer retention, focus on
-            understanding why customers stay or leave.
-
-            <br><br>
-
-            <strong>1.</strong> Improve customer service.<br>
-            <strong>2.</strong> Follow up after a sale.<br>
-            <strong>3.</strong> Offer consistent quality.<br>
-            <strong>4.</strong> Build long-term relationships.<br>
-            <strong>5.</strong> Ask customers for feedback.
-
-            <br><br>
-
-            <strong>Key lesson:</strong>
-            Customer retention depends on consistently
-            delivering value and building trust.
-
-        `;
-
-    }
-
-
-    if(
-        q.includes("sales") ||
-        q.includes("revenue")
-    ){
-
-        return `
-
-            <strong>Increasing Sales</strong>
-
-            <br><br>
-
-            A business can approach sales growth by
-            improving its offer, reaching the right
-            customers and strengthening its sales process.
-
-            <br><br>
-
-            <strong>1.</strong> Identify the target customer.<br>
-            <strong>2.</strong> Understand their needs.<br>
-            <strong>3.</strong> Improve the value proposition.<br>
-            <strong>4.</strong> Build a consistent sales process.<br>
-            <strong>5.</strong> Measure results and improve.
-
-            <br><br>
-
-            <strong>Key lesson:</strong>
-            Sales growth should be connected to customer
-            value and a measurable sales process.
-
-        `;
-
-    }
-
-
-    if(
-        q.includes("development")
-    ){
-
-        return `
-
-            <strong>Business Development</strong>
-
-            <br><br>
-
-            Business development focuses on identifying
-            opportunities that can create long-term value
-            for an organization.
-
-            <br><br>
-
-            It can involve:
-
-            <br><br>
-
-            • Finding new markets<br>
-            • Building professional relationships<br>
-            • Developing partnerships<br>
-            • Understanding customer needs<br>
-            • Creating growth opportunities
-
-            <br><br>
-
-            <strong>Key lesson:</strong>
-            Business development combines relationships,
-            market understanding and strategic thinking.
-
-        `;
-
-    }
-
-
-    if(
-        q.includes("strategy") ||
-        q.includes("strategic")
-    ){
-
-        return `
-
-            <strong>Business Strategy</strong>
-
-            <br><br>
-
-            A business strategy provides a structured
-            direction for achieving important objectives.
-
-            <br><br>
-
-            Start with:
-
-            <br><br>
-
-            <strong>1.</strong> Define the objective.<br>
-            <strong>2.</strong> Understand the current situation.<br>
-            <strong>3.</strong> Identify opportunities and risks.<br>
-            <strong>4.</strong> Select practical actions.<br>
-            <strong>5.</strong> Measure the results.
-
-            <br><br>
-
-            <strong>Key lesson:</strong>
-            Good strategy connects objectives with
-            practical actions and measurable results.
-
-        `;
-
-    }
-
-
-    if(
-        q.includes("leadership") ||
-        q.includes("leader")
-    ){
-
-        return `
-
-            <strong>Business Leadership</strong>
-
-            <br><br>
-
-            Effective leadership involves creating clarity,
-            communicating expectations and helping people
-            work toward shared objectives.
-
-            <br><br>
-
-            Important areas include:
-
-            <br><br>
-
-            • Communication<br>
-            • Responsibility<br>
-            • Teamwork<br>
-            • Decision-making<br>
-            • Problem solving<br>
-            • Continuous improvement
-
-            <br><br>
-
-            <strong>Key lesson:</strong>
-            Leadership involves direction, communication,
-            responsibility and support for the team.
-
-        `;
-
-    }
-
-
-    if(
-        q.includes("entrepreneur") ||
-        q.includes("startup") ||
-        q.includes("business idea")
-    ){
-
-        return `
-
-            <strong>Entrepreneurship</strong>
-
-            <br><br>
-
-            A strong business idea should begin with a real
-            customer problem or opportunity.
-
-            <br><br>
-
-            A simple process is:
-
-            <br><br>
-
-            <strong>
-                Problem → Customer → Solution → Test → Improve → Grow
-            </strong>
-
-            <br><br>
-
-            Before investing heavily, test whether customers
-            actually value the proposed solution.
-
-            <br><br>
-
-            <strong>Key lesson:</strong>
-            Validate the problem and customer need before
-            investing heavily in a solution.
-
-        `;
-
-    }
-
-
-    if(
-        q.includes("management") ||
-        q.includes("administration")
-    ){
-
-        return `
-
-            <strong>Business Administration</strong>
-
-            <br><br>
-
-            Business administration helps an organization
-            coordinate its people, resources, information
-            and daily activities.
-
-            <br><br>
-
-            Key areas include:
-
-            <br><br>
-
-            • Planning<br>
-            • Organization<br>
-            • Documentation<br>
-            • Communication<br>
-            • Resource management<br>
-            • Performance monitoring
-
-            <br><br>
-
-            <strong>Key lesson:</strong>
-            Strong administration creates structure that
-            supports efficient business operations.
-
-        `;
-
-    }
-
-
-    /* GENERAL ANSWER */
-
-    return `
-
-        <strong>Business Learning Response</strong>
-
-        <br><br>
-
-        Your question is related to an important area
-        of business thinking.
-
-        <br><br>
-
-        A useful way to approach most business questions is:
-
-        <br><br>
-
-        <strong>1. Understand the problem</strong><br>
-        Identify what is happening and why it matters.
-
-        <br><br>
-
-        <strong>2. Understand the customer</strong><br>
-        Consider who receives the value and what they need.
-
-        <br><br>
-
-        <strong>3. Identify options</strong><br>
-        Develop several practical approaches before
-        choosing a solution.
-
-        <br><br>
-
-        <strong>4. Take action</strong><br>
-        Select a practical step and test the result.
-
-        <br><br>
-
-        <strong>5. Learn and improve</strong><br>
-        Measure the outcome and use the learning to
-        improve the next decision.
-
-        <br><br>
-
-        <strong>Key lesson:</strong>
-        Good business development comes from continuous
-        learning, action and improvement.
-
-    `;
-
-}
-
-
-/* =========================================================
-   ESCAPE USER INPUT
-========================================================= */
 
 function escapeHTML(text){
-
-    const div =
-        document.createElement("div");
-
-    div.textContent = text;
-
-    return div.innerHTML;
-
+  const div=document.createElement("div");
+  div.textContent=text;
+  return div.innerHTML;
 }
 
+function addChatMessage(type,label,content){
+  const chat=document.getElementById("chatMessages");
+  const message=document.createElement("div");
+  message.className="chat-message"+(type==="user"?" user-message":"");
+  message.innerHTML='<div class="message-avatar">'+label+'</div><div class="message-content">'+content+'</div>';
+  chat.appendChild(message);
+  chat.scrollTop=chat.scrollHeight;
+  return message;
+}
 
-/* ENTER TO ASK */
+function askBusinessAI(){
+  const input=document.getElementById("businessQuestion");
+  const question=input.value.trim();
+  if(!question){input.focus();return}
+  addChatMessage("user","YOU",escapeHTML(question));
+  input.value="";
+  const thinking=addChatMessage("ai","AI",'<span class="typing-answer">Thinking about your business question...</span>');
+  setTimeout(function(){
+    thinking.remove();
+    addChatMessage("ai","AI",getBusinessAnswer(question));
+  },700);
+}
+
+function getBusinessAnswer(question){
+  const q=question.toLowerCase();
+
+  if(q.includes("customer")||q.includes("retention"))return `<strong>Customer Retention</strong><br><br>To improve customer retention, focus on understanding why customers stay or leave.<br><br><strong>1.</strong> Improve customer service.<br><strong>2.</strong> Follow up after a sale.<br><strong>3.</strong> Offer consistent quality.<br><strong>4.</strong> Build long-term relationships.<br><strong>5.</strong> Ask customers for feedback.<br><br><strong>Key lesson:</strong> Customer retention depends on consistently delivering value and building trust.`;
+
+  if(q.includes("sales")||q.includes("revenue"))return `<strong>Increasing Sales</strong><br><br>A business can approach sales growth by improving its offer, reaching the right customers and strengthening its sales process.<br><br><strong>1.</strong> Identify the target customer.<br><strong>2.</strong> Understand their needs.<br><strong>3.</strong> Improve the value proposition.<br><strong>4.</strong> Build a consistent sales process.<br><strong>5.</strong> Measure results and improve.<br><br><strong>Key lesson:</strong> Sales growth should be connected to customer value and a measurable sales process.`;
+
+  if(q.includes("development"))return `<strong>Business Development</strong><br><br>Business development focuses on identifying opportunities that can create long-term value for an organization.<br><br>It can involve:<br><br>• Finding new markets<br>• Building professional relationships<br>• Developing partnerships<br>• Understanding customer needs<br>• Creating growth opportunities<br><br><strong>Key lesson:</strong> Business development combines relationships, market understanding and strategic thinking.`;
+
+  if(q.includes("strategy")||q.includes("strategic"))return `<strong>Business Strategy</strong><br><br>A business strategy provides a structured direction for achieving important objectives.<br><br>Start with:<br><br><strong>1.</strong> Define the objective.<br><strong>2.</strong> Understand the current situation.<br><strong>3.</strong> Identify opportunities and risks.<br><strong>4.</strong> Select practical actions.<br><strong>5.</strong> Measure the results.<br><br><strong>Key lesson:</strong> Good strategy connects objectives with practical actions and measurable results.`;
+
+  if(q.includes("leadership")||q.includes("leader"))return `<strong>Business Leadership</strong><br><br>Effective leadership involves creating clarity, communicating expectations and helping people work toward shared objectives.<br><br>Important areas include:<br><br>• Communication<br>• Responsibility<br>• Teamwork<br>• Decision-making<br>• Problem solving<br>• Continuous improvement<br><br><strong>Key lesson:</strong> Leadership involves direction, communication, responsibility and support for the team.`;
+
+  if(q.includes("entrepreneur")||q.includes("startup")||q.includes("business idea"))return `<strong>Entrepreneurship</strong><br><br>A strong business idea should begin with a real customer problem or opportunity.<br><br>A simple process is:<br><br><strong>Problem → Customer → Solution → Test → Improve → Grow</strong><br><br>Before investing heavily, test whether customers actually value the proposed solution.<br><br><strong>Key lesson:</strong> Validate the problem and customer need before investing heavily in a solution.`;
+
+  if(q.includes("management")||q.includes("administration"))return `<strong>Business Administration</strong><br><br>Business administration helps an organization coordinate its people, resources, information and daily activities.<br><br>Key areas include:<br><br>• Planning<br>• Organization<br>• Documentation<br>• Communication<br>• Resource management<br>• Performance monitoring<br><br><strong>Key lesson:</strong> Strong administration creates structure that supports efficient business operations.`;
+
+  return `<strong>Business Learning Response</strong><br><br>Your question is related to an important area of business thinking.<br><br>A useful way to approach most business questions is:<br><br><strong>1. Understand the problem</strong><br>Identify what is happening and why it matters.<br><br><strong>2. Understand the customer</strong><br>Consider who receives the value and what they need.<br><br><strong>3. Identify options</strong><br>Develop several practical approaches before choosing a solution.<br><br><strong>4. Take action</strong><br>Select a practical step and test the result.<br><br><strong>5. Learn and improve</strong><br>Measure the outcome and use the learning to improve the next decision.<br><br><strong>Key lesson:</strong> Good business development comes from continuous learning, action and improvement.`;
+}
 
 document.addEventListener("keydown",function(event){
-
-    const input =
-        document.getElementById("businessQuestion");
-
-
-    if(
-        document.activeElement === input &&
-        event.key === "Enter" &&
-        !event.shiftKey
-    ){
-
-        event.preventDefault();
-
-        askBusinessAI();
-
-    }
-
+  const input=document.getElementById("businessQuestion");
+  if(document.activeElement===input&&event.key==="Enter"&&!event.shiftKey){
+    event.preventDefault();
+    askBusinessAI();
+  }
 });
-
-
-/* =========================================================
-   CLOSE MOBILE MENU
-========================================================= */
 
 document.addEventListener("click",function(event){
-
-    const nav =
-        document.getElementById("navLinks");
-
-    const toggle =
-        document.querySelector(".menu-toggle");
-
-
-    if(
-        nav &&
-        nav.classList.contains("active") &&
-        !nav.contains(event.target) &&
-        !toggle.contains(event.target)
-    ){
-
-        nav.classList.remove("active");
-
-    }
-
+  const nav=document.getElementById("navLinks");
+  const toggle=document.querySelector(".menu-toggle");
+  if(nav&&toggle&&nav.classList.contains("active")&&!nav.contains(event.target)&&!toggle.contains(event.target))nav.classList.remove("active");
 });
-
 </script>
 
 </body>
