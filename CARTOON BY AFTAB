@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ToonSpark Cartoon Maker</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#10172a;color:white;font-family:Arial,sans-serif}
+header{padding:18px 25px;background:#19233b;display:flex;justify-content:space-between;align-items:center}
+header h2{margin:0;color:#a99aff}
+main{max-width:1200px;margin:auto;padding:20px;display:grid;grid-template-columns:260px 1fr;gap:20px}
+.panel{background:#19233b;padding:18px;border-radius:14px}
+label{display:block;font-size:12px;color:#bdc6dc;margin:13px 0 6px}
+input,select,textarea{width:100%;padding:11px;border-radius:8px;border:1px solid #394762;background:#10172a;color:white}
+textarea{height:75px}
+button{padding:10px 14px;border:0;border-radius:8px;background:#6958dc;color:white;cursor:pointer;font-weight:bold;margin:3px}
+button:hover{opacity:.85}
+canvas{width:100%;background:#26334d;border-radius:10px;display:block}
+.toolbar{display:flex;flex-wrap:wrap;gap:5px;margin:12px 0}
+.scenes{display:flex;gap:8px;overflow:auto;margin:15px 0}
+.scene{min-width:100px;background:#293653;padding:12px;border-radius:9px;cursor:pointer}
+.active{outline:2px solid #a99aff}
+small{color:#bdc6dc}
+@media(max-width:750px){main{grid-template-columns:1fr;padding:10px}header{padding:15px}}
+</style>
+</head>
+<body>
+
+<header>
+<h2>🎬 ToonSpark</h2>
+<span>FREE CARTOON MAKER · 60 SEC</span>
+</header>
+
+<main>
+<section class="panel">
+<h3>🎨 Cartoon Studio</h3>
+
+<label>Cartoon style</label>
+<select id="style">
+<option>Mixed</option>
+<option>3D</option>
+<option>2D</option>
+<option>Anime</option>
+</select>
+
+<label>Character</label>
+<select id="character">
+<option value="boy">🧒 Happy Boy</option>
+<option value="girl">👧 Happy Girl</option>
+<option value="cat">🐱 Cartoon Cat</option>
+<option value="robot">🤖 Robot</option>
+<option value="dino">🦖 Dinosaur</option>
+<option value="bunny">🐰 Bunny</option>
+</select>
+
+<label>Character name</label>
+<input id="name" value="Alex">
+
+<label>Background</label>
+<select id="background">
+<option value="park">Sunny Park</option>
+<option value="space">Space</option>
+<option value="beach">Beach</option>
+<option value="city">City</option>
+<option value="night">Night</option>
+<option value="castle">Castle</option>
+</select>
+
+<label>Animation</label>
+<select id="motion">
+<option value="bounce">Happy Bounce</option>
+<option value="walk">Walking</option>
+<option value="wave">Wave Hello</option>
+<option value="float">Floating</option>
+</select>
+
+<label>Story / Dialogue</label>
+<textarea id="story">Hello friends! Welcome to my cartoon adventure!</textarea>
+
+<label>Scene duration</label>
+<select id="duration">
+<option value="5">5 seconds</option>
+<option value="8" selected>8 seconds</option>
+<option value="10">10 seconds</option>
+<option value="15">15 seconds</option>
+<option value="20">20 seconds</option>
+</select>
+
+<button onclick="applyScene()">Apply Scene</button>
+<button onclick="addScene()">+ Add Scene</button>
+<button onclick="deleteScene()">Delete Scene</button>
+
+<hr>
+
+<h3>🎙️ Voice</h3>
+<button onclick="speak()">Speak Story</button>
+
+<label>Voice</label>
+<select id="voice"></select>
+
+<hr>
+<button onclick="saveProject()">Save Project</button>
+<label>Load Project</label>
+<input type="file" id="file" accept=".json">
+
+</section>
+
+<section class="panel">
+<h3>🎥 Video Preview</h3>
+
+<canvas id="screen" width="1280" height="720"></canvas>
+
+<div class="toolbar">
+<button onclick="preview()">▶ Preview</button>
+<button onclick="stop()">■ Stop</button>
+<button onclick="previous()">Previous</button>
+<button onclick="next()">Next</button>
+</div>
+
+<div id="info">Scene 1</div>
+
+<h3>📽️ Storyboard</h3>
+<div class="scenes" id="scenes"></div>
+
+<h3>⬇️ Export Video</h3>
+<button onclick="exportVideo()">Download Cartoon Video</button>
+
+<p id="status">Maximum video duration: 60 seconds.</p>
+</section>
+</main>
+
+<script>
+const canvas=document.getElementById("screen");
+const ctx=canvas.getContext("2d");
+
+let scenes=[{
+character:"boy",
+name:"Alex",
+background:"park",
+motion:"bounce",
+story:"Hello friends! Welcome to my cartoon adventure!",
+duration:8
+}];
+
+let index=0;
+let animation=null;
+let running=false;
+
+function current(){
+return scenes[index];
+}
+
+function total(){
+return scenes.reduce((a,s)=>a+Number(s.duration),0);
+}
+
+function background(type){
+let colors={
+park:["#69c9ed","#9ddd79"],
+space:["#10143d","#493075"],
+beach:["#65d5ee","#ffe0a0"],
+city:["#83c9e9","#e6c7a1"],
+night:["#101a3b","#27345e"],
+castle:["#b4a5e8","#efc9df"]
+};
+
+let g=ctx.createLinearGradient(0,0,0,720);
+g.addColorStop(0,colors[type][0]);
+g.addColorStop(1,colors[type][1]);
+
+ctx.fillStyle=g;
+ctx.fillRect(0,0,1280,720);
+
+if(type==="park"){
+ctx.fillStyle="#60b85d";
+ctx.fillRect(0,500,1280,220);
+
+for(let i=0;i<5;i++){
+let x=100+i*280;
+ctx.fillStyle="#80512f";
+ctx.fillRect(x,340,35,190);
+ctx.fillStyle="#299c5b";
+ctx.beginPath();
+ctx.arc(x+15,325,85,0,Math.PI*2);
+ctx.fill();
+}
+}
+
+if(type==="space" || type==="night"){
+for(let i=0;i<70;i++){
+ctx.fillStyle="white";
+ctx.beginPath();
+ctx.arc((i*173)%1280,(i*97)%500,3,0,Math.PI*2);
+ctx.fill();
+}
+}
+
+if(type==="beach"){
+ctx.fillStyle="#26b8d0";
+ctx.fillRect(0,470,1280,250);
+}
+
+if(type==="city"){
+for(let i=0;i<9;i++){
+ctx.fillStyle="#7385a5";
+ctx.fillRect(i*150,320,120,350);
+}
+}
+
+if(type==="castle"){
+ctx.fillStyle="#8c79c5";
+ctx.fillRect(300,280,680,350);
+}
+}
+
+function character(type,t){
+let x=640;
+let y=430;
+
+if(current().motion==="bounce")
+y-=Math.abs(Math.sin(t*5))*35;
+
+if(current().motion==="walk")
+x=420+(t*100)%420;
+
+if(current().motion==="float")
+y+=Math.sin(t*2)*24;
+
+ctx.save();
+ctx.translate(x,y);
+
+let colors={
+boy:"#d69a76",
+girl:"#d99572",
+cat:"#f5a85b",
+robot:"#7dd9d2",
+dino:"#69bd70",
+bunny:"#f3e9e8"
+};
+
+ctx.fillStyle=colors[type];
+
+ctx.beginPath();
+ctx.ellipse(0,-50,85,115,0,0,Math.PI*2);
+ctx.fill();
+
+if(type==="cat"){
+ctx.beginPath();
+ctx.moveTo(-65,-100);
+ctx.lineTo(-55,-180);
+ctx.lineTo(-5,-130);
+ctx.lineTo(65,-100);
+ctx.lineTo(55,-180);
+ctx.lineTo(5,-130);
+ctx.fill();
+}
+
+if(type==="bunny"){
+ctx.fillRect(-55,-230,35,130);
+ctx.fillRect(20,-230,35,130);
+}
+
+if(type==="dino"){
+for(let i=0;i<4;i++){
+ctx.beginPath();
+ctx.arc(-45+i*30,-160,27,0,7);
+ctx.fill();
+}
+}
+
+if(type==="robot"){
+ctx.fillRect(-85,-160,170,100);
+}
+
+if(type==="boy"||type==="girl"){
+ctx.fillStyle="#473126";
+ctx.beginPath();
+ctx.arc(0,-145,75,Math.PI,0);
+ctx.fill();
+}
+
+ctx.fillStyle="white";
+ctx.beginPath();
+ctx.arc(-28,-70,13,0,7);
+ctx.arc(28,-70,13,0,7);
+ctx.fill();
+
+ctx.fillStyle="#222";
+ctx.beginPath();
+ctx.arc(-25,-70,6,0,7);
+ctx.arc(31,-70,6,0,7);
+ctx.fill();
+
+ctx.strokeStyle="#7c3d45";
+ctx.lineWidth=5;
+ctx.beginPath();
+ctx.arc(0,-40,22,0,Math.PI);
+ctx.stroke();
+
+ctx.restore();
+}
+
+function draw(t=0){
+let s=current();
+
+background(s.background);
+character(s.character,t);
+
+ctx.fillStyle="white";
+ctx.font="bold 30px Arial";
+ctx.fillText(s.name,70,80);
+
+ctx.fillStyle="#17213ddd";
+ctx.beginPath();
+ctx.roundRect(100,620,1080,75,15);
+ctx.fill();
+
+ctx.fillStyle="white";
+ctx.font="bold 27px Arial";
+ctx.textAlign="center";
+ctx.fillText(s.story,640,668,1020);
+ctx.textAlign="left";
+}
+
+function applyScene(){
+let s=current();
+
+s.character=document.getElementById("character").value;
+s.name=document.getElementById("name").value;
+s.background=document.getElementById("background").value;
+s.motion=document.getElementById("motion").value;
+s.story=document.getElementById("story").value;
+s.duration=Number(document.getElementById("duration").value);
+
+if(total()>60){
+s.duration=5;
+alert("Maximum video length is 60 seconds.");
+}
+
+render();
+}
+
+function addScene(){
+if(total()+5>60){
+alert("Maximum 60 seconds reached.");
+return;
+}
+
+scenes.push({
+...current(),
+duration:5,
+story:"A new adventure begins!"
+});
+
+index=scenes.length-1;
+render();
+}
+
+function deleteScene(){
+if(scenes.length===1){
+alert("At least one scene is required.");
+return;
+}
+
+scenes.splice(index,1);
+index=Math.max(0,index-1);
+render();
+}
+
+function render(){
+let s=current();
+
+document.getElementById("character").value=s.character;
+document.getElementById("name").value=s.name;
+document.getElementById("background").value=s.background;
+document.getElementById("motion").value=s.motion;
+document.getElementById("story").value=s.story;
+document.getElementById("duration").value=s.duration;
+
+document.getElementById("info").textContent=
+"Scene "+(index+1)+" · "+s.duration+" seconds · Total "+total()+"/60 seconds";
+
+let list=document.getElementById("scenes");
+list.innerHTML="";
+
+scenes.forEach((scene,i)=>{
+let b=document.createElement("button");
+b.className="scene "+(i===index?"active":"");
+b.textContent="🎬 Scene "+(i+1)+" ("+scene.duration+"s)";
+b.onclick=()=>{index=i;render()};
+list.appendChild(b);
+});
+
+draw();
+}
+
+function previous(){
+index=Math.max(0,index-1);
+render();
+}
+
+function next(){
+index=Math.min(scenes.length-1,index+1);
+render();
+}
+
+function stop(){
+running=false;
+cancelAnimationFrame(animation);
+draw();
+}
+
+function preview(){
+stop();
+running=true;
+let start=performance.now();
+let duration=current().duration*1000;
+
+function frame(now){
+if(!running)return;
+
+let t=(now-start)/1000;
+draw(t);
+
+if(now-start>=duration){
+stop();
+return;
+}
+
+animation=requestAnimationFrame(frame);
+}
+
+animation=requestAnimationFrame(frame);
+}
+
+function speak(){
+if(!window.speechSynthesis){
+alert("Speech is not supported in this browser.");
+return;
+}
+
+speechSynthesis.cancel();
+
+let utterance=new SpeechSynthesisUtterance(current().story);
+let voices=speechSynthesis.getVoices();
+let voice=voices.find(v=>v.name===document.getElementById("voice").value);
+
+if(voice)utterance.voice=voice;
+
+speechSynthesis.speak(utterance);
+}
+
+function loadVoices(){
+let select=document.getElementById("voice");
+select.innerHTML='<option value="">Default voice</option>';
+
+speechSynthesis.getVoices().forEach(v=>{
+let option=document.createElement("option");
+option.value=v.name;
+option.textContent=v.name;
+select.appendChild(option);
+});
+}
+
+if(window.speechSynthesis){
+loadVoices();
+speechSynthesis.onvoiceschanged=loadVoices;
+}
+
+function saveProject(){
+let data={
+title:"ToonSpark Project",
+scenes:scenes
+};
+
+let blob=new Blob([JSON.stringify(data,null,2)],{
+type:"application/json"
+});
+
+let a=document.createElement("a");
+a.href=URL.createObjectURL(blob);
+a.download="toonspark-project.json";
+a.click();
+}
+
+document.getElementById("file").onchange=async e=>{
+try{
+let data=JSON.parse(await e.target.files[0].text());
+if(!Array.isArray(data.scenes)||!data.scenes.length)throw Error();
+if(data.scenes.reduce((a,s)=>a+Number(s.duration),0)>60)throw Error();
+scenes=data.scenes;
+index=0;
+render();
+}catch{
+alert("Invalid project file.");
+}
+};
+
+async function exportVideo(){
+if(!window.MediaRecorder||!canvas.captureStream){
+alert("Please use updated Google Chrome or Edge.");
+return;
+}
+
+stop();
+
+let stream=canvas.captureStream(30);
+
+let type=[
+"video/webm;codecs=vp9",
+"video/webm;codecs=vp8",
+"video/webm"
+].find(t=>MediaRecorder.isTypeSupported(t));
+
+if(!type){
+alert("Video recording is not supported.");
+return;
+}
+
+let recorder=new MediaRecorder(stream,{mimeType:type});
+let chunks=[];
+
+recorder.ondataavailable=e=>{
+if(e.data.size)chunks.push(e.data);
+};
+
+let finished=new Promise(resolve=>{
+recorder.onstop=resolve;
+});
+
+recorder.start();
+
+let elapsed=0;
+let duration=total();
+
+for(let i=0;i<scenes.length;i++){
+index=i;
+render();
+
+let start=performance.now();
+let length=scenes[i].duration*1000;
+
+await new Promise(resolve=>{
+function frame(now){
+let t=(now-start)/1000;
+draw(t);
+
+document.getElementById("status").textContent=
+"Rendering "+Math.min(100,Math.round((elapsed+t)/duration*100))+"%";
+
+if(now-start>=length){
+resolve();
+}else{
+requestAnimationFrame(frame);
+}
+}
+requestAnimationFrame(frame);
+});
+
+elapsed+=scenes[i].duration;
+}
+
+recorder.stop();
+await finished;
+
+stream.getTracks().forEach(t=>t.stop());
+
+let blob=new Blob(chunks,{type:"video/webm"});
+let a=document.createElement("a");
+a.href=URL.createObjectURL(blob);
+a.download="my-cartoon-video.webm";
+a.click();
+
+document.getElementById("status").textContent=
+"Video successfully exported!";
+
+index=0;
+render();
+}
+
+render();
+</script>
+</body>
+</html>
